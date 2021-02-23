@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>MS</title>
+
+</head>
+
+<body>
+  <form>
+  <header>
+    <div class="header_1">
+      <h2 class="nome_secao">Mandados de Segurança</h2>
+    </div>
+
+    <div class="header_2">
+        <ul>
+            <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+            <a href="pa.html" class="links_topo"><li>P.A</li></a>
+            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+          </ul>
+
+    </div>
+
+    <div
+  </header>
+      <h3 class="black_subtitles">Dados</h3>
+        
+        <label for="ms_data" class="label_inputs">Data:</label>
+        <input id="ms_data" type="date" class="inputs_geral"><br>
+
+        <label for="ms_prazo" class="label_inputs">Prazo:</label>
+        <input id="ms_prazo" type="date" class="inputs_geral"><br>
+
+      </div>
+
+      <h3 class="black_subtitles">Segurado</h3>
+      <div ="container_segurado" class="vinculos_containers"> 
+        
+        <label for="vinculos_nome" class="label_inputs">Nome:</label>
+        <input id="vinculos_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+        
+        <label for="vinculos_rg" class="label_inputs">RG:</label>
+        <input id="vinculos_rg" class="inputs_geral" placeholder="Número do RG">
+        
+        <br>
+        
+        <label for="vinculos_cpf" class="label_inputs">CPF:</label>
+        <input id="vinculos_cpf" class="inputs_geral" placeholder="Número do CPF">
+       
+        <br>
+
+        <label for="ms_nit" class="label_inputs">NIT:</label>
+        <input id="ms_nit" class="inputs_geral" placeholder="Número de Inscrição do Trabalhador">
+
+        <br>
+
+        <label for="ms_nb" class="label_inputs">NB:</label>
+        <input id="ms_nb" class="inputs_geral" placeholder="Número do Benefício">
+
+        <br>
+
+        <label for="ms_protocolo" class="label_inputs">Protocolo:</label>
+        <input id="ms_protocolo" class="inputs_geral" placeholder="Número do Protocolo">
+
+        <br>
+
+        <label for="vinculos_nascimento" class="label_inputs">Nasc.:</label>
+        <input id="vinculos_nascimento" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
+        
+        <label for="vinculos_mae" class="label_inputs">Mãe:</label>
+        <input id="vinculos_mae" class="inputs_geral" placeholder="Nome da Mãe">
+
+        <br>
+        
+        <label for="vinculos_endereco" class="label_inputs" id="label_endereco">Sit.:</label>
+        <textarea id="vinculos_endereco" class="inputs_geral" rows="20" cols="70" placeholder="Notas e relato da situação"></textarea>
+      </div>
+      
+      <br>
+      
+      <!--Seleção da situação do vínculo-->
+      <h3 class="black_subtitles">Respostas</h3>
+      <div class="vinculos_radio">
+
+        <input id="radio_1" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_1">Segurado não localizado</label><br>
+        
+        <input id="radio_2" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_2" >Informar vínculo ativo</label>   
+
+        <br>
+
+        <input id="radio_3" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_3" >Informar vínculo e salário</label>   
+
+        <br>
+        
+        <input id="radio_4" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_4" >Vínculo aberto (Sem remunerações recentes)</label>
+
+        <br>
+        
+        <input id="radio_5"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_5">Sem vínculo</label>
+
+        <br>
+
+        <input id="radio_6"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_6">Benefício ativo</label>
+
+        <br>
+
+        <input id="radio_7"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_7">Sem benefício ativo</label>
+
+        <br>
+
+
+        <input id="radio_8"class="radio_vinculos" type="radio" name="radio" value="5">
+        <label for="radio_8">Informar Endereço</label>
+
+        <br>
+        
+        <input id="radio_9"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_9">Extrato CNIS completo</label>
+
+        <br>
+        <br>
+
+        <input id="radio_10"class="radio_vinculos" type="radio" name="ressalvas" value="1">
+        <label for="radio_10">Ressalva - Cadastro de Dependentes</label>
+
+        <br>
+
+        <input id="radio_11"class="radio_vinculos" type="radio" name="ressalvas" value="2">
+        <label for="radio_11">Ressalva - Área de atuação do INSS</label>
+
+    
+    </div>
+      
+      <div ="vinculos_div_button">
+    
+      <button type="button" onclick="resposta_vinculos()">Responder</button>
+    
+     
+    </div>
+    <section id="respostas">
+        
+        <label for="assunto_email">Assunto:</label>
+
+        <textarea id="vinculos_assunto_email" rows="1" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+
+
+      <textarea id="vinculos_textarea" rows="8" cols="75" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+
+    </section>
+      <footer ="geral_footer">
+        &copyFelipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
+
+  
