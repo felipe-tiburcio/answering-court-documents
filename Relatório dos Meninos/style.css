@@ -1,0 +1,30 @@
+body {
+  background-image: "img/background_blue.png";
+
+}
+.background {
+  margin-top: -8px;
+  margin-left: -8px;
+
+}
+  
+.photos {
+  position-top
+  width: 20%;
+  border-radius: 50%;
+  border: 2px solid black;
+  }
+
+.select {
+  padding: 2%;
+  border-radius: 50%;
+  border: 2px solid black;
+  
+}
+.buttons {
+  padding: 2%;
+  border-radius: 50%;
+  border: 2px solid black;
+  
+
+}

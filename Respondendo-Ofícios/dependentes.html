@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYNPq2L2nk9pq77oOAe15JFG9zpgELtqhBew&usqp=CAUfavicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <title>Dependentes</title>
+</head>
+
+<body>
+  <form>
+    <header class="header_1">
+      <h2 class="nome_secao">Dependentes</h2>
+    </header>
+    
+    <header class="header_2">
+        <ul>
+            <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+            <a href="pa.html" class="links_topo"><li>P.A</li></a>
+            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+          </ul>
+    </header>
+    <div class="solicitante_container">
+        <h4 class="black_subtitles">Solicitante</h4>
+        <label for="dependentes_sei" class="label_inputs">SEI:</label>
+        <input id="dependentes_sei" class="inputs_geral">
+        <br>
+        <label for="dependentes_orgao" class="label_inputs">Órgão:</label>
+        <select id="dependentes_orgao" class="inputs_geral">
+            <option>1ª Vara Cível</option>
+            <option>2ª Vara Cível</option>
+            <option>3ª Vara Cível</option>
+            <option>4ª Vara Cível</option>
+            <option>5ª Vara Cível</option>
+            <option>6ª Vara Cível</option>
+            <option>7ª Vara Cível</option>
+            <option>8ª Vara Cível</option>
+            <option>9ª Vara Cível</option>
+            <option>10ª Vara Cível</option>
+            <option>11ª Vara Cível</option>
+            <option>12ª Vara Cível</option>
+            <option>13ª Vara Cível</option>
+            <option>14ª Vara Cível</option>
+            <option>15ª Vara Cível</option>
+            <option>16ª Vara Cível</option>
+            <option>17ª Vara Cível</option>
+            <option>18ª Vara Cível</option>
+            <option>19ª Vara Cível</option>
+            <option>20ª Vara Cível</option>
+            <option>21ª Vara Cível</option>
+            <option>22ª Vara Cível</option>
+            <option>23ª Vara Cível</option>
+            <option>24ª Vara Cível</option>
+            <option selected>25ª Vara Cível</option>
+            <option>26ª Vara Cível</option>
+            <option>27ª Vara Cível</option>
+            <option>28ª Vara Cível</option>
+        </select>
+
+        <br>
+        
+        <label for="dependentes_cidade" class="label_inputs">Cidade:</label>
+        <select id="dependentes_cidade" class="inputs_geral">
+            <option selected>Aracaju</option>
+            <option>Nossa Sra. do Socorro</option>
+            <option>São Cristóvão</option>
+            <option>Itaporanga</option>
+            <option>Carmópolis</option>
+            <option>Maruim</option>
+            <option>Pirambu</option>
+            <option>Barra dos Coqueiros</option>
+            <option>Outra Cidade</option>
+            <option>Outra Cidade</option>
+            <option>Outra Cidade</option>
+            <option>Outra Cidade</option>
+           
+        </select>
+
+        <br>
+        <label for="dependentes_email" class="label_inputs">E-mail:</label>
+        <input id="dependentes_email" class="inputs_geral" placeholder="E-mail"><br>
+
+
+        <label for="dependentes_processo" class="label_inputs">Processo:</label>
+        <input type="text" id="dependentes_processo" class="inputs_geral" min="0" placeholder="Número do Processo Digital">
+    </div>
+    
+    <br>
+    
+    <div id="dependentes_segurado_container">
+        <h4 class="black_subtitles">Segurado</h4>       
+        <label for="dependentes_segurado_nome" class="label_inputs">Nome:</label>
+          <input id="dependentes_segurado_nome" class="inputs_geral" placeholder="Nome do Segurado"><br>
+          
+          <label for="dependentes_segurado_rg" class="label_inputs">RG:</label>
+          <input type="text" min="0" id="dependentes_segurado_rg" class="inputs_geral" placeholder="RG com Órgão Emissor e UF"><br>
+          
+          <label for="dependentes_segurado_cpf" class="label_inputs">CPF:</label>
+          <input type="text" min="0" id="dependentes_segurado_cpf"  class="inputs_geral" placeholder="Número do CPF"><br>
+
+          <label for="dependentes_segurado_pis" class="label_inputs">NIT/PIS:</label>
+          <input type="text" min="0" id="dependentes_segurado_pis"  class="inputs_geral" placeholder="NIT/PIS/PASEP"><br>
+
+          <label for="dependentes_segurado_mae" class="label_inputs">Mãe:</label>
+          <input id="dependentes_segurado_mae" class="inputs_geral" placeholder="Nome da mãe"><br>
+          
+          <label for="dependentes_segurado_data_nascimento" class="label_inputs">Nasc.:</label>
+          <input type="text" id="dependentes_segurado_data_nascimento" class="inputs_geral" placeholder="Data de Nascimento"><br>
+
+          <label for="dependentes_segurado_nit" class="label_inputs">NIT/PIS:</label>
+          <input type="text" id="dependentes_segurado_nit" class="inputs_geral" placeholder="NIT/PIS"><br>
+          
+          <label class="label_inputs" id="dependentes_segurado_data_obito">Óbito:</label>
+          <input type="text" id="dependentes_segurado_data_obito" class="inputs_geral" placeholder="Data de Óbito"><br>
+          
+          <label for="dependentes_segurado_certidao_obito" class="label_inputs">Certidão</label>
+          <input type="text" id="dependentes_segurado_certidao_obito" class="inputs_geral" placeholder="Certidão de Óbito nº"><br>
+          
+          <label for="dependentes_segurado_livro" class="label_inputs">Livro:</label>
+          <input id="dependentes_segurado_livro"  class="inputs_geral" placeholder="A, B ou C"><br>
+          
+          <label for="dependentes_segurado_folha" class="label_inputs">Folha:</label>
+          <input id="dependentes_segurado_folha" class="inputs_geral" placeholder="Folha"><br>
+          
+          <label for="dependentes_segurado_cartorio" class="label_inputs">Cartório:</label>
+          <input id="dependentes_segurado_cartorio" class="inputs_geral" placeholder="Nome do Cartório"> 
+      </div>
+      <br>
+      
+      <!--Seleção da situação-->
+
+      <div id="">
+        <h4 class="black_subtitles">Situação</h4>
+        
+        <label for="segurado_nao_localizado">
+            <div id="radio_selection_1" class="radio_selections">
+                <input id="segurado_nao_localizado" class="radio" type="radio" name="radio" value="1">Segurado não localizado
+            </div>
+        </label>
+                        
+            
+        <label for="segurado_tem_dependentes">
+            <div class="radio_selections">   
+                <input id="segurado_tem_dependentes" class="radio" type="radio" name="radio" value="2">Existem dependentes ativos
+            </div>
+        </label>
+          
+        
+        <label for="segurado_sem_dependentes">
+            <div class="radio_selections">
+                <input id="segurado_sem_dependentes" class="radio" type="radio" name="radio" value="3">Sem dependentes ativos
+            </div>
+        </label>
+
+        <label for="sem_dependentes_certidao">
+            <div class="radio_selections">
+                <input id="sem_dependentes_certidao" class="radio" type="radio" name="radio" value="4">Sem dependentes + Certidão
+            </div>
+        </label>
+            
+        
+        <label for="houve_dependentes">    
+            <div class="radio_selections">
+                <input id="houve_dependentes" class="radio" type="radio" name="radio" value="5">Já houve dependentes
+            </div>
+        </label>
+        
+        <label for="com_dependentes_certidao">    
+            <div class="radio_selections">
+                <input id="com_dependentes_certidao" class="radio" type="radio" name="radio" value="6">Com dependentes + Certidão
+            </div>
+        </label>
+
+      <br>
+      
+      <div id="">
+        <h4 class="black_subtitles">Dependentes</h4>
+        <label for "nb1_dependentes" class="label_inputs">NB 1:</label>
+        
+        <input type="text" class="inputs_geral" placeholder="Número do Benefício 1"><br>
+        
+        <label for "nb2_dependentes" class="label_inputs">NB 2:</label>
+        
+        <input type="text" class="inputs_geral" placeholder="Número do Benefício 2"><br>
+        
+        <label for "nb3_dependentes" class="label_inputs">NB 3:</label>
+        
+        <input type="text" class="inputs_geral" placeholder="Número do Benefício 3"><br>
+        
+        <label for "nb4_dependentes" class="label_inputs">NB 4:</label>
+        
+        <input type="text" class="inputs_geral" placeholder="Número do Benefício 4"><br>
+        
+    <div id="text_area_container">
+            <textarea class="dependentes_textarea" cols="75" rows="8" placeholder="Colar os dados do DEPEND do PLENUS"></textarea>
+
+    </div>  
+      
+      <div>
+        <button type="button" onclick="resposta_dependentes()">Gerar Resposta</button><br>
+      </div>
+
+      <label for="assunto_email">Assunto:</label>
+
+        <textarea id="dependentes_assunto_email" rows="2" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+      
+      <textarea id="dependentes_resposta" class="text_area_resposta" cols="75" rows="6" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
+      <footer id=""><br>
+        &copy Felipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>

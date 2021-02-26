@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Vínculos</title>
+
+</head>
+
+<body>
+  <form>
+  <header>
+    <div class="header_1">
+      <h2 class="nome_secao">Vínculos, Benefícios E Cadastro</h2>
+    </div>
+
+    <div class="header_2">
+        <ul>
+            <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+            <a href="pa.html" class="links_topo"><li>P.A</li></a>
+            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+          </ul>
+
+    </div>
+
+    <div
+  </header>
+      <h3 class="black_subtitles">Solicitante</h3>
+      <div ="container_solicitante" class="vinculos_containers"> 
+        <label for="vinculos_sei" class="label_inputs">SEI:</label>
+        <input id="vinculos_sei" class="inputs_geral">
+        <br>
+        <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
+        <select id="vinculos_orgao" class="inputs_geral">
+            <option>1ª Vara Cível</option>
+            <option>2ª Vara Cível</option>
+            <option>3ª Vara Cível</option>
+            <option>4ª Vara Cível</option>
+            <option>5ª Vara Cível</option>
+            <option>6ª Vara Cível</option>
+            <option>7ª Vara Cível</option>
+            <option>8ª Vara Cível</option>
+            <option>9ª Vara Cível</option>
+            <option>10ª Vara Cível</option>
+            <option>11ª Vara Cível</option>
+            <option>12ª Vara Cível</option>
+            <option>13ª Vara Cível</option>
+            <option>14ª Vara Cível</option>
+            <option>15ª Vara Cível</option>
+            <option>16ª Vara Cível</option>
+            <option>17ª Vara Cível</option>
+            <option>18ª Vara Cível</option>
+            <option>19ª Vara Cível</option>
+            <option>20ª Vara Cível</option>
+            <option>21ª Vara Cível</option>
+            <option>22ª Vara Cível</option>
+            <option>23ª Vara Cível</option>
+            <option>24ª Vara Cível</option>
+            <option selected>25ª Vara Cível</option>
+            <option>26ª Vara Cível</option>
+            <option>27ª Vara Cível</option>
+            <option>28ª Vara Cível</option>
+        </select>
+
+        <br>
+        
+        <label for="vinculos_cidade" class="label_inputs">Cidade:</label>
+        <select id="vinculos_cidade" class="inputs_geral">
+            <option selected>Aracaju</option>
+            <option>N. Sra. do Socorro</option>
+            <option>Barra dos Coqueiros</option>
+            <option>São Cristóvão</option>
+            <option>Itaporanga</option>
+            <option>Carmópolis</option>
+            <option>Maruim</option>
+            <option>Santo Amaro das Brotas</option>
+            <option>Pirambu</option>
+            <option>Outra Cidade</option>
+            <option>Outra Cidade</option>
+            <option>Outra Cidade</option>
+            
+        </select>
+
+        <br>
+        
+        <label for="vinculos_processo" class="label_inputs">Processo:</label>
+        <input id="vinculos_processo" class="inputs_geral" placeholder="Número do Processo"><br>
+
+        <label for="vinculos_email" class="label_inputs">E-mail:</label>
+        <input id="vinculos_email" class="inputs_geral" placeholder="E-mail"><br>
+
+      </div>
+
+      <h3 class="black_subtitles">Segurado</h3>
+      <div ="container_segurado" class="vinculos_containers"> 
+        
+        <label for="vinculos_nome" class="label_inputs">Nome:</label>
+        <input id="vinculos_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+        
+        <label for="vinculos_rg" class="label_inputs">RG:</label>
+        <input id="vinculos_rg" class="inputs_geral" placeholder="Número do RG"><br>
+        
+        <label for="vinculos_cpf" class="label_inputs">CPF:</label>
+        <input id="vinculos_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
+       
+        <label for="vinculos_nascimento" class="label_inputs">Nasc.:</label>
+        <input id="vinculos_nascimento" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
+        
+        <label for="vinculos_mae" class="label_inputs">Mãe:</label>
+        <input id="vinculos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+        
+        <label for="vinculos_endereco" class="label_inputs" id="label_endereco">End.:</label>
+        <textarea id="vinculos_endereco" class="inputs_geral" rows="6" cols="70" placeholder="Endereço(s) cadastrado(s) no CNIS"></textarea>
+      </div><br>
+
+      <h3 class="black_subtitles">Benefício</h3>
+      <div ="container_beneficio" class="vinculos_containers">
+
+      <label for="vinculos_nb" class="label_inputs">NB:</label>
+        <input id="vinculos_nb" class="inputs_geral" placeholder="Número do Benefício"><br>
+
+        <label for="vinculos_tipoBeneficio" class="label_inputs">Tipo:</label>
+        <select id="vinculos_tipoBeneficio" class="inputs_geral">
+            
+            <option selected>Pensão por Morte</option>
+            <option>Aposentadoria por Idade</option>
+            <option>Aposentadoria por Tempo de Contribuição</option>
+            <option>Aposentadoria Especial</option>
+            <option>Auxílio por Incapacidade Temporária</option>
+            <option>Auxílio por Incapacidade Temporária Acidentária</option>
+            <option>Amparo Social a Pes. Def.</option>
+            <option>Amparo Social ao Idoso</option>
+            <option>Outra opção</option>
+            
+        
+        </select>
+
+        <br>
+
+        
+        <label for="vinculos_beneficioInicio" class="label_inputs">DIB:</label>
+        <input id="vinculos_beneficioInicio" placeholder="xx/xx/xxxx" class="inputs_geral">
+
+        <br>
+
+        <label for="valorBeneficio" class="label_inputs">R$:</label>
+        <input id="valorBeneficio" placeholder="MR do benefício no INFBEN" class="inputs_geral">
+    </div>
+      
+      <br>
+      
+      <!--Seleção da situação do vínculo-->
+      <h3 class="black_subtitles">Situação</h3>
+      <div class="vinculos_radio">
+
+        <input id="radio_1" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_1">Segurado não localizado</label><br>
+        
+        <input id="radio_2" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_2" >Informar vínculo ativo</label>   
+
+        <br>
+
+        <input id="radio_3" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_3" >Informar vínculo e salário</label>   
+
+        <br>
+        
+        <input id="radio_4" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_4" >Vínculo aberto (Sem remunerações recentes)</label>
+
+        <br>
+        
+        <input id="radio_5"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_5">Sem vínculo</label>
+
+        <br>
+
+        <input id="radio_6"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_6">Benefício ativo</label>
+
+        <br>
+
+        <input id="radio_7"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_7">Sem benefício ativo</label>
+
+        <br>
+
+
+        <input id="radio_8"class="radio_vinculos" type="radio" name="radio" value="5">
+        <label for="radio_8">Informar Endereço</label>
+
+        <br>
+        
+        <input id="radio_9"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_9">Extrato CNIS completo</label>
+
+        <br>
+        <br>
+
+        <input id="radio_10"class="radio_vinculos" type="radio" name="ressalvas" value="1">
+        <label for="radio_10">Ressalva - Cadastro de Dependentes</label>
+
+        <br>
+
+        <input id="radio_11"class="radio_vinculos" type="radio" name="ressalvas" value="2">
+        <label for="radio_11">Ressalva - Área de atuação do INSS</label>
+
+    
+    </div>
+       
+      <h3 class="black_subtitles">Empresa</h3>
+      
+      <div id="container_empresa" class="vinculos_containers"> 
+        
+        <label for="vinculos_empresa" class="label_inputs">Empresa:</label>
+        <input id="vinculos_empresa" placeholder="Nome da Empresa" class="inputs_geral">
+        <br>
+        
+        <label for="vinculos_data_inicio" class="label_inputs">Início:</label>
+        <input id="vinculos_data_inicio" placeholder="xx/xx/xxxx" class="inputs_geral">
+
+        <br>
+
+        <label for="vinculos_salario" class="label_inputs">R$:</label>
+        <input id="vinculos_salario" placeholder="Última remuneração no CNIS" class="inputs_geral">
+
+      </div>
+      
+      <div ="vinculos_div_button">
+    
+      <button type="button" onclick="resposta_vinculos()">Responder</button>
+    
+     
+    </div>
+    <section id="respostas">
+        
+        <label for="assunto_email">Assunto:</label>
+
+        <textarea id="vinculos_assunto_email" rows="1" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+
+
+      <textarea id="vinculos_textarea" rows="8" cols="75" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+
+    </section>
+      <footer ="geral_footer">
+        &copyFelipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
+
+  

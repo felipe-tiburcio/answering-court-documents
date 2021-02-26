@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Resíduos</title>
+</head>
+<body>
+  <form>
+  <header class="header_1">
+    <div>
+      <!--<img src="">-->
+      <h2 class="nome_secao">Resíduos</h2>
+      
+    </div>
+  </header>
+
+  <header class="header_2">
+    <ul>
+        <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+            <a href="pa.html" class="links_topo"><li>P.A</li></a>
+            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+      </ul>
+  </header>
+
+      <h4 class="black_subtitles">Solicitante</h4>
+      <div>
+          
+        <label for="residuos_sei" class="label_inputs">SEI:</label>
+        <input id="residuos_sei" class="inputs_geral">
+        <br>
+
+        <label for="residuos_orgao" class="label_inputs">Órgão:</label>
+        <select id="residuos_orgao" class="inputs_geral">
+            <option>1ª Vara Cível</option>
+            <option>2ª Vara Cível</option>
+            <option>3ª Vara Cível</option>
+            <option>4ª Vara Cível</option>
+            <option>5ª Vara Cível</option>
+            <option>6ª Vara Cível</option>
+            <option>7ª Vara Cível</option>
+            <option>8ª Vara Cível</option>
+            <option>9ª Vara Cível</option>
+            <option>10ª Vara Cível</option>
+            <option>11ª Vara Cível</option>
+            <option>12ª Vara Cível</option>
+            <option>13ª Vara Cível</option>
+            <option>14ª Vara Cível</option>
+            <option>15ª Vara Cível</option>
+            <option>16ª Vara Cível</option>
+            <option>17ª Vara Cível</option>
+            <option>18ª Vara Cível</option>
+            <option>19ª Vara Cível</option>
+            <option>20ª Vara Cível</option>
+            <option>21ª Vara Cível</option>
+            <option>22ª Vara Cível</option>
+            <option>23ª Vara Cível</option>
+            <option>24ª Vara Cível</option>
+            <option selected>25ª Vara Cível</option>
+            <option>26ª Vara Cível</option>
+            <option>27ª Vara Cível</option>
+            <option>28ª Vara Cível</option>
+        </select>
+
+        <br>
+        
+        <label for="residuos_cidade" class="label_inputs">Cidade:</label>
+        <select id="residuos_cidade" class="inputs_geral">
+            <option selected>Aracaju</option>
+            <option>N. Sra. do Socorro</option>
+            <option>Barra dos Coqueiros</option>
+            <option>São Cristóvão</option>
+            <option>Itaporanga</option>
+            <option>Carmópolis</option>
+            <option>Maruim</option>
+            <option>Riachuelo</option>
+            <option>Santo Amaro das Brotas</option>
+            <option>Outra Cidade</option>
+            <option>Outra Cidade</option>
+        </select>
+
+        <br>
+        
+        <label for="residuos_processo" class="label_inputs">Processo:</label>
+        <input id="residuos_processo" class="inputs_geral" placeholder="Número do Processo">
+      </div>
+      
+      <h4 class="black_subtitles">Segurado</h4>
+      <div> 
+        
+        <label for="residuos_nome" class="label_inputs">Nome:</label>
+        <input id="residuos_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+
+        <label for="residuos_cpf" class="label_inputs">CPF:</label>
+        <input id="residuos_cpf" class="inputs_geral" placeholder="CPF"><br>
+        
+        <label for="residuos_nascimento" class="label_inputs">Nasc.:</label>
+        <input id="residuos_nascimento" class="inputs_geral" placeholder="Data de Nascimento"><br>
+
+        <label for="residuos_mae" class="label_inputs">Mãe:</label>
+        <input id="residuos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+
+        <label for="residuos_obito" class="label_inputs">Óbito:</label>
+        
+        <select id="dia_obito" class="label_inputs">
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+            <option>06</option>
+            <option>07</option>
+            <option>08</option>
+            <option>09</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option selected>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+        </select>
+
+        <select id="mes_obito" class="label_inputs">
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+            <option>06</option>
+            <option>07</option>
+            <option>08</option>
+            <option>09</option>
+            <option>10</option>
+            <option selected>11</option>
+            <option>12</option>
+        </select>
+
+        <select id="ano_obito" class="label_inputs">
+            <option>2010</option>
+            <option>2011</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option selected>2020</option>
+            <option>2021</option>
+        </select>
+        
+        <br>
+
+        <label for="residuos_beneficio" class="label_inputs">Benefício:</label>
+        <input id="residuos_beneficio" class="inputs_geral" placeholder="Número do Benefício"><br>
+
+        <label for="residuos_mr" class="label_inputs">MR:</label>
+        <input id="residuos_mr" class="inputs_geral" placeholder="R$ XXXX.XX">
+        
+        <br>         
+        <br>
+        
+        <div id="divCheckbox">
+           
+            <p>Meses não recebidos:</p><br>
+
+            <input id="checkbox_01" class="checkboxes" type="checkbox" value="01">
+            <label for="checkbox_01">01</label>
+            
+            <input id="checkbox_02" class="checkboxes" type="checkbox" value="02">
+            <label for="checkbox_02">02</label>
+            
+            <input id="checkbox_03" class="checkboxes" type="checkbox" value="03">
+            <label for="checkbox_03">03</label>
+            
+            <input id="checkbox_04" class="checkboxes" type="checkbox" value="04">
+            <label for="checkbox_04">04</label>
+            
+            <input id="checkbox_05" class="checkboxes" type="checkbox" value="05">
+            <label for="checkbox_05">05</label>
+            
+            <input id="checkbox_06" class="checkboxes" type="checkbox" value="06"> 
+            <label for="checkbox_06">06</label>
+                    
+            <input id="checkbox_07" class="checkboxes" type="checkbox" value="07">
+            <label for="checkbox_07">07</label>
+            
+            <input id="checkbox_08" class="checkboxes" type="checkbox" value="08">
+            <label for="checkbox_08">08</label>
+            
+            <input id="checkbox_09" class="checkboxes" type="checkbox" value="09">
+            <label for="checkbox_09">09</label>
+                        
+            <input id="checkbox_10" class="checkboxes" type="checkbox" value="10">
+            <label for="checkbox_10">10</label>
+            
+            <input id="checkbox_11" class="checkboxes" type="checkbox" value="11">
+            <label for="checkbox_11">11</label>
+            
+            <input id="checkbox_12" class="checkboxes" type="checkbox" value="12">
+            <label for="checkbox_12">12</label>
+
+            <br>
+            <br>
+
+            <label for="valoresIndevidos">Valores Indevidos:</label>
+            <input id="valoresIndevidos"><br>
+            
+            
+        </div>
+
+        <br> 
+
+        <div class="">
+            
+            <div class="">
+                <input id="radioNaoEncontrado"type="radio" class="radioResiduos" name="semResiduos">
+                <label for="radioNaoEncontrado">Segurado não-localizado</label>
+
+                <br>
+
+                <input id="radioSemBeneficio" type="radio" class="radioResiduos" name="semResiduos">
+                <label for="radioSemBeneficio">Sem Benefício</label>
+
+                <br>
+
+                <input id="radioSemResiduos" type="radio" class="radioResiduos" name="semResiduos">
+                <label for="radioSemResiduos">Sem Resíduos</label>
+                
+                <br>
+                <br>
+
+                <input id="radio_13_yes" class="radioResiduos" type="radio" name="13_salario"
+            value="tem13">
+                <label for="radio_13_yes" class="">Benefício com 13º</label><br>   
+                
+                <input id="radio_13_no" class="radioResiduos" type="radio" name="13_salario" value="no">
+                <label for="radio_13_no" class="">Não tem 13º</label><br>
+            </div>    
+
+            <br>
+            
+            <div class="">    
+            
+                <input type="radio" id="nao_recebeu_13" class="radioResiduos" name="recebeu_13">
+                <label for="nao_recebeu_13" class="">Não recebeu nenhum valor de 13º</label><br>
+                
+                <input type="radio" id="recebeu_13" class="radioResiduos" name="recebeu_13">
+                <label for="recebeu_13" class="">Recebeu alguns valores de 13º</label><br>
+
+                <label for="o13_recebido" class="">13º Recebido(R$):</label>
+                <input id="o13_recebido" class="radioResiduos" name="13_recebido">
+
+                <br>
+                <br>
+
+            </div>
+            
+            <div class="">
+
+                <input id="radio_10" type="radio" class="radioRessalvas" name="ressalvas">
+                <label for="radio_10">Ressalva - Acerto de Contas</label>
+
+                <br>
+
+                <input id="radio_11" class="radioRessalvas" type="radio" name="ressalvas">
+                <label for="radio_11" class="">Ressalva - Cadastro de Dependentes</label>
+        
+                <br>
+        
+                <input id="radio_12" class="radioRessalvas" type="radio" name="ressalvas">
+                <label for="radio_12" class="">Ressalva - Área de atuação do INSS</label>
+
+                <br>
+
+                <input id="radio_13" class="radioRessalvas" type="radio" name="ressalvas">
+                <label for="radio_13" class="">Ressalva - Sem acesso a dados bancários</label>
+
+                <br>
+
+                <input id="radio_14" class="radioRessalvas" type="radio" name="ressalvas">
+                <label for="radio_14" class="">Ressalva - Encaminhamento para o MOB</label>
+
+                <br>
+                <br>
+                
+
+            </div>    
+            
+        
+        </div>
+            
+      
+      <div class="div_botao">
+        <button type="button" onclick="respostaResiduos()">Gerar Resposta</button><br>
+      </div>
+      
+      <section id="respostas">
+
+        <textarea id="residuos_assunto" rows="2" cols="75" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+
+
+      <textarea id="residuos_resposta" rows="25" cols="75" placeholder="A resposta aparecerá aqui. Utilize Ctrl+A para selecionar tudo, Ctrl+C para copiar e Ctrl+V no Expresso."></textarea>
+
+    </section>
+      
+      <footer id="geral_footer">
+        &copy Felipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
+
+  

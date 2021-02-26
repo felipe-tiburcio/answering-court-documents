@@ -263,13 +263,6 @@ Atenciosamente,
 
 Atenciosamente,
 `
-
-    } else if(semResiduos[3].checked){
-        resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que embora existam resíduos a serem pagos, também existem valores pagos indevidamente, o que acarretará na realização de acerto de contas quando o requerimento dos valores for realizado pelos interessados.
-
-Atenciosamente,
-        `
-
     } else {
 
 resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados do(a) Sr(a) ${nome} nos sistemas do INSS. Neste documento é possível verificar a seguinte situação: 
@@ -312,24 +305,31 @@ Atenciosamente,`;
 
 }
 
-if (ressalvas[0].checked) {
+
+if (ressalvas[0].checked){
+
+    resposta.innerHTML += `\n\nCabe ressaltar que embora existam resíduos a serem pagos, também existem valores pagos indevidamente, o que acarretará na realização de acerto de contas quando o requerimento dos valores for realizado pelos interessados.
+
+Atenciosamente,
+    `
+} else if (ressalvas[1].checked) {
     
     resposta.innerHTML += `\n\nImportante salientar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.
 
 Atenciosamente,
     `
-} else if(ressalvas[1].checked) {
+} else if(ressalvas[2].checked) {
     resposta.innerHTML += `\n\nRessaltamos que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.
     
 Atenciosamente,
     `
-} else if(ressalvas[2].checked){
+} else if(ressalvas[3].checked){
 
     resposta.innerHTML += `\n\nImportante salientar que o INSS realiza a concessão e administração de benefícios através de sistemas próprios e não tem acesso aos dados bancários/financeiros do segurado, cabendo ao agente bancário esta competência.
 
 Atenciosamente,
 `
-} else if(ressalvas[3].checked){
+} else if(ressalvas[4].checked){
     resposta.innerHTML += `\n\nNeste caso, como houve recebimento pós-óbito, o processo será encaminhado ao setor de Monitoramento Operacional de Benefícios(MOB) para apuração das competências e valores recebidos após o óbito do segurado.
     ` 
 }
