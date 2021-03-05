@@ -27,40 +27,8 @@
     </header>
     <div class="solicitante_container">
         <h4 class="black_subtitles">Solicitante</h4>
-        <label for="dependentes_sei" class="label_inputs">SEI:</label>
-        <input id="dependentes_sei" class="inputs_geral">
-        <br>
         <label for="dependentes_orgao" class="label_inputs">Órgão:</label>
-        <select id="dependentes_orgao" class="inputs_geral">
-            <option>1ª Vara Cível</option>
-            <option>2ª Vara Cível</option>
-            <option>3ª Vara Cível</option>
-            <option>4ª Vara Cível</option>
-            <option>5ª Vara Cível</option>
-            <option>6ª Vara Cível</option>
-            <option>7ª Vara Cível</option>
-            <option>8ª Vara Cível</option>
-            <option>9ª Vara Cível</option>
-            <option>10ª Vara Cível</option>
-            <option>11ª Vara Cível</option>
-            <option>12ª Vara Cível</option>
-            <option>13ª Vara Cível</option>
-            <option>14ª Vara Cível</option>
-            <option>15ª Vara Cível</option>
-            <option>16ª Vara Cível</option>
-            <option>17ª Vara Cível</option>
-            <option>18ª Vara Cível</option>
-            <option>19ª Vara Cível</option>
-            <option>20ª Vara Cível</option>
-            <option>21ª Vara Cível</option>
-            <option>22ª Vara Cível</option>
-            <option>23ª Vara Cível</option>
-            <option>24ª Vara Cível</option>
-            <option selected>25ª Vara Cível</option>
-            <option>26ª Vara Cível</option>
-            <option>27ª Vara Cível</option>
-            <option>28ª Vara Cível</option>
-        </select>
+        <input class="inputs_geral">
 
         <br>
         
@@ -74,7 +42,7 @@
             <option>Maruim</option>
             <option>Pirambu</option>
             <option>Barra dos Coqueiros</option>
-            <option>Outra Cidade</option>
+            <option>Santo Amaro das Brotas</option>
             <option>Outra Cidade</option>
             <option>Outra Cidade</option>
             <option>Outra Cidade</option>
@@ -82,12 +50,14 @@
         </select>
 
         <br>
-        <label for="dependentes_email" class="label_inputs">E-mail:</label>
-        <input id="dependentes_email" class="inputs_geral" placeholder="E-mail"><br>
-
-
+      
         <label for="dependentes_processo" class="label_inputs">Processo:</label>
-        <input type="text" id="dependentes_processo" class="inputs_geral" min="0" placeholder="Número do Processo Digital">
+        <input type="text" id="dependentes_processo" class="inputs_geral" min="0" placeholder="Número do Processo">
+
+        <br>
+        
+        <label for="dependentes_email" class="label_inputs">E-mail:</label>
+        <input id="dependentes_email" class="inputs_geral" placeholder="E-mail">
     </div>
     
     <br>
@@ -103,17 +73,17 @@
           <label for="dependentes_segurado_cpf" class="label_inputs">CPF:</label>
           <input type="text" min="0" id="dependentes_segurado_cpf"  class="inputs_geral" placeholder="Número do CPF"><br>
 
-          <label for="dependentes_segurado_pis" class="label_inputs">NIT/PIS:</label>
-          <input type="text" min="0" id="dependentes_segurado_pis"  class="inputs_geral" placeholder="NIT/PIS/PASEP"><br>
-
-          <label for="dependentes_segurado_mae" class="label_inputs">Mãe:</label>
-          <input id="dependentes_segurado_mae" class="inputs_geral" placeholder="Nome da mãe"><br>
-          
           <label for="dependentes_segurado_data_nascimento" class="label_inputs">Nasc.:</label>
           <input type="text" id="dependentes_segurado_data_nascimento" class="inputs_geral" placeholder="Data de Nascimento"><br>
 
-          <label for="dependentes_segurado_nit" class="label_inputs">NIT/PIS:</label>
-          <input type="text" id="dependentes_segurado_nit" class="inputs_geral" placeholder="NIT/PIS"><br>
+          <label for="dependentes_segurado_mae" class="label_inputs">Mãe:</label>
+          <input id="dependentes_segurado_mae" class="inputs_geral" placeholder="Nome da mãe"><br>
+
+          <label for="dependentes_segurado_pis" class="label_inputs">NIT/PIS:</label>
+          <input type="text" min="0" id="dependentes_segurado_pis"  class="inputs_geral" placeholder="NIT/PIS/PASEP">
+          
+          <br>
+          <br>
           
           <label class="label_inputs" id="dependentes_segurado_data_obito">Óbito:</label>
           <input type="text" id="dependentes_segurado_data_obito" class="inputs_geral" placeholder="Data de Óbito"><br>
@@ -207,7 +177,7 @@
 
       <label for="assunto_email">Assunto:</label>
 
-        <textarea id="dependentes_assunto_email" rows="2" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+        <textarea id="dependentes_assunto_email" rows="1" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
       
       <textarea id="dependentes_resposta" class="text_area_resposta" cols="75" rows="6" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
       <footer id=""><br>

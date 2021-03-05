@@ -12,7 +12,7 @@
   <form>
   <header>
     <div class="header_1">
-      <h2 class="nome_secao">Vínculos, Benefícios E Cadastro</h2>
+      <h2 class="nome_secao">Vínculos, Benefícios e Cadastro</h2>
     </div>
 
     <div class="header_2">
@@ -31,41 +31,8 @@
   </header>
       <h3 class="black_subtitles">Solicitante</h3>
       <div ="container_solicitante" class="vinculos_containers"> 
-        <label for="vinculos_sei" class="label_inputs">SEI:</label>
-        <input id="vinculos_sei" class="inputs_geral">
-        <br>
         <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
-        <select id="vinculos_orgao" class="inputs_geral">
-            <option>1ª Vara Cível</option>
-            <option>2ª Vara Cível</option>
-            <option>3ª Vara Cível</option>
-            <option>4ª Vara Cível</option>
-            <option>5ª Vara Cível</option>
-            <option>6ª Vara Cível</option>
-            <option>7ª Vara Cível</option>
-            <option>8ª Vara Cível</option>
-            <option>9ª Vara Cível</option>
-            <option>10ª Vara Cível</option>
-            <option>11ª Vara Cível</option>
-            <option>12ª Vara Cível</option>
-            <option>13ª Vara Cível</option>
-            <option>14ª Vara Cível</option>
-            <option>15ª Vara Cível</option>
-            <option>16ª Vara Cível</option>
-            <option>17ª Vara Cível</option>
-            <option>18ª Vara Cível</option>
-            <option>19ª Vara Cível</option>
-            <option>20ª Vara Cível</option>
-            <option>21ª Vara Cível</option>
-            <option>22ª Vara Cível</option>
-            <option>23ª Vara Cível</option>
-            <option>24ª Vara Cível</option>
-            <option selected>25ª Vara Cível</option>
-            <option>26ª Vara Cível</option>
-            <option>27ª Vara Cível</option>
-            <option>28ª Vara Cível</option>
-        </select>
-
+        <input class="inputs_geral">
         <br>
         
         <label for="vinculos_cidade" class="label_inputs">Cidade:</label>
@@ -114,8 +81,30 @@
         <input id="vinculos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
         
         <label for="vinculos_endereco" class="label_inputs" id="label_endereco">End.:</label>
-        <textarea id="vinculos_endereco" class="inputs_geral" rows="6" cols="70" placeholder="Endereço(s) cadastrado(s) no CNIS"></textarea>
-      </div><br>
+        <textarea id="vinculos_endereco" class="inputs_geral" rows="4" cols="70" placeholder="Endereço(s) cadastrado(s) no CNIS"></textarea>
+      </div>
+      
+      <br>
+
+      <h3 class="black_subtitles">Empresa</h3>
+      
+      <div id="container_empresa" class="vinculos_containers"> 
+        
+        <label for="vinculos_empresa" class="label_inputs">Empresa:</label>
+        <input id="vinculos_empresa" placeholder="Nome da Empresa" class="inputs_geral">
+        <br>
+        
+        <label for="vinculos_data_inicio" class="label_inputs">Início:</label>
+        <input id="vinculos_data_inicio" placeholder="xx/xx/xxxx" class="inputs_geral">
+
+        <br>
+
+        <label for="vinculos_salario" class="label_inputs">R$:</label>
+        <input id="vinculos_salario" placeholder="Última remuneração no CNIS" class="inputs_geral">
+
+      </div>
+
+      <br>
 
       <h3 class="black_subtitles">Benefício</h3>
       <div ="container_beneficio" class="vinculos_containers">
@@ -152,32 +141,37 @@
     </div>
       
       <br>
+
+
+
+     
       
       <!--Seleção da situação do vínculo-->
       <h3 class="black_subtitles">Situação</h3>
       <div class="vinculos_radio">
-
+        <br>
         <input id="radio_1" type="radio" name="radio" class="radio_vinculos">
-        <label for="radio_1">Segurado não localizado</label><br>
-        
+        <label for="radio_1">Segurado não localizado</label>
+        <hr>
+        <br>
         <input id="radio_2" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
-        <label for="radio_2" >Informar vínculo ativo</label>   
+        <label for="radio_2" >Vínculo ativo</label>   
 
         <br>
 
         <input id="radio_3" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
-        <label for="radio_3" >Informar vínculo e salário</label>   
+        <label for="radio_3" >Vínculo e salário</label>   
 
         <br>
         
         <input id="radio_4" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
-        <label for="radio_4" >Vínculo aberto (Sem remunerações recentes)</label>
+        <label for="radio_4" >Vínculo(s) aberto(s) (Sem remunerações recentes)</label>
 
         <br>
         
         <input id="radio_5"class="radio_vinculos" type="radio" name="radio">
         <label for="radio_5">Sem vínculo</label>
-
+        <hr>
         <br>
 
         <input id="radio_6"class="radio_vinculos" type="radio" name="radio">
@@ -187,19 +181,23 @@
 
         <input id="radio_7"class="radio_vinculos" type="radio" name="radio">
         <label for="radio_7">Sem benefício ativo</label>
-
+        <hr>
         <br>
 
 
         <input id="radio_8"class="radio_vinculos" type="radio" name="radio" value="5">
-        <label for="radio_8">Informar Endereço</label>
-
+        <label for="radio_8">Endereço</label>
         <br>
         
-        <input id="radio_9"class="radio_vinculos" type="radio" name="radio">
-        <label for="radio_9">Extrato CNIS completo</label>
+        <input id="radio_9" class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_9">CNIS completo</label>
 
         <br>
+
+        <input id="radio_10" class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_10">Dados Cadastrais</label>
+
+        <hr>
         <br>
 
         <input id="radio_10"class="radio_vinculos" type="radio" name="ressalvas" value="1">
@@ -209,27 +207,12 @@
 
         <input id="radio_11"class="radio_vinculos" type="radio" name="ressalvas" value="2">
         <label for="radio_11">Ressalva - Área de atuação do INSS</label>
+        <br>
+        <hr>
 
     
     </div>
        
-      <h3 class="black_subtitles">Empresa</h3>
-      
-      <div id="container_empresa" class="vinculos_containers"> 
-        
-        <label for="vinculos_empresa" class="label_inputs">Empresa:</label>
-        <input id="vinculos_empresa" placeholder="Nome da Empresa" class="inputs_geral">
-        <br>
-        
-        <label for="vinculos_data_inicio" class="label_inputs">Início:</label>
-        <input id="vinculos_data_inicio" placeholder="xx/xx/xxxx" class="inputs_geral">
-
-        <br>
-
-        <label for="vinculos_salario" class="label_inputs">R$:</label>
-        <input id="vinculos_salario" placeholder="Última remuneração no CNIS" class="inputs_geral">
-
-      </div>
       
       <div ="vinculos_div_button">
     
