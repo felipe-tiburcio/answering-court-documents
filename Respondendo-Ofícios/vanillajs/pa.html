@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Pensão Alimentícia</title>
+
+</head>
+
+<body>
+  <form id="pa_form_geral">
+    <header class="header_1">
+    <h2 class="nome_secao">Pensão Alimentícia</h2>
+  </header>
+
+  <header class="header_2">
+    <ul>
+        <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+            <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
+            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+            <a href="MS.html" class="links_topo"><li>Mandado de Segurança</li></a>
+      </ul>
+
+
+  </header>
+
+      <h3 class="black_subtitles">Solicitante</h3>
+      <div id="container_solicitante" class="pa_containers">
+          
+        <label for="pa_sei" class="label_inputs">SEI:</label>
+        <input id="pa_sei" class="inputs_geral">
+        <br>
+
+        <label for="orgao" class="label_inputs">Órgão:</label>
+        <input id="orgao" class="inputs_geral" placeholder="Órgão"><br>
+        <label for="cidade" class="label_inputs">Cidade:</label>
+        <input id="cidade" class="inputs_geral" placeholder="Cidade"><br>
+        <label for="PA_processo" class="label_inputs">Nº do Processo:</label>
+        <input id="PA_processo" class="inputs_geral" placeholder="Número do Processo"><br>
+        <label for="email" class="label_inputs">E-mail:</label>
+        <input id="email" class="inputs_geral" placeholder="E-mail">
+      </div>
+
+      <h3 class="black_subtitles">Instituidor</h3>
+      <div id="container_inst" class = "pa_containers">
+        <label for="PA_segurado_nome" class="label_inputs">Nome:</label> 
+        <input id="PA_segurado_nome" class = "inputs_geral" placeholder="Nome Completo"><br>
+        <label for="cpf_inst" class="label_inputs">CPF:</label> 
+        <input id="cpf_inst" class = "inputs_geral" placeholder="Número do CPF">
+        <br>
+        <br>
+        <input type="checkbox" id="13" checked class = "radio">
+        <label for="13" class="pa_checked">13º salário</label>
+        <input type="checkbox" id="sf" class = "radio" placeholder="Salário Família?">
+        <label for="sf" class="pa_checked">Salário Família</label>
+      </div>
+            
+      <h3 class="black_subtitles">Dependentes</h3>
+      <div id="container_titular" class="pa_containers"> 
+        <label for="nome_dependente_1" class="label_inputs">Nome:</label> 
+        <input id="nome_dependente_1" placeholder="Dependente 1" class="inputs_geral">
+        <br>
+        <label for="rg_dependente_1" class="label_inputs">RG:</label>
+        <input id="rg_dependente_1" placeholder="RG" class="inputs_geral">
+        <br>
+        <label for="cpf_dependente_1" class="label_inputs">CPF:</label> 
+        <input id="cpf_dependente_1" placeholder="CPF" class="inputs_geral">
+        <br>
+        <label for="nome_dependente_2" class="label_inputs">Nome:</label> 
+        <input id="nome_dependente_2" placeholder="Dependente 2" class="inputs_geral">
+        <br>
+        <label for="rg_dependente_2" class="label_inputs">RG:</label>
+        <input id="rg_dependente_2" placeholder="RG" class="inputs_geral">
+        <br>
+        <label for="cpf_dependente_2" class="label_inputs">CPF:</label> 
+        <input id="cpf_dependente_2" placeholder="CPF" class="inputs_geral">
+        <br>
+        <label for="nome_dependente_3" class="label_inputs">Nome:</label> 
+        <input id="nome_dependente_3" placeholder="Dependente 3" class="inputs_geral">
+        <br>
+        <label for="rg_dependente_3" class="label_inputs">RG:</label>
+        <input id="rg_dependente_3" placeholder="RG" class="inputs_geral">
+        <br>
+        <label for="cpf_dependente_3" class="label_inputs">CPF:</label> 
+        <input id="cpf_dependente_3" placeholder="CPF" class="inputs_geral">
+
+      </div>
+
+      <h3 class="black_subtitles">Representante Legal</h3>
+      
+      <div id="container_rl" class="pa_containers"> 
+        <label for="rl" class="label_inputs">Nome:</label> 
+        <input id="rl" placeholder="Representante Legal" class="inputs_geral">
+        <br>
+        <label for="cpf_rl" class="label_inputs">CPF:</label> 
+        <input id="cpf_rl" placeholder="Número do CPF" class="inputs_geral">
+      </div>
+ 
+      <h3 class="black_subtitles">Dados Bancários</h3>
+      
+      <div id="container_dados_bancarios" class="pa_containers"> 
+        
+        <label for="tipo_conta" class="label_inputs">Tipo:</label>
+        <select id="tipo_conta" class="inputs_geral">
+            <option>Conta-Corrente</option>
+            <option>Poupança</option>
+            <option>Conjunta</option>
+            <option>Salário</option>
+            <option>Outra</option>
+        </select>
+        <br>
+               
+        <label for="numero_conta" class="label_inputs">Número:</label> 
+        <input id="numero_conta" placeholder="Número da Conta" class="inputs_geral">
+        <br>
+
+        <label for="ag" class="label_inputs">Agência:</label> 
+        <input id="ag" placeholder="Agência" class="inputs_geral">
+        <br>
+        
+        <label for="banco" class="label_inputs">Banco:</label> 
+        <input id="banco" placeholder="Nome do Banco" class="inputs_geral">
+        <br>
+        <br>
+
+        <label for="tarefa" class="label_inputs">Tarefa:</label> 
+        <input id="tarefa" placeholder="Protocolo da Tarefa Aberta no GET" class="inputs_geral">
+        <br>
+
+        <button type="button" onclick="respostaPA()">Responder</button>
+        
+       
+      </div>
+
+      <section id="respostas">
+        <label for="vinculos_assunto_email">Assunto:</label>
+        <textarea id="vinculos_assunto_email" rows="2" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+
+      <label for="vinculos_textarea">Resposta:</label>  
+      <textarea id="vinculos_textarea" rows="10" cols="75" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+
+    </section>
+  
+      <footer id="geral_footer">
+        &copyFelipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
+
+  

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Consignações</title>
+
+</head>
+
+<body>
+  <form>
+  <header>
+    <div class="header_1">
+      <h2 class="nome_secao">Consignações</h2>
+    </div>
+
+    <div class="header_2">
+        <ul>
+            <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+            <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
+            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+            <a href="MS.html" class="links_topo"><li>Mandado de Segurança</li></a>
+          </ul>
+
+    </div>
+
+    <div
+  </header>
+      <h3 class="black_subtitles">Solicitante</h3>
+      <div ="container_solicitante" class="consignacoes_containers"> 
+        <label for="consignacoes_sei" class="label_inputs">SEI:</label>
+        <input id="consignacoes_sei" class="inputs_geral">
+
+        <br>
+        
+        <label for="consignacoes_orgao" class="label_inputs">Órgão:</label>
+        <input id="consignacoes_orgao" class="inputs_geral" placeholder="TJ / Vara / TRT / outros"><br>
+        
+        <label for="consignacoes_cidade" class="label_inputs">Cidade:</label>
+        <input id="consignacoes_cidade" class="inputs_geral" placeholder="Cidade"><br>
+        
+        <label for="consignacoes_processo" class="label_inputs">Processo:</label>
+        <input id="consignacoes_processo" class="inputs_geral" placeholder="Número do Processo"><br>
+
+        <label for="consignacoes_email" class="label_inputs">E-mail:</label>
+        <input id="consignacoes_email" class="inputs_geral" placeholder="E-mail"><br>
+
+      </div>
+
+      <h3 class="black_subtitles">Segurado</h3>
+      <div ="container_segurado" class="consignacoes_containers"> 
+        
+        <label for="consignacoes_nome" class="label_inputs">Nome:</label>
+        <input id="consignacoes_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+        
+        <label for="consignacoes_rg" class="label_inputs">RG:</label>
+        <input id="consignacoes_rg" class="inputs_geral" placeholder="Número do RG"><br>
+        
+        <label for="consignacoes_cpf" class="label_inputs">CPF:</label>
+        <input id="consignacoes_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
+       
+        <label for="consignacoes_nascimento" class="label_inputs">Nasc.:</label>
+        <input id="consignacoes_nascimento" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
+        
+        <label for="consignacoes_mae" class="label_inputs">Mãe:</label>
+        <input id="consignacoes_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+
+        <label for="consignacoes_nb" class="label_inputs">NB:</label>
+        <input id="consignacoes_nb" class="inputs_geral" placeholder="Número do Benefício"><br>
+
+        <label for="consignacoes_contrato1" class="label_inputs">Cont.1:</label>
+        <input id="consignacoes_contrato1" class="inputs_geral" placeholder="Contrato 1"><br>
+
+        <label for="consignacoes_agente1" class="label_inputs">Banco 1:</label>
+        <input id="consignacoes_agente1" class="inputs_geral" placeholder="Banco 1"><br>
+
+        <label for="consignacoes_contrato2" class="label_inputs">Cont.2:</label>
+        <input id="consignacoes_contrato2" class="inputs_geral" placeholder="Contrato 2"><br>
+
+        <label for="consignacoes_agente2" class="label_inputs">Banco 2:</label>
+        <input id="consignacoes_agente2" class="inputs_geral" placeholder="Agente financeiro 2"><br>
+
+        <label for="consignacoes_contrato3" class="label_inputs">Cont.3:</label>
+        <input id="consignacoes_contrato3" class="inputs_geral" placeholder="Contrato 3"><br>
+
+        <label for="consignacoes_agente3" class="label_inputs">Banco 3:</label>
+        <input id="consignacoes_agente3" class="inputs_geral" placeholder="Banco 3"><br>
+        
+      </div>
+      
+      <br>
+      
+      <!--Seleção da situação da consignação-->
+      <h3 class="black_subtitles">Situação</h3>
+      <div class="consignacoes_radio">
+
+        <input id="radio_1" type="radio" name="radio" class="radio_consignacoes">
+        <label for="radio_1">Segurado não localizado</label><br>
+        
+        <input id="radio_2" class="radio_consignacoes" type="radio" name="radio">
+        <label for="radio_2">Consignação Ativa</label>   
+
+        <br>
+        
+        <input id="radio_3" class="radio_consignacoes" type="radio" name="radio">
+        <label for="radio_3" >Cancelada pelo banco</label>
+
+        <br>
+        
+        <input id="radio_4"class="radio_consignacoes" type="radio" name="radio">
+        <label for="radio_4">Cancelada pelo INSS</label>
+
+        <br>
+        
+        <input id="radio_5"class="radio_consignacoes" type="radio" name="radio">
+        <label for="radio_5">Relatório Completo</label>
+
+        <br>
+        <br>
+
+        <input id="radio_6" class="ressalvaConsignacoes" type="radio" name="ressalvas">
+        <label for="radio_6">Ressalva - Sem Informações Bancárias</label>
+
+        <br>
+
+        <input id="radio_7" class="ressalvaConsignacoes" type="radio" name="ressalvas">
+        <label for="radio_7">Ressalva - Cadastro de Dependentes</label>
+
+        <br>
+
+        <input id="radio_8" class="ressalvaConsignacoes" type="radio" name="ressalvas">
+        <label for="radio_8">Ressalva - Área de Atuação do INSS</label>
+
+    
+    </div>
+      
+      <div ="consignacoes_div_button">
+    
+      <button type="button" onclick="resposta_consignacoes()">Responder</button>
+    
+     
+    </div>
+    <section id="respostas">
+        
+        <label for="assunto_email">Assunto:</label>
+
+        <textarea id="consignacoes_assunto_email" rows="1" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+
+
+      <textarea id="consignacoes_textarea" rows="8" cols="75" id="consignacoes_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+
+    </section>
+      <footer ="geral_footer">
+        &copyFelipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
+
+  

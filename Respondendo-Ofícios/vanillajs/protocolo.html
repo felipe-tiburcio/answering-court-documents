@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Protocolo</title>
+
+</head>
+
+<body>
+  <form>
+  <header>
+    <div class="header_1">
+      <h2 class="nome_secao">Protocolo</h2>
+    </div>
+
+    <div class="header_2">
+        <ul>
+            <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+            <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
+            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+            <a href="MS.html" class="links_topo"><li>Mandado de Segurança</li></a>
+          </ul>
+
+    </div>
+
+    <div
+  </header>
+      <h3 class="black_subtitles">Solicitante</h3>
+      <div class="vinculos_containers"> 
+        <label for="protocolo_sei" class="label_inputs">SEI:</label>
+        <input id="protocolo_sei" class="inputs_geral">
+        <br>
+        
+        <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
+        <input id="vinculos_orgao" class="inputs_geral" placeholder="TJ / Vara / TRT / outros"><br>
+        
+        <label for="vinculos_cidade" class="label_inputs">Cidade:</label>
+        <input id="vinculos_cidade" class="inputs_geral" placeholder="Cidade"><br>
+        
+        <label for="vinculos_processo" class="label_inputs">Processo:</label>
+        <input id="vinculos_processo" class="inputs_geral" placeholder="Número do Processo" oninput="salvar(this)"><br>
+
+        <label for="vinculos_email" class="label_inputs">E-mail:</label>
+        <input id="vinculos_email" class="inputs_geral" placeholder="E-mail"><br>
+
+      </div>
+
+      <h3 class="black_subtitles">Segurado</h3>
+      <div ="container_segurado" class="vinculos_containers"> 
+        
+        <label for="vinculos_nome" class="label_inputs">Nome:</label>
+        <input id="vinculos_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+        
+        <label for="vinculos_rg" class="label_inputs">RG:</label>
+        <input id="vinculos_rg" class="inputs_geral" placeholder="Número do RG"><br>
+        
+        <label for="vinculos_cpf" class="label_inputs">CPF:</label>
+        <input id="vinculos_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
+       
+        <label for="vinculos_nascimento" class="label_inputs">Nasc.:</label>
+        <input id="vinculos_nascimento" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
+        
+        <label for="vinculos_mae" class="label_inputs">Mãe:</label>
+        <input id="vinculos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+
+        <label for="observacoes" class="label_inputs">Obs.:</label>
+        <textarea rows="8" cols="50" id="observacoes" placeholder="Anotações diversas"></textarea>
+        
+      </div>
+      
+      <br>
+      
+      <!--Seleção da situação do vínculo-->
+      <h3 class="black_subtitles">Situação:</h3>
+      <div class="radio_protocolo">
+
+        <input id="radio_1" type="radio" name="radio" class="radio_protocolo">
+        <label for="radio_1">Em andamento</label><br>
+        
+        <input id="radio_2" class="radio_protocolo" type="radio" name="radio">
+        <label for="radio_2" >Exigência</label><br>   
+        
+        <input id="radio_3" class="radio_protocolo" type="radio" name="radio">
+        <label for="radio_3" >Deferido</label>
+
+        <br>
+        
+        <input id="radio_4" class="radio_protocolo" type="radio" name="radio">
+        <label for="radio_4">Indeferido</label>
+
+        <br>
+        <br>
+
+        <input id="radio_6"class="radio_vinculos" type="radio" name="ressalvas" value="1">
+        <label for="radio_6">Ressalva1</label>
+
+        <br>
+
+        <input id="radio_7"class="radio_vinculos" type="radio" name="ressalvas" value="2">
+        <label for="radio_7">Ressalva2</label>
+
+    
+    </div>
+       
+  
+      
+      <div ="vinculos_div_button">
+    
+      <button type="button" onclick="resposta_vinculos()">Responder</button>
+    
+     
+    </div>
+    <section id="respostas">
+        
+        <label for="assunto_email">Assunto:</label>
+
+        <textarea rows="2" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea>
+        
+        <br>
+
+
+      <textarea id="vinculos_textarea" rows="8" cols="75" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+
+    </section>
+      <footer ="geral_footer">
+        &copyFelipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
+
+  
