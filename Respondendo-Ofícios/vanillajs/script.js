@@ -455,33 +455,34 @@ Atenciosamente,
 //Início do Script de Mandado de Segurança
 
 function resposta_ms() {
-  // let processo = document.querySelector("#ms_processo").value;
 
-  // let segurado = document.querySelector("#ms_nome").value;
+  let nome = document.querySelector("#ms_nome").value;
 
-  // let endereco = document.querySelector("#ms_endereco").value;
+  let beneficio = document.querySelector("#ms_nb").value;
 
   let situacao = document.getElementsByClassName("radio_ms");
 
-  // let empresa = document.querySelector("#ms_empresa").value;
+  let agendamento = document.getElementById("ms_agendamento").value;
 
-  // let ultimoSalario = document.querySelector("#ms_salario").value;
+  let horario = document.querySelector("#ms_horario").value;
 
-  // let data_inicio = document.querySelector("#ms_data_inicio").value;
-
-  // let beneficio = document.querySelector("#ms_tipoBeneficio").value;
-
-  // let inicioBeneficio = document.querySelector("#ms_beneficioInicio").value;
-
-  // let valorBeneficio = document.querySelector("#valorBeneficio").value;
+  let aps = document.querySelector("#ms_aps").value;
 
   let resposta = document.querySelector("#ms_textarea");
   
-  // let assunto = document.getElementById("ms_assunto_email");
   
+  //Problema no PP
 
-if (situacao[0].checked) {
-  console.log("Erro no PP")
+  if (situacao[0].checked) {
+  resposta.innerHTML = `Encaminhamento de determinação judicial para cumprimento.
+
+1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome} que não conseguiu realizar o agendamento de Perícia de Prorrogação dentro do prazo e teve seu benefício nº ${beneficio} indevidamente cessado. 
+  
+2. Situação resolvida e perícia agendada para o dia ${agendamento} às ${horario} na APS ${aps}.
+  
+3. O benefício foi reativado e já consta o cálculo dos pagamentos pendentes conforme relatório anexo. `
+
+  //Finalização de Análise  
 
 } else if(situacao[1].checked){
 
@@ -495,11 +496,24 @@ if (situacao[0].checked) {
   
   5. Importante ressaltar a ciência do(a) segurado(a) e/ou seu procurador, tendo em vista os constantes acessos ao processo digital registrados no sistema GET.`
 
-} else if(situacao[2].checked){
-  console.log("Alguma situação")
 
+  //Alguma situação
+} else if(situacao[2].checked){
+
+  resposta.innerHTML = `1. Trata-se de Mandado de Segurança solicitando mais informações sobre o caso do(a) segurado(a) ${nome}. determinando a finalização da análise do benefício 7090285392 em até 30 dias após o cumprimento das exigências por parte do(a) segurado(a) Eliana dos Santos Franca.  
+
+  2. A exigência solicitava atualização no Cadúnico, além de outros documentos complementares, e foi realizada em 21/11/2020.
+  
+  3. Em 15/01/2021 o procurador do(a) segurado(a) fez um pedido de dilação do prazo da exigência.
+  
+  4. Em 02/03/2021 o requerimento foi indeferido, tendo em vista que não houve manifestação do(a) segurado(a) referente o cumprimento da exigência pendente há mais de 100 dias.
+  
+  5. Importante ressaltar a ciência do(a) segurado(a) e/ou seu procurador, tendo em vista os constantes acessos ao processo digital registrados no sistema GET.`
+
+
+  //Outra situação
 } else if(situacao[3].checked){
-  console.log("Outra situação")
+  resposta.innerHTML = `Outra situação`
 }
 
 }

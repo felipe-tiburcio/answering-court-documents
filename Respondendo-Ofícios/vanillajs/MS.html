@@ -30,60 +30,97 @@
 
     <div
   </header>
-      <h3 class="black_subtitles">Dados</h3>
-        
-        <label for="ms_data" class="label_inputs">Data:</label>
-        <input id="ms_data" type="date" class="inputs_geral">
+  <h3 class="black_subtitles">Situação</h3>
+  
+      <input type="checkbox" id="checkbox_finalizacao" class="">
+      <label for="checkbox_finalizacao" class="">Finalização da Análise</label>
+
+      <br>
+
+      <input type="checkbox" id="checkbox_pp" class="">
+      <label for="checkbox_pp" class="">Problemas no PP</label>
+      
+      <br>
+
+      <input type="checkbox" id="checkbox_informacoes" class="">
+      <label for="checkbox_informacoes" class="">Informações/Dossiê</label>
+
+      
+      <br>
+
+      <input type="checkbox" id="checkbox_finalizacao" class="">
+      <label for="checkbox_finalizacao" class="">Outra Situação</label>
+      
+      <br>
+
+      <h3 class="black_subtitles">Segurado</h3>
+
+        <label for="ms_nome" class="label_inputs">Nome:</label>
+        <input id="ms_nome" class="inputs_geral" placeholder="Nome Completo">
+
+        <br>
+
+        <label for="ms_cpf" class="label_inputs">CPF:</label>
+        <input id="ms_cpf" class="inputs_geral" placeholder="Número do CPF">
+       
+        <br>
+
+        <label for="ms_nit" class="label_inputs">NIT:</label>
+        <input id="ms_nit" class="inputs_geral" placeholder="Número de Inscrição do Trabalhador">
+              
+        <br>
+
+        <label for="ms_rg" class="label_inputs">RG:</label>
+        <input id="ms_rg" class="inputs_geral" placeholder="Número do RG">
         
         <br>
 
-        <label for="ms_prazo" class="label_inputs">Prazo:</label>
-        <input id="ms_prazo" class="inputs_geral">
-        
-        <br>
+        <h3 class="black_subtitles">Benefício</h3>
 
         <label for="ms_protocolo" class="label_inputs">Protocolo:</label>
         <input id="ms_protocolo" class="inputs_geral" placeholder="Número do Protocolo">
-
+        
         <br>
 
         <label for="ms_nb" class="label_inputs">NB:</label>
-        <input id="ms_nb" type="text" class="inputs_geral">
+        <input id="ms_nb" type="text" class="inputs_geral" placeholder="Número de Benefício">
         
         <br>
 
         <label for="ms_der" class="label_inputs">DER:</label>
         <input id="ms_der" type="date" class="inputs_geral">
-        
+
         <br>
+
+        <label for="ms_dcb" class="label_inputs">DCB:</label>
+        <input id="ms_dcb" type="date" class="inputs_geral">
+
+        <br>
+
 
       </div>
 
-      <h3 class="black_subtitles">Segurado</h3>
       <div ="container_segurado" class="vinculos_containers"> 
+      
         
-        <label for="vinculos_nome" class="label_inputs">Nome:</label>
-        <input id="vinculos_nome" class="inputs_geral" placeholder="Nome Completo">
-        
-        <br>
-
-        <label for="vinculos_cpf" class="label_inputs">CPF:</label>
-        <input id="vinculos_cpf" class="inputs_geral" placeholder="Número do CPF">
-       
-        <br>
-
-        <label for="vinculos_rg" class="label_inputs">RG:</label>
-        <input id="vinculos_rg" class="inputs_geral" placeholder="Número do RG">
-        
-        <br>
-
-        <label for="ms_nit" class="label_inputs">NIT:</label>
-        <input id="ms_nit" class="inputs_geral" placeholder="Número de Inscrição do Trabalhador">
+        <label for="ms_resumo" class="label_inputs" id="label_endereco">Situação:</label>
+        <textarea id="ms_resumo" class="inputs_geral" rows="5" cols="70" placeholder="Notas e relato da situação"></textarea>
 
         <br>
+
+        <label for="ms_agendamento" class="label_inputs">Data:</label>
+        <input id="ms_agendamento" type="date" class="inputs_geral">
+
+        <br>
+
+        <label for="ms_horario" class="label_inputs">Horário:</label>
+        <input id="ms_horario" class="inputs_geral" placeholder="Horário da perícia">
+
+        <br>
+
+        <label for="ms_aps" class="label_inputs">APS:</label>
+        <input id="ms_aps" class="inputs_geral" placeholder="APS" value="Ivo do Prado">
         
-        <label for="vinculos_endereco" class="label_inputs" id="label_endereco">Situação:</label>
-        <textarea id="vinculos_endereco" class="inputs_geral" rows="10" cols="70" placeholder="Notas e relato da situação"></textarea>
       </div>
       
       <br>
@@ -118,7 +155,7 @@
           class="radio_ms"
           type="radio" 
           name="radio">
-        <label for="radio_2" >Alguma situação</label>   
+        <label for="radio_2" >Informação/Dossiê</label>   
 
         <br>
         
@@ -143,7 +180,7 @@
 
     <section id="respostas">
 
-      <textarea id="ms_textarea" rows="18" cols="75" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+      <textarea id="ms_textarea" rows="18" cols="65" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
 
     </section>
       <footer ="geral_footer">
