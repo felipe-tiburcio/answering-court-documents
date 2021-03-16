@@ -384,14 +384,14 @@ Atenciosamente,
   } else if(situacao[2].checked){
 
     resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do Sr.(a) ${segurado} conforme segue:
-    
+    q
       
 Atenciosamente,
       `  
 
   } else if(situacao[3].checked) {
 
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme segue:
+    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme determinação.
     
 
 Atenciosamente,
