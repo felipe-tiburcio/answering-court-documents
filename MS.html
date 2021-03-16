@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>MS</title>
+
+</head>
+
+<body>
+  <form>
+  <header>
+    <div class="header_1">
+      <h2 class="nome_secao">Mandado de Segurança</h2>
+    </div>
+
+    <div class="header_2">
+        <ul>
+            <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+            <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
+            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+            <a href="MS.html" class="links_topo"><li>Mandado de Segurança</li></a>
+          </ul>
+
+    </div>
+
+    <div
+  </header>
+  <h3 class="black_subtitles">Situação</h3>
+  
+      <input type="checkbox" id="checkbox_finalizacao" class="">
+      <label for="checkbox_finalizacao" class="">Finalização da Análise</label>
+
+      <br>
+
+      <input type="checkbox" id="checkbox_pp" class="">
+      <label for="checkbox_pp" class="">Problemas no PP</label>
+      
+      <br>
+
+      <input type="checkbox" id="checkbox_informacoes" class="">
+      <label for="checkbox_informacoes" class="">Informações/Dossiê</label>
+
+      
+      <br>
+
+      <input type="checkbox" id="checkbox_finalizacao" class="">
+      <label for="checkbox_finalizacao" class="">Outra Situação</label>
+      
+      <br>
+
+      <h3 class="black_subtitles">Segurado</h3>
+
+        <label for="ms_nome" class="label_inputs">Nome:</label>
+        <input id="ms_nome" class="inputs_geral" placeholder="Nome Completo">
+
+        <br>
+
+        <label for="ms_cpf" class="label_inputs">CPF:</label>
+        <input id="ms_cpf" class="inputs_geral" placeholder="Número do CPF">
+       
+        <br>
+
+        <label for="ms_nit" class="label_inputs">NIT:</label>
+        <input id="ms_nit" class="inputs_geral" placeholder="Número de Inscrição do Trabalhador">
+              
+        <br>
+
+        <label for="ms_rg" class="label_inputs">RG:</label>
+        <input id="ms_rg" class="inputs_geral" placeholder="Número do RG">
+        
+        <br>
+
+        <h3 class="black_subtitles">Benefício</h3>
+
+        <label for="ms_protocolo" class="label_inputs">Protocolo:</label>
+        <input id="ms_protocolo" class="inputs_geral" placeholder="Número do Protocolo">
+        
+        <br>
+
+        <label for="ms_nb" class="label_inputs">NB:</label>
+        <input id="ms_nb" type="text" class="inputs_geral" placeholder="Número de Benefício">
+        
+        <br>
+
+        <label for="ms_der" class="label_inputs">DER:</label>
+        <input id="ms_der" type="date" class="inputs_geral">
+
+        <br>
+
+        <label for="ms_dcb" class="label_inputs">DCB:</label>
+        <input id="ms_dcb" type="date" class="inputs_geral">
+
+        <br>
+
+
+      </div>
+
+      <div ="container_segurado" class="vinculos_containers"> 
+      
+        
+        <label for="ms_resumo" class="label_inputs" id="label_endereco">Situação:</label>
+        <textarea id="ms_resumo" class="inputs_geral" rows="5" cols="70" placeholder="Notas e relato da situação"></textarea>
+
+        <br>
+
+        <label for="ms_agendamento" class="label_inputs">Data:</label>
+        <input id="ms_agendamento" type="date" class="inputs_geral">
+
+        <br>
+
+        <label for="ms_horario" class="label_inputs">Horário:</label>
+        <input id="ms_horario" class="inputs_geral" placeholder="Horário da perícia">
+
+        <br>
+
+        <label for="ms_aps" class="label_inputs">APS:</label>
+        <input id="ms_aps" class="inputs_geral" placeholder="APS" value="Ivo do Prado">
+        
+      </div>
+      
+      <br>
+      
+      <!--Seleção da situação do vínculo-->
+      <h3 class="black_subtitles">Respostas</h3>
+      <div class="vinculos_radio">
+
+        <input 
+          id="radio_0" 
+          type="radio"
+          name="radio" class="radio_ms"
+        >
+        
+        <label for="radio_0">Erro no PP</label>
+        
+        <br>
+        
+        <input 
+          id="radio_1" 
+          class="radio_ms"
+          type="radio" 
+          name="radio"
+        >
+
+        <label for="radio_1" >Finalização de Análise</label>   
+
+        <br>
+
+        <input
+          id="radio_2"
+          class="radio_ms"
+          type="radio" 
+          name="radio">
+        <label for="radio_2" >Informação/Dossiê</label>   
+
+        <br>
+        
+        <input 
+          id="radio_3" 
+          class="radio_ms"
+          type="radio" 
+          name="radio">
+        <label for="radio_3" >Outra situação</label>
+
+    
+    </div>
+      
+      <div ="vinculos_div_button">
+    
+      <button 
+        type="button"
+        onclick="resposta_ms()" >Responder</button>
+    </div>
+
+    <br>
+
+    <section id="respostas">
+
+      <textarea id="ms_textarea" rows="18" cols="65" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+
+    </section>
+      <footer ="geral_footer">
+        &copyFelipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
+
+  
