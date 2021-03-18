@@ -15,7 +15,7 @@
       <h2 class="nome_secao">Vínculos, Benefícios e Cadastro</h2>
     </div>
 
-    <div class="header_2">
+    <div id="nav" class="header_2">
         <ul>
             <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
             <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
@@ -30,8 +30,37 @@
 
     <div
   </header>
+
+      <br>
+
+      <input id="checkbox1"type="checkbox">
+      <label for="checkbox1">Existência de Vínculo</label>
+      
+      <br>
+
+      <input id="checkbox2"type="checkbox">
+      <label for="checkbox2">Endereço Cadastrado</label>
+      
+      <br>
+
+      <input id="checkbox3"type="checkbox">
+      <label for="checkbox3">Existência de Benefício</label>
+      
+      <br>
+
+      <input id="checkbox4"type="checkbox">
+      <label for="checkbox4">Valor de Benefício</label>
+      
+      <br>
+      
+      <input id="checkbox5"type="checkbox">
+      <label for="checkbox5">Outra coisa</label>
+      
+      <br>
+
       <h3 class="black_subtitles">Solicitante</h3>
-      <div ="container_solicitante" class="vinculos_containers"> 
+      <div ="container_solicitante" class="vinculos_containers">
+        <a href="#vinculos_textarea">Down!</a><br> 
         <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
         <input class="inputs_geral">
         <br>
@@ -47,7 +76,7 @@
             <option>Maruim</option>
             <option>Santo Amaro das Brotas</option>
             <option>Pirambu</option>
-            <option>Outra Cidade</option>
+            <option>Laranjeiras</option>
             <option>Outra Cidade</option>
             <option>Outra Cidade</option>
             
@@ -68,18 +97,18 @@
         
         <label for="vinculos_nome" class="label_inputs">Nome:</label>
         <input id="vinculos_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+
+        <label for="vinculos_cpf" class="label_inputs">CPF:</label>
+        <input id="vinculos_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
+
+        <label for="vinculos_mae" class="label_inputs">Mãe:</label>
+        <input id="vinculos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
         
         <label for="vinculos_rg" class="label_inputs">RG:</label>
         <input id="vinculos_rg" class="inputs_geral" placeholder="Número do RG"><br>
-        
-        <label for="vinculos_cpf" class="label_inputs">CPF:</label>
-        <input id="vinculos_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
        
         <label for="vinculos_nascimento" class="label_inputs">Nasc.:</label>
         <input id="vinculos_nascimento" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
-        
-        <label for="vinculos_mae" class="label_inputs">Mãe:</label>
-        <input id="vinculos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
         
         <label for="vinculos_endereco" class="label_inputs" id="label_endereco">End.:</label>
         <textarea id="vinculos_endereco" class="inputs_geral" rows="4" cols="70" placeholder="Endereço(s) cadastrado(s) no CNIS"></textarea>
@@ -201,13 +230,13 @@
         <hr>
         <br>
 
-        <input id="radio_10"class="radio_vinculos" type="radio" name="ressalvas" value="1">
-        <label for="radio_10">Ressalva - Cadastro de Dependentes</label>
+        <input id="radio_11"class="radio_vinculos" type="radio" name="ressalvas" value="1">
+        <label for="radio_11">Ressalva - Cadastro de Dependentes</label>
 
         <br>
 
-        <input id="radio_11"class="radio_vinculos" type="radio" name="ressalvas" value="2">
-        <label for="radio_11">Ressalva - Área de atuação do INSS</label>
+        <input id="radio_12"class="radio_vinculos" type="radio" name="ressalvas" value="2">
+        <label for="radio_12">Ressalva - Área de atuação do INSS</label>
         <br>
         <hr>
 
@@ -222,6 +251,7 @@
      
     </div>
     <section id="respostas">
+      <a href="#nav">Up!</a><br>
         
         <label for="assunto_email">Assunto:</label>
 
