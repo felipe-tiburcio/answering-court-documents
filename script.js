@@ -25,7 +25,7 @@ Atenciosamente,
 
     } else if (situacao[1].checked) {
         
-        resposta.innerHTML = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), sendo eles:
+        resposta.innerHTML = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), sendo ele(s):
         
 ${dependentes}        
 Atenciosamente,
@@ -126,7 +126,7 @@ Atenciosamente,
 
   } else if(situacao[3].checked) {
 
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo(s) ativo(s), no entanto, não existem dados atuais informados pela(s) empresa(s) sobre a remuneração do empregado, o que gera dúvida quanto à manutenção deste(s) vínculo(s).
+    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo(s) em aberto, no entanto, não existem dados atuais informados pela(s) empresa(s) sobre a remuneração recebida, o que gera dúvida quanto à manutenção deste(s) vínculo(s).
 
 Atenciosamente,
 

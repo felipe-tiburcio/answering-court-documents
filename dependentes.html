@@ -50,7 +50,7 @@
             <option>Barra dos Coqueiros</option>
             <option>Santo Amaro das Brotas</option>
             <option>Japaratuba</option>
-            <option>Outra Cidade</option>
+            <option>Laranjeiras</option>
             <option>Outra Cidade</option>
            
         </select>
@@ -66,7 +66,33 @@
         <input id="dependentes_email" class="inputs_geral" placeholder="E-mail">
     </div>
     
-    <br>
+    <h4 class="black_subtitles">Assunto</h4>
+
+    <div id="vinculosCheckbox" class="vinculosCheckbox"> 
+
+      <input id="checkbox1"type="checkbox">
+        <label for="checkbox1">Existência de Dependentes</label>
+        
+        <br>
+  
+        <input id="checkbox2"type="checkbox">
+        <label for="checkbox2">Emissão da Certidão</label>
+        
+        <br>
+  
+        <input id="checkbox3"type="checkbox">
+        <label for="checkbox3">Informar Resíduos</label>
+        
+        <br>
+  
+        <input id="checkbox4"type="checkbox">
+        <label for="checkbox4">Outra coisa</label>
+        
+        <br>
+
+        <input id="checkbox5"type="checkbox">
+        <label for="checkbox5">Outra coisa</label>
+    </div>
     
     <div id="dependentes_segurado_container">
         <h4 class="black_subtitles">Segurado</h4>       
@@ -111,50 +137,7 @@
       </div>
       <br>
       
-      <!--Seleção da situação-->
-
-      <div id="">
-        <h4 class="black_subtitles">Situação</h4>
-        
-        <label for="segurado_nao_localizado">
-            <div id="radio_selection_1" class="radio_selections">
-                <input id="segurado_nao_localizado" class="radio" type="radio" name="radio" value="1">Segurado não localizado
-            </div>
-        </label>
-                        
-            
-        <label for="segurado_tem_dependentes">
-            <div class="radio_selections">   
-                <input id="segurado_tem_dependentes" class="radio" type="radio" name="radio" value="2">Existem dependentes ativos
-            </div>
-        </label>
-          
-        
-        <label for="segurado_sem_dependentes">
-            <div class="radio_selections">
-                <input id="segurado_sem_dependentes" class="radio" type="radio" name="radio" value="3">Sem dependentes ativos
-            </div>
-        </label>
-
-        <label for="sem_dependentes_certidao">
-            <div class="radio_selections">
-                <input id="sem_dependentes_certidao" class="radio" type="radio" name="radio" value="4">Sem dependentes + Certidão
-            </div>
-        </label>
-            
-        
-        <label for="houve_dependentes">    
-            <div class="radio_selections">
-                <input id="houve_dependentes" class="radio" type="radio" name="radio" value="5">Já houve dependentes
-            </div>
-        </label>
-        
-        <label for="com_dependentes_certidao">    
-            <div class="radio_selections">
-                <input id="com_dependentes_certidao" class="radio" type="radio" name="radio" value="6">Com dependentes + Certidão
-            </div>
-        </label>
-
+      
       <br>
       
       <div id="">
@@ -176,21 +159,70 @@
         <input type="text" class="inputs_geral" placeholder="Número do Benefício 4"><br>
         
     <div id="text_area_container">
-            <textarea class="dependentes_textarea" cols="75" rows="8" placeholder="Colar os dados do DEPEND do PLENUS"></textarea>
+            <textarea class="dependentes_textarea" cols="60" rows="8" placeholder="Colar os dados do DEPEND do PLENUS"></textarea>
 
-    </div>  
+    </div> 
+    
+    <br>
 
-    <a href="#nav" class="scroll">&#8657</a><br>
+    <!--Seleção da situação-->
+
+    <div id="">
+      <h4 class="black_subtitles">Situação</h4>
       
+      <label for="segurado_nao_localizado">
+          <div id="radio_selection_1" class="radio_selections">
+              <input id="segurado_nao_localizado" class="radio" type="radio" name="radio" value="1">Segurado não localizado
+          </div>
+      </label>
+                      
+          
+      <label for="segurado_tem_dependentes">
+          <div class="radio_selections">   
+              <input id="segurado_tem_dependentes" class="radio" type="radio" name="radio" value="2">Existem dependentes ativos
+          </div>
+      </label>
+        
+      
+      <label for="segurado_sem_dependentes">
+          <div class="radio_selections">
+              <input id="segurado_sem_dependentes" class="radio" type="radio" name="radio" value="3">Sem dependentes ativos
+          </div>
+      </label>
+
+      <label for="sem_dependentes_certidao">
+          <div class="radio_selections">
+              <input id="sem_dependentes_certidao" class="radio" type="radio" name="radio" value="4">Sem dependentes + Certidão
+          </div>
+      </label>
+          
+      
+      <label for="houve_dependentes">    
+          <div class="radio_selections">
+              <input id="houve_dependentes" class="radio" type="radio" name="radio" value="5">Já houve dependentes
+          </div>
+      </label>
+      
+      <label for="com_dependentes_certidao">    
+          <div class="radio_selections">
+              <input id="com_dependentes_certidao" class="radio" type="radio" name="radio" value="6">Com dependentes + Certidão
+          </div>
+      </label>
+
+      <br>
+      <br>
+       
       <div>
         <button type="button" onclick="resposta_dependentes()">Gerar Resposta</button><br>
       </div>
 
+      <a href="#nav" class="scroll">&#8657</a><br>
+
       <label for="assunto_email">Assunto:</label>
 
-        <textarea id="dependentes_assunto_email" rows="1" cols="75" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+        <textarea id="dependentes_assunto_email" rows="1" cols="64" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
       
-      <textarea id="dependentes_resposta" class="text_area_resposta" cols="75" rows="6" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
+      <textarea id="dependentes_resposta" class="text_area_resposta" cols="62" rows="6" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
       <footer id=""><br>
         &copy Felipe Tiburcio - 2020
       </footer>
