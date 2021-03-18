@@ -27,12 +27,13 @@ html {
     text-decoration: none;
     width: 190px;
     border: 1px solid black;
-    border-radius: 6px;
-    padding: 3px
+    border-radius: 2px;
+    padding: 3px;
+    margin: 1px;
 }
 .nome_secao {
     color: #ececec;
-    font-size: 20px;
+    font-size: 22px;
     padding: 10px;
 }
 
@@ -50,9 +51,24 @@ a {
     margin-left: -4px;
 }
 
-input:focus {
+.inputs_geral:focus {
     background-color: #ffffe0;
+    outline: 2px solid #002539;
 }
+
+textarea:focus {
+    background-color: #ffffe0;
+    outline: 2px solid #002539;
+}
+
+.scroll {
+  display: absolute;
+  margin-left: 300px;
+  margin-bottom: 10px;
+  font-size: 20px;
+
+}
+
 
 
 .black_subtitles{

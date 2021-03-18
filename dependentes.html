@@ -15,19 +15,24 @@
       <h2 class="nome_secao">Dependentes</h2>
     </header>
     
-    <header class="header_2">
-        <ul>
-            <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
-            <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
-            <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
-            <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
-            <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
-            <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
-            <a href="MS.html" class="links_topo"><li>Mandado de Segurança</li></a>
-          </ul>
-    </header>
+    <div id="nav" class="header_2">
+      <ul>
+        <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+        <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+        <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+        <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
+        <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+        <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+        <a href="MS.html" class="links_topo"><li>Mandado de Segurança</li></a>
+        <a href="" class="links_topo"><li>Outra Situação</li></a>
+      </ul>
+    </div>
+
     <div class="solicitante_container">
-        <h4 class="black_subtitles">Solicitante</h4>
+      
+      <a href="#dependentes_resposta" class="scroll">&#8659</a><br>
+        
+      <h4 class="black_subtitles">Solicitante</h4>
         <label for="dependentes_orgao" class="label_inputs">Órgão:</label>
         <input class="inputs_geral">
 
@@ -174,6 +179,8 @@
             <textarea class="dependentes_textarea" cols="75" rows="8" placeholder="Colar os dados do DEPEND do PLENUS"></textarea>
 
     </div>  
+
+    <a href="#nav" class="scroll">&#8657</a><br>
       
       <div>
         <button type="button" onclick="resposta_dependentes()">Gerar Resposta</button><br>
