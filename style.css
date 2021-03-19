@@ -11,31 +11,48 @@ html {
   scroll-behavior: smooth;
 }
 
+form {
+  border: 1px solid black;
+  width: 420px;
+
+}
+
 .header_1 {
     background-color: #002539;
     padding: 5px;
     max-width: 420px;
+    border: 0.5px solid black;
 }
 
 .header_2 {
     background-color: #00314d;
     padding: 10px;
     max-width: 420px;
+    border: 0.5px solid black;
 
 }
 
 .links_topo {
     color: #ececec;
+    text-shadow: 1px 1px 1px black;
     text-decoration: none;
-    width: 190px;
+    width: 193px;
     border: 1px solid black;
-    border-radius: 2px;
-    padding: 3px;
+    border-radius: 6px;
+    padding: 8px;
     margin: 1px;
 }
+
+.links_topo:hover{
+  background-color: #FFCD07;
+  font-size: 1.2em;
+  transition: 0.2s;
+}
+
 .nome_secao {
     color: #ececec;
     font-size: 22px;
+    font-weight: 400;
     padding: 10px;
 }
 
@@ -55,20 +72,23 @@ a {
 
 .vinculosCheckbox {
   border: 1px solid black;
+  border-radius: 6px;
   margin-top: 3px;
   margin-left: 10px;
   padding: 5px;
-  max-width: 400px;
+  width: 360px;
+  margin: auto;
 }
 
 .inputs_geral:focus {
     background-color: #ffffe0;
-    outline: 2px solid #FFCD07;
+    outline: 1px solid #FFCD07;
+    border-radius: 6px;
 }
 
 textarea:focus {
     background-color: #ffffe0;
-    outline: 2px solid #FFCD07;
+    outline: 1px solid #FFCD07;
 }
 
 .scroll {
@@ -87,6 +107,7 @@ textarea:focus {
 
 .label_inputs {
     display: inline-block;
+    font-weight: 650;
     width: 50px;
     /* border: 1px solid black; */
     margin: 3px 3px 3px 20px;
@@ -94,6 +115,7 @@ textarea:focus {
 }
 
 .inputs_geral {
+    border-radius: 6px;
     width: 260px;
     padding: 5px;
     margin: 2px;
@@ -145,6 +167,7 @@ div button {
 
 .text_area_resposta{
     padding: 5px;
+    width: 420px;
 }
 
 /*Aqui começa o CSS da parte de Vínculos*/
@@ -159,13 +182,17 @@ div button {
 }
 
 #assunto_email {
-
-    margin-left: 12px;
+  margin-left: 18px;
 }
 
 #vinculos_text_area {
-    margin-left: 60px;
+
     
+}
+
+label[id="assunto"] {
+  margin-left: 4px;
+  vertical-align: super;
 }
 
 /* .div_botao {
