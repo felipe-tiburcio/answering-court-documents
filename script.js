@@ -383,8 +383,8 @@ Atenciosamente,
       
   } else if(situacao[2].checked){
 
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do Sr.(a) ${segurado} conforme segue:
-    q
+    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}. 
+    
       
 Atenciosamente,
       `  
@@ -401,12 +401,15 @@ Atenciosamente,
     
     resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do segurado(a) ${segurado}.
 
+Atenciosamente,
+
    `     
   } else if (ressalva[0].checked) {
       resposta.innerHTML += `\n\nRessaltamos que o INSS trata da concessão e manutenção de benefícios previdenciários, não dispondo assim dos detalhes contratuais firmados entre o segurado e o agente bancário responsável pela consignação. 
             
       Atenciosamente,
             `
+    
     } else if(ressalva[1].checked){
     resposta.innerHTML += `\n\nImportante salientar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.
 
