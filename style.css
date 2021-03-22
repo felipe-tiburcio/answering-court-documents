@@ -185,9 +185,8 @@ div button {
   margin-left: 18px;
 }
 
-#vinculos_text_area {
-
-    
+#ms_textarea {
+  margin-left: 8px;    
 }
 
 label[id="assunto"] {

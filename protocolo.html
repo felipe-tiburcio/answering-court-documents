@@ -22,9 +22,9 @@
         <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
         <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
         <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
-        <a href="protocolo.html" class="links_topo"><li>Protocolo</li></a>
+        <a href="protocolo.html" class="links_topo"><li>Protocolo/Requerimento</li></a>
         <a href="MS.html" class="links_topo"><li>Mandado de Segurança</li></a>
-        <a href="" class="links_topo"><li>Outra Situação</li></a>
+        <a href="outra.html" class="links_topo"><li>Outra Situação</li></a>
       </ul>
     </div>
     <div
@@ -33,9 +33,6 @@
 
       <h3 class="black_subtitles">Solicitante</h3>
       <div class="vinculos_containers"> 
-        <label for="protocolo_sei" class="label_inputs">SEI:</label>
-        <input id="protocolo_sei" class="inputs_geral">
-        <br>
         
         <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
         <input id="vinculos_orgao" class="inputs_geral" placeholder="TJ / Vara / TRT / outros"><br>
@@ -54,20 +51,42 @@
       <h3 class="black_subtitles">Segurado</h3>
       <div ="container_segurado" class="vinculos_containers"> 
         
-        <label for="vinculos_nome" class="label_inputs">Nome:</label>
-        <input id="vinculos_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+        <label for="protocolo_nome" class="label_inputs">Nome:</label>
+        <input id="protocolo_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+
+        <label for="protocolo_cpf" class="label_inputs">CPF:</label>
+        <input id="protocolo_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
         
-        <label for="vinculos_rg" class="label_inputs">RG:</label>
-        <input id="vinculos_rg" class="inputs_geral" placeholder="Número do RG"><br>
-        
-        <label for="vinculos_cpf" class="label_inputs">CPF:</label>
-        <input id="vinculos_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
+        <label for="protocolo_rg" class="label_inputs">RG:</label>
+        <input id="protocolo_rg" class="inputs_geral" placeholder="Número do RG"><br>
        
-        <label for="vinculos_nascimento" class="label_inputs">Nasc.:</label>
-        <input id="vinculos_nascimento" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
+        <label for="protocolo_nascimento" class="label_inputs">Nasc.:</label>
+        <input id="protocolo_nascimento" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
         
-        <label for="vinculos_mae" class="label_inputs">Mãe:</label>
-        <input id="vinculos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+        <label for="protocolo_mae" class="label_inputs">Mãe:</label>
+        <input id="protocolo_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+        
+        <br>
+
+        <label for="protocolo_tipo" class="label_inputs">Tipo:</label>
+        <select id="protocolo_tipo" class="inputs_geral">
+          <option>Benefício por Incapacidade</option>
+          <option>Aposentadorias e Pensões</option>
+          <option>BPC</option>
+        </select>
+
+        <br>
+
+        <label for="protocolo_get" class="label_inputs">GET:</label>
+        <input id="protocolo_get" class="inputs_geral" placeholder="Protocolo GET">
+
+        <br>
+
+        <label for="protocolo_req" class="label_inputs">Req.:</label>
+        <input id="protocolo_req" class="inputs_geral" placeholder="Número de Requerimento">
+        
+        <br>
+        <br>
 
         <label for="observacoes" class="label_inputs">Obs.:</label>
         <textarea rows="8" cols="50" id="observacoes" placeholder="Anotações diversas"></textarea>
