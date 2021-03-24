@@ -1,10 +1,11 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 html {
@@ -14,65 +15,63 @@ html {
 form {
   border: 1px solid black;
   width: 420px;
-
 }
 
 .header_1 {
-    background-color: #002539;
-    padding: 5px;
-    max-width: 420px;
-    border: 0.5px solid black;
+  background-color: #002539;
+  padding: 5px;
+  max-width: 420px;
+  border: 0.5px solid black;
 }
 
 .header_2 {
-    background-color: #00314d;
-    padding: 10px;
-    max-width: 420px;
-    border: 0.5px solid black;
-
+  background-color: #00314d;
+  padding: 10px;
+  max-width: 420px;
+  border: 0.5px solid black;
 }
 
 .links_topo {
-    color: #ececec;
-    text-shadow: 1px 1px 1px black;
-    text-decoration: none;
-    width: 193px;
-    border: 1px solid black;
-    border-radius: 6px;
-    padding: 8px;
-    margin: 1px;
+  color: #ececec;
+  text-shadow: 1px 1px 1px black;
+  text-decoration: none;
+  width: 193px;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 1px;
 }
 
-.links_topo:hover{
-  background-color: #FFCD07;
+.links_topo:hover {
+  background-color: #ffcd07;
   font-size: 1.2em;
   transition: 0.2s;
 }
 
 .nome_secao {
-    color: #ececec;
-    font-size: 22px;
-    font-weight: 400;
-    padding: 10px;
+  color: #ececec;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 10px;
 }
 
 a {
-    display: inline-block;
-    
-    width: 90px;
-    
-    /* background-color: lightblue; */
-    
-    list-style: none;
+  display: inline-block;
 
-    text-align: center;
+  width: 90px;
 
-    margin-left: -4px;
+  /* background-color: lightblue; */
+
+  list-style: none;
+
+  text-align: center;
+
+  margin-left: -4px;
 }
 
 .vinculosCheckbox {
   border: 1px solid black;
-  border-radius: 6px;
+  border-radius: 4px;
   margin-top: 3px;
   margin-left: 10px;
   padding: 5px;
@@ -81,104 +80,104 @@ a {
 }
 
 .inputs_geral:focus {
-    background-color: #ffffe0;
-    outline: 1px solid #FFCD07;
-    border-radius: 6px;
+  background-color: #ffffe0;
+  outline: 1px solid #ffcd07;
+  border-radius: 4px;
+}
+
+textarea {
+  border-radius: 4px;
 }
 
 textarea:focus {
-    background-color: #ffffe0;
-    outline: 1px solid #FFCD07;
+  background-color: #ffffe0;
+  outline: 1px solid #ffcd07;
 }
 
 .scroll {
   display: absolute;
   margin-left: 350px;
   font-size: 30px;
-  color:#FFCD07;
+  color: #ffcd07;
 }
 
-
-
-.black_subtitles{
-    margin-left: 180px;
-    font-weight: bold;
+.black_subtitles {
+  margin-left: 180px;
+  font-weight: bold;
 }
 
 .label_inputs {
-    display: inline-block;
-    font-weight: 650;
-    width: 50px;
-    /* border: 1px solid black; */
-    margin: 3px 3px 3px 20px;
-    vertical-align: middle;
+  display: inline-block;
+  font-weight: 650;
+  width: 50px;
+  /* border: 1px solid black; */
+  margin: 3px 3px 3px 20px;
+  vertical-align: middle;
 }
 
 .inputs_geral {
-    border-radius: 6px;
-    width: 260px;
-    padding: 5px;
-    margin: 2px;
+  border-radius: 4px;
+  width: 260px;
+  padding: 5px;
+  margin: 2px;
 }
 
 .radio_selections {
-    border: 1px solid black;
-    border-radius: 6px;
-    padding: 10px;
-    display: inline-block;
-    width: 310px;
-    height: 40px;
-    margin: 2px;
-    margin-left: 68px;
-    text-align: center;
-    
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 10px;
+  display: inline-block;
+  width: 310px;
+  height: 40px;
+  margin: 2px;
+  margin-left: 68px;
+  text-align: center;
 }
 
 .radio_selections:hover {
-    background-color:#FFCD07;
-    font-size: 1.1em;
-    transition: 0.2s;
+  background-color: #ffcd07;
+  font-size: 1.1em;
+  transition: 0.2s;
 }
 
 .solicitante_container {
-    /* border: 1px solid black; */
+  /* border: 1px solid black; */
 }
 
 .dependentes_textarea {
-    padding: 5px;
-    /* margin: 2px;  */
+  padding: 2px;
+  /* margin: 2px;  */
 }
 
-.dependentes_textarea:focus{
-    background-color: #ffffe0;    
+.dependentes_textarea:focus {
+  background-color: #ffffe0;
 }
 
 #text_area_container {
-    /* border: 1px solid black; */
-    text-align: center;
-    margin: 10px 0px 0px 0px;
+  /* border: 1px solid black; */
+  text-align: center;
+  margin: 10px 0px 0px 0px;
 }
 
 div button {
-    display: block;
-    margin-left: 170px;
-    padding: 5px 10px;
+  display: block;
+  margin-left: 170px;
+  padding: 5px 10px;
 }
 
-.text_area_resposta{
-    padding: 5px;
-    width: 420px;
+.text_area_resposta {
+  padding: 5px;
+  width: 420px;
 }
 
 /*Aqui começa o CSS da parte de Vínculos*/
-#label_endereco{
-    vertical-align:top;
+#label_endereco {
+  vertical-align: top;
 }
 .vinculos_radio {
-    /* border: 1px solid black; */
-    display: inline-block;
-    margin-left: 60px;
-   
+  /* border: 1px solid black; */
+  display: inline-block;
+  margin-left: 60px;
 }
 
 #assunto_email {
@@ -186,7 +185,7 @@ div button {
 }
 
 #ms_textarea {
-  margin-left: 8px;    
+  margin-left: 8px;
 }
 
 label[id="assunto"] {

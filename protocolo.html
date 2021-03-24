@@ -40,8 +40,8 @@
         <label for="vinculos_cidade" class="label_inputs">Cidade:</label>
         <input id="vinculos_cidade" class="inputs_geral" placeholder="Cidade"><br>
         
-        <label for="vinculos_processo" class="label_inputs">Processo:</label>
-        <input id="vinculos_processo" class="inputs_geral" placeholder="Número do Processo" oninput="salvar(this)"><br>
+        <label for="protocolo_processo" class="label_inputs">Processo:</label>
+        <input id="protocolo_processo" class="inputs_geral" placeholder="Número do Processo" oninput="salvar(this)"><br>
 
         <label for="vinculos_email" class="label_inputs">E-mail:</label>
         <input id="vinculos_email" class="inputs_geral" placeholder="E-mail"><br>
@@ -89,7 +89,7 @@
         <br>
 
         <label for="observacoes" class="label_inputs">Obs.:</label>
-        <textarea rows="8" cols="50" id="observacoes" placeholder="Anotações diversas"></textarea>
+        <textarea rows="8" cols="40" id="observacoes" placeholder="Anotações diversas"></textarea>
         
       </div>
       
@@ -100,38 +100,46 @@
       <div class="radio_protocolo">
 
         <input id="radio_1" type="radio" name="radio" class="radio_protocolo">
-        <label for="radio_1">Em andamento</label><br>
+        <label for="radio_1">Cópia/Dossiê</label>
         
-        <input id="radio_2" class="radio_protocolo" type="radio" name="radio">
-        <label for="radio_2" >Exigência</label><br>   
+        <br>
+        
+        <input id="radio_2" type="radio" name="radio" class="radio_protocolo">
+        <label for="radio_2">Em andamento</label>
+        
+        <br>
         
         <input id="radio_3" class="radio_protocolo" type="radio" name="radio">
-        <label for="radio_3" >Deferido</label>
+        <label for="radio_3" >Exigência</label>
+        
+        <br>   
+        
+        <input id="radio_4" class="radio_protocolo" type="radio" name="radio">
+        <label for="radio_4" >Deferido</label>
 
         <br>
         
-        <input id="radio_4" class="radio_protocolo" type="radio" name="radio">
-        <label for="radio_4">Indeferido</label>
+        <input id="radio_5" class="radio_protocolo" type="radio" name="radio">
+        <label for="radio_5">Indeferido</label>
 
         <br>
         <br>
 
-        <input id="radio_6"class="radio_vinculos" type="radio" name="ressalvas" value="1">
+        <input id="radio_6" class="radio_protocolo" type="radio" name="ressalvas">
         <label for="radio_6">Ressalva1</label>
 
         <br>
 
-        <input id="radio_7"class="radio_vinculos" type="radio" name="ressalvas" value="2">
+        <input id="radio_7" class="radio_protocolo" type="radio" name="ressalvas">
         <label for="radio_7">Ressalva2</label>
 
     
     </div>
        
-  
       
       <div ="vinculos_div_button">
     
-      <button type="button" onclick="resposta_vinculos()">Responder</button>
+      <button type="button" onclick="resposta_protocolo()">Responder</button>
     
      
     </div>
@@ -142,12 +150,12 @@
         
         <label for="assunto_email">Assunto:</label>
 
-        <textarea rows="2" cols="46" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea>
+        <textarea rows="2" cols="44" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea>
         
         <br>
 
 
-      <textarea id="vinculos_textarea" rows="8" cols="75" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+      <textarea id="protocolo_textarea" rows="8" cols="62" id="protocolo_textarea" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
 
     </section>
       <footer ="geral_footer">
