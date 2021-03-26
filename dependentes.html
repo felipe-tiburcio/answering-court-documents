@@ -30,7 +30,7 @@
 
     <div class="solicitante_container">
       
-      <a href="#dependentes_resposta" class="scroll">&#8659</a><br>
+      <a href="#dependentes_segurado_nome" class="scroll">&#8659</a><br>
         
       <h4 class="black_subtitles">Solicitante</h4>
         <label for="dependentes_orgao" class="label_inputs">Órgão:</label>
@@ -116,9 +116,9 @@
 
           <label for="dependentes_segurado_pis" class="label_inputs">NIT/PIS:</label>
           <input type="text" min="0" id="dependentes_segurado_pis"  class="inputs_geral" placeholder="NIT/PIS/PASEP">
-          
-          <br>
-          <br>
+
+          <a href="#nav" class="scroll">&#8657</a><br>
+          <a href="#dependentes_resposta" class="scroll">&#8659</a><br>
           
           <label class="label_inputs" id="dependentes_segurado_data_obito">Óbito:</label>
           <input type="text" id="dependentes_segurado_data_obito" class="inputs_geral" placeholder="Data de Óbito"><br>
@@ -133,7 +133,8 @@
           <input id="dependentes_segurado_folha" class="inputs_geral" placeholder="Folha"><br>
           
           <label for="dependentes_segurado_cartorio" class="label_inputs">Cartório:</label>
-          <input id="dependentes_segurado_cartorio" class="inputs_geral" placeholder="Nome do Cartório"> 
+          <input id="dependentes_segurado_cartorio" class="inputs_geral" placeholder="Nome do Cartório">
+
       </div>
       <br>
       
@@ -216,13 +217,13 @@
         <button type="button" onclick="resposta_dependentes()">Gerar Resposta</button><br>
       </div>
 
-      <a href="#nav" class="scroll">&#8657</a><br>
+      <a href="#dependentes_segurado_nome" class="scroll">&#8657</a><br>
 
       <label for="assunto_email">Assunto:</label>
 
         <textarea id="dependentes_assunto_email" rows="1" cols="46" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
       
-      <textarea id="dependentes_resposta" class="text_area_resposta" cols="60" rows="6" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
+      <textarea id="dependentes_resposta" class="text_area_resposta" cols="58" rows="6" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
       <footer id=""><br>
         &copy Felipe Tiburcio - 2020
       </footer>

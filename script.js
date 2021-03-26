@@ -28,251 +28,188 @@ function resposta_vinculos() {
 
   // Variáveis com as respostas para melhor organização
 
-  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.`
+  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.`;
 
-  const vinculoAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo ativo com a empresa ${empresa} desde ${data_inicio}.`
-  
-  const vinculoSalario = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo ativo com a empresa ${empresa} desde ${data_inicio}, e seu último salário informado pelo empregador foi R$ ${ultimoSalario}.`
+  const vinculoAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo ativo com a empresa ${empresa} desde ${data_inicio}.`;
 
-  const vinculoDuvida = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo(s) em aberto, no entanto, não existem dados atuais informados pela(s) empresa(s) sobre a remuneração recebida, o que gera dúvida quanto à manutenção deste(s) vínculo(s).`
+  const vinculoSalario = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo ativo com a empresa ${empresa} desde ${data_inicio}, e seu último salário informado pelo empregador foi R$ ${ultimoSalario}.`;
 
-  const semVinculo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum vínculo ativo atual no cadastro do(a) segurado(a) ${segurado}.`
+  const vinculoDuvida = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo(s) em aberto, no entanto, não existem dados atuais informados pela(s) empresa(s) sobre a remuneração recebida, o que gera dúvida quanto à manutenção deste(s) vínculo(s).`;
 
-  const beneficioAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} recebe benefício de ${beneficio} desde ${inicioBeneficio} com o valor bruto de R$ ${valorBeneficio}.`
+  const semVinculo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum vínculo ativo atual no cadastro do(a) segurado(a) ${segurado}.`;
 
-  const semBeneficio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum benefício ativo no cadastro do(a) segurado(a) ${segurado}.`
+  const beneficioAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} recebe benefício de ${beneficio} desde ${inicioBeneficio} com o valor bruto de R$ ${valorBeneficio}.`;
+
+  const semBeneficio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum benefício ativo no cadastro do(a) segurado(a) ${segurado}.`;
 
   const informarEndereco = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta(m) o(s) seguinte(s) endereço(s) do segurado ${segurado}: 
 
-${endereco}`
+${endereco}`;
 
-  const cnisCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de vínculos e remunerações do(a) segurado(a) ${segurado}.`
+  const cnisCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
 
-  const dadosCadastrais = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar os dados cadastrais do(a) segurado(a) ${segurado}.`
+  const dadosCadastrais = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar os dados cadastrais do(a) segurado(a) ${segurado}.`;
 
-  const ressalvaDependentes = `\n\nImportante ressaltar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.`
+  const ressalvaDependentes = `\n\nImportante ressaltar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.`;
 
-  const escopoInss = `\n\nImportante ressaltar que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`
+  const escopoInss = `\n\nImportante ressaltar que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`;
 
-  const atenciosamente = `\n\nAtenciosamente,`
-  
+  const atenciosamente = `\n\nAtenciosamente,
+  `;
+
   assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
 
   //Lógica com as ressalvas sendo lidas primeiro para mudar a posição do "Atenciosamente".
 
   if (situacao[10].checked) {
-    
     if (situacao[0].checked) {
       resposta.innerHTML = naoLocalizado;
-      
     } else if (situacao[1].checked) {
-      resposta.innerHTML = vinculoAtivo;   
-  
+      resposta.innerHTML = vinculoAtivo;
     } else if (situacao[2].checked) {
       resposta.innerHTML = vinculoSalario;
-  
     } else if (situacao[3].checked) {
       resposta.innerHTML = vinculoDuvida;
-  
     } else if (situacao[4].checked) {
       resposta.innerHTML = semVinculo;
-  
     } else if (situacao[5].checked) {
       resposta.innerHTML = beneficioAtivo;
-  
     } else if (situacao[6].checked) {
       resposta.innerHTML = semBeneficio;
-  
     } else if (situacao[7].checked) {
       resposta.innerHTML = informarEndereco;
-  
     } else if (situacao[8].checked) {
       resposta.innerHTML = cnisCompleto;
-  
     } else if (situacao[9].checked) {
       resposta.innerHTML = dadosCadastrais;
     }
-  
+
     resposta.innerHTML += ressalvaDependentes + atenciosamente;
-
   } else if (situacao[11].checked) {
-
     if (situacao[0].checked) {
       resposta.innerHTML = naoLocalizado;
-      
     } else if (situacao[1].checked) {
-      resposta.innerHTML = vinculoAtivo;   
-  
+      resposta.innerHTML = vinculoAtivo;
     } else if (situacao[2].checked) {
       resposta.innerHTML = vinculoSalario;
-  
     } else if (situacao[3].checked) {
       resposta.innerHTML = vinculoDuvida;
-  
     } else if (situacao[4].checked) {
       resposta.innerHTML = semVinculo;
-  
     } else if (situacao[5].checked) {
       resposta.innerHTML = beneficioAtivo;
-  
     } else if (situacao[6].checked) {
       resposta.innerHTML = semBeneficio;
-  
     } else if (situacao[7].checked) {
       resposta.innerHTML = informarEndereco;
-  
     } else if (situacao[8].checked) {
       resposta.innerHTML = cnisCompleto;
-  
     } else if (situacao[9].checked) {
       resposta.innerHTML = dadosCadastrais;
     }
     resposta.innerHTML += escopoInss + atenciosamente;
-
   } else {
-    
     if (situacao[0].checked) {
       resposta.innerHTML = naoLocalizado + atenciosamente;
-      
     } else if (situacao[1].checked) {
-      resposta.innerHTML = vinculoAtivo + atenciosamente;   
-  
+      resposta.innerHTML = vinculoAtivo + atenciosamente;
     } else if (situacao[2].checked) {
       resposta.innerHTML = vinculoSalario + atenciosamente;
-  
     } else if (situacao[3].checked) {
       resposta.innerHTML = vinculoDuvida + atenciosamente;
-  
     } else if (situacao[4].checked) {
       resposta.innerHTML = semVinculo + atenciosamente;
-  
     } else if (situacao[5].checked) {
       resposta.innerHTML = beneficioAtivo + atenciosamente;
-  
     } else if (situacao[6].checked) {
       resposta.innerHTML = semBeneficio + atenciosamente;
-  
     } else if (situacao[7].checked) {
       resposta.innerHTML = informarEndereco + atenciosamente;
-  
     } else if (situacao[8].checked) {
       resposta.innerHTML = cnisCompleto + atenciosamente;
-  
     } else if (situacao[9].checked) {
       resposta.innerHTML = dadosCadastrais + atenciosamente;
     }
   }
-
-  
- 
-
-
-
-
-
-  
 }
 
-
-
-
-
-
 //Final da página de Vínculos
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Início da página de Dependentes
 
 function resposta_dependentes() {
+
   const processo = document.querySelector("#dependentes_processo").value;
 
   const segurado = document.querySelector("#dependentes_segurado_nome").value;
 
-  let situacao = document.getElementsByClassName("radio");
+  const situacao = document.getElementsByClassName("radio");
 
-  let resposta = document.getElementById("dependentes_resposta");
+  const resposta = document.getElementById("dependentes_resposta");
 
-  let assunto = document.getElementById("dependentes_assunto_email");
+  const assunto = document.getElementById("dependentes_assunto_email");
+
+  const dependentes = document.getElementsByClassName("dependentes_textarea").value;
+
+  //Variáveis com as respostas pra melhor organização
+
+  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.
+  
+Atenciosamente,
+`
+
+  const temDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), sendo ele(s):
+        
+  ${dependentes}
+  
+Atenciosamente,
+`
+
+  const semDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS).
+  
+Atenciosamente,
+`
+
+  const semDependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), motivo pelo qual estamos encaminhando a Certidão de Inexistência de Dependentes, conforme solicitação.
+
+Atenciosamente,
+`
+
+  const tinhamDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que, embora no momento atual não tenham sido localizados dependentes com benefício ativo do(a) Sr.(a) ${segurado} como instituidor(a), foram reconhecidos anteriormente como dependentes:
+        
+  ${dependentes}
+  
+Atenciosamente,
+`
+
+  const dependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), motivo pelo qual encaminhamos a Certidão de PIS/PASEP/FGTS conforme solicitação.
+
+Atenciosamente,
+`
 
   assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
 
-  let dependentes = document.querySelector(".dependentes_textarea").value;
-
   if (situacao[0].checked) {
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.
-        
-Atenciosamente,
-        
-        `;
+    resposta.innerHTML = naoLocalizado;
+
   } else if (situacao[1].checked) {
-    resposta.innerHTML = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), sendo ele(s):
-        
-${dependentes}        
-Atenciosamente,
-        `;
+    resposta.innerHTML = temDependentes;
+
   } else if (situacao[2].checked) {
-    resposta.innerHTML = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS).
+    resposta.innerHTML = semDependentes;
 
-Atenciosamente,
-        `;
   } else if (situacao[3].checked) {
-    resposta.innerHTML = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), motivo pelo qual estamos encaminhando a Certidão de Inexistência de Dependentes, conforme solicitação.
+    resposta.innerHTML = semDependentesCertidao;
 
-Atenciosamente,
-        
-        
-        `;
   } else if (situacao[4].checked) {
-    resposta.innerHTML = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que, embora no momento atual não tenham sido localizados dependentes com benefício ativo do(a) Sr.(a) ${segurado} como instituidor(a), foram reconhecidos anteriormente como dependentes:
-        
-        ${dependentes[0].value}
-        ---------------------------------------------
-        ${dependentes[1].value}
-        ---------------------------------------------
-        ${dependentes[2].value}
-        
-Atenciosamente,
-        `;
+    resposta.innerHTML = tinhamDependentes;
+
   } else if (situacao[5].checked) {
-    resposta.innerHTML = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), motivo pelo qual encaminhamos a Certidão de PIS/PASEP/FGTS conforme solicitação.
-        
-Atenciosamente,
-        `;
-  } else {
-    alert("Você precisa preencher os campos e selecionar uma situação");
+    resposta.innerHTML = dependentesCertidao;
   }
 }
 
 // Final da página de Dependentes
-
-
 
 //Início da página de Resíduos
 
@@ -580,9 +517,6 @@ function resposta_ms() {
 
 //Final de Mandado de Segurança
 
-
-
-
 //Início da página de Protocolo
 
 function resposta_protocolo() {
@@ -591,7 +525,6 @@ function resposta_protocolo() {
   const nome = document.querySelector("#protocolo_nome").value;
 
   const radios = document.querySelectorAll(".radio_protocolo");
-
 
   //Variáveis com os textos das respostas
   const resposta_dossie = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando cópia/dossiê relativo ao segurado ${nome} conforme determinação.`;
