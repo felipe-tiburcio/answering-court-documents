@@ -15,13 +15,14 @@ html {
 form {
   border: 1px solid black;
   width: 420px;
+  box-shadow: 1px 1px 1px gray;
 }
 
 .header_1 {
   background-color: #002539;
   padding: 5px;
   max-width: 420px;
-  border: 0.5px solid black;
+  /* border: 0.5px solid black; */
 }
 
 .header_2 {
@@ -33,12 +34,12 @@ form {
 
 .links_topo {
   color: #ececec;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 2px black;
   text-decoration: none;
-  width: 193px;
-  border: 1px solid black;
+  width: 194px;
+  border: 0.5px solid black;
   border-radius: 6px;
-  padding: 8px;
+  padding: 6px;
   margin: 1px;
 }
 
@@ -120,6 +121,7 @@ textarea:focus {
   width: 260px;
   padding: 5px;
   margin: 2px;
+  /* box-shadow: 0.5px 0.5px 0.5px black; */
 }
 
 .radio_selections {
