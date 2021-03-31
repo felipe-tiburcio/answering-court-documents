@@ -34,7 +34,7 @@
 
        
 
-      <a href="#vinculos_textarea" class="scroll">&#8659</a><br>
+      <a href="#container_segurado" class="scroll">&#8659</a><br>
 
       <div ="container_solicitante" class="vinculos_containers">       
         <h3 class="black_subtitles">Solicitante</h3>
@@ -110,7 +110,7 @@
   
 
       <h3 class="black_subtitles">Segurado</h3>
-      <div ="container_segurado" class="vinculos_containers"> 
+      <div id="container_segurado" class="vinculos_containers"> 
         
         <label for="vinculos_nome" class="label_inputs">Nome:</label>
         <input 
@@ -134,8 +134,9 @@
         <label for="vinculos_endereco" class="label_inputs" id="label_endereco">End.:</label>
         <textarea id="vinculos_endereco" class="inputs_geral" rows="4" cols="70" placeholder="Endereço(s) cadastrado(s) no CNIS"></textarea>
       </div>
-      
-      <br>
+
+      <a href="#nav" class="scroll">&#8657</a><br>
+      <a href="#vinculos_situacao" class="scroll">&#8659</a><br>
 
       <h3 class="black_subtitles">Empresa</h3>
       
@@ -199,7 +200,7 @@
       
       <!--Seleção da situação do vínculo-->
       <h3 class="black_subtitles">Situação</h3>
-      <div class="vinculos_radio">
+      <div id="vinculos_situacao" class="vinculos_radio">
         <br>
         <input id="radio_1" type="radio" name="radio" class="radio_vinculos">
         <label for="radio_1">Segurado não localizado</label>
@@ -274,7 +275,7 @@
      
     </div>
     <section id="respostas">
-      <a href="#nav" class="scroll">&#8657</a><br>
+      <a href="#container_segurado" class="scroll">&#8657</a><br>
         
         <label id="assunto" for="assunto_email">Assunto:</label>
 

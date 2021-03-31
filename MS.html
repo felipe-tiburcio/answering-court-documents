@@ -35,7 +35,7 @@
   <h3 class="black_subtitles">Situação</h3>
   
       <input type="checkbox" id="checkbox_finalizacao" class="">
-      <label for="checkbox_finalizacao" class="">Finalização da Análise</label>
+      <label for="checkbox_finalizacao" class="">Demora na Análise</label>
 
       <br>
 
@@ -50,8 +50,8 @@
       
       <br>
 
-      <input type="checkbox" id="checkbox_finalizacao" class="">
-      <label for="checkbox_finalizacao" class="">Outra Situação</label>
+      <input type="checkbox" id="checkbox_outra" class="">
+      <label for="checkbox_outra" class="">Outra Situação</label>
       
       <br>
 
@@ -116,17 +116,17 @@
         <br>
 
         <label for="ms_agendamento" class="label_inputs">Data:</label>
-        <input id="ms_agendamento" type="date" class="inputs_geral">
+        <input id="ms_agendamento" class="inputs_geral" placeholder="xx/xx/xxxx">
 
         <br>
 
         <label for="ms_horario" class="label_inputs">Horário:</label>
-        <input id="ms_horario" class="inputs_geral" placeholder="Horário da perícia">
+        <input id="ms_horario" class="inputs_geral" placeholder="Horário do Agendamento">
 
         <br>
 
-        <label for="ms_aps" class="label_inputs">APS:</label>
-        <input id="ms_aps" class="inputs_geral" placeholder="APS" value="Ivo do Prado">
+        <label for="ms_aps" class="label_inputs">Local:</label>
+        <input id="ms_aps" class="inputs_geral" placeholder="APS" value="APS Ivo do Prado">
         
       </div>
       
@@ -172,13 +172,24 @@
           type="radio" 
           name="radio">
         <label for="radio_3">Perícia - DCB</label>
+        
         <br>
+        
         <input 
           id="radio_4" 
           class="radio_ms"
           type="radio" 
           name="radio">
-        <label for="radio_4">Outra situação</label>
+        <label for="radio_4">BPC - Análise/Agendamentos</label>
+        
+        <br>
+        
+        <input 
+          id="radio_5" 
+          class="radio_ms"
+          type="radio" 
+          name="radio">
+        <label for="radio_5">Outra situação</label>
 
     
     </div>

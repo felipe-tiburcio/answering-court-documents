@@ -14,21 +14,21 @@ html {
 
 form {
   border: 1px solid black;
-  width: 420px;
+  width: 437px;
   box-shadow: 1px 1px 1px gray;
 }
 
 .header_1 {
   background-color: #002539;
   padding: 5px;
-  max-width: 420px;
+  max-width: 437px;
   /* border: 0.5px solid black; */
 }
 
 .header_2 {
   background-color: #00314d;
   padding: 10px;
-  max-width: 420px;
+  max-width: 437px;
   border: 0.5px solid black;
 }
 
@@ -71,7 +71,7 @@ a {
 }
 
 .vinculosCheckbox {
-  border: 1px solid black;
+  border: 1px solid gray;
   border-radius: 4px;
   margin-top: 3px;
   margin-left: 10px;
@@ -98,8 +98,14 @@ textarea:focus {
 .scroll {
   display: absolute;
   margin-left: 350px;
-  font-size: 30px;
+  font-size: 28px;
   color: #ffcd07;
+}
+
+.scroll:active{
+  color: green;
+  font-size: 60px;
+  transition: 0.050s;
 }
 
 .black_subtitles {

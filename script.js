@@ -144,12 +144,14 @@ function resposta_dependentes() {
   const segurado = document.querySelector("#dependentes_segurado_nome").value;
 
   const situacao = document.getElementsByClassName("radio");
-
+   
   const resposta = document.getElementById("dependentes_resposta");
+
+  console.log(resposta)
 
   const assunto = document.getElementById("dependentes_assunto_email");
 
-  const dependentes = document.getElementsByClassName("dependentes_textarea").value;
+  const dependentes = document.querySelector(".dependentes_textarea").value;
 
   //Variáveis com as respostas pra melhor organização
 
@@ -190,22 +192,22 @@ Atenciosamente,
   assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
 
   if (situacao[0].checked) {
-    resposta.innerHTML = naoLocalizado;
+    resposta.value = naoLocalizado;
 
   } else if (situacao[1].checked) {
-    resposta.innerHTML = temDependentes;
+    resposta.value = temDependentes;
 
   } else if (situacao[2].checked) {
-    resposta.innerHTML = semDependentes;
+    resposta.value = semDependentes;
 
   } else if (situacao[3].checked) {
-    resposta.innerHTML = semDependentesCertidao;
+    resposta.value = semDependentesCertidao;
 
   } else if (situacao[4].checked) {
-    resposta.innerHTML = tinhamDependentes;
+    resposta.value = tinhamDependentes;
 
   } else if (situacao[5].checked) {
-    resposta.innerHTML = dependentesCertidao;
+    resposta.value = dependentesCertidao;
   }
 }
 
@@ -531,9 +533,9 @@ function resposta_ms() {
 
   const situacao = document.getElementsByClassName("radio_ms");
 
-  const agendamento = document.getElementById("ms_agendamento").value;
+  const dataAgendamento = document.getElementById("ms_agendamento").value;
 
-  const horario = document.querySelector("#ms_horario").value;
+  const horaAgendamento = document.querySelector("#ms_horario").value;
 
   const aps = document.querySelector("#ms_aps").value;
 
@@ -545,7 +547,7 @@ function resposta_ms() {
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome} que não conseguiu realizar o agendamento de Perícia de Prorrogação dentro do prazo e teve seu benefício nº ${beneficio} indevidamente cessado. 
     
-2. Situação resolvida e perícia agendada para o dia ${agendamento} às ${horario} na APS ${aps}.
+2. Situação resolvida e perícia agendada para o dia ${dataAgendamento} às ${horaAgendamento} na ${aps}.
     
 3. O benefício foi reativado e já consta o cálculo dos pagamentos pendentes conforme relatório anexo.`
 
@@ -581,25 +583,37 @@ const analiseMedica = `Encaminhamento de determinação judicial para cumpriment
 4. Com a cessação do benefício, o segurado tem prazo de 30 dias de prazo para entrar com Recurso Administrativo contra a decisão e/ou terá que aguardar 30 dias para realizar um novo requerimento de benefício.`
 
 
+const bpcDemora = `Encaminhamento de determinação judicial para cumprimento.
+
+1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome}. 
+    
+2. É possível verificar através de relatório anexo que o processo de análise do benefício está em andamento e foi agendada a Avaliação Social para o dia ${dataAgendamento} às ${horaAgendamento} a ser realizada na ${aps}. 
+
+3. Existe o registro no processo, que devido à falta de vagas, não foi possível marcar a Perícia Médica para o mesmo dia da Avaliação Social. Por isso o servidor orienta que seja solicitado ao Assistente Social, no dia da Avaliação Social, para que seja feito o agendamento de Perícia Médica do(a) segurado(a).`
+
+
 const outraSituacao = `Outra situação`
 
 
 //Fim das frases - começo da lógica
 
   if (situacao[0].checked) {
-    resposta.innerHTML = erroPP;
+    resposta.value = erroPP;
 
   } else if (situacao[1].checked) {
-    resposta.innerHTML = finalizarAnalise;
+    resposta.value = finalizarAnalise;
   
   } else if (situacao[2].checked) {
-    resposta.innerHTML = informacoesDossie;
+    resposta.value = informacoesDossie;
 
   } else if (situacao[3].checked) {
-    resposta.innerHTML = analiseMedica;
+    resposta.value = analiseMedica;
   
   } else if (situacao[4].checked) {
-    resposta.innerHTML = outraSituacao;
+    resposta.value = bpcDemora;
+  
+  } else if (situacao[5].checked) {
+    resposta.value = outraSituacao;
   }
 }
 
@@ -661,8 +675,3 @@ function resposta_protocolo() {
 }
 
 // Fim da página de Procotolo
-
-
-const teste =()=> {
-  return "beatiful text and colors"
-}
