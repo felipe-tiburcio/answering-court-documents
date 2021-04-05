@@ -29,14 +29,13 @@
 
     </div>
 
-    <div
   </header>
 
        
 
       <a href="#container_segurado" class="scroll">&#8659</a><br>
 
-      <div ="container_solicitante" class="vinculos_containers">       
+      <div id="container_solicitante"  class="vinculos_containers">       
         <h3 class="black_subtitles">Solicitante</h3>
         <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
         <input class="inputs_geral">
@@ -105,6 +104,17 @@
 
       <input id="checkbox7"type="checkbox">
       <label for="checkbox7">Outra situação</label>
+
+  </div>
+
+  <h3 class="black_subtitles">Notas</h3>
+
+  <div class="alignCenter">
+    
+
+    <textarea rows="6" cols="60">
+
+    </textarea>
 
   </div>
   
@@ -268,18 +278,19 @@
     </div>
        
       
-      <div ="vinculos_div_button">
+      <div id="vinculos_div_button">
     
       <button type="button" onclick="resposta_vinculos()">Responder</button>
     
      
     </div>
-    <section id="respostas">
+
+    <section id="respostas" class="alignCenter">
       <a href="#container_segurado" class="scroll">&#8657</a><br>
         
         <label id="assunto" for="assunto_email">Assunto:</label>
 
-        <textarea id="vinculos_assunto_email" rows="1" cols="46" id="assunto_email" class="inputs_geral" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+        <textarea id="vinculos_assunto_email" rows="1" cols="46" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
 
 
       <textarea id="vinculos_textarea" rows="12" cols="60" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>

@@ -90,6 +90,10 @@ textarea {
   border-radius: 4px;
 }
 
+.alignCenter {
+  text-align: center;
+}
+
 textarea:focus {
   background-color: #ffffe0;
   outline: 1px solid #ffcd07;
