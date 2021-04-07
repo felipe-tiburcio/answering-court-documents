@@ -111,7 +111,7 @@
          
 
           <label for="dependentes_segurado_data_nascimento" class="label_inputs">Nasc.:</label>
-          <input type="text" id="dependentes_segurado_data_nascimento" class="inputs_geral" placeholder="Data de Nascimento"><br>
+          <input type="date" id="dependentes_segurado_data_nascimento" class="inputs_geral"><br>
 
 
           <label for="dependentes_segurado_pis" class="label_inputs">NIT/PIS:</label>
@@ -172,7 +172,7 @@
       <h4 class="black_subtitles">Situação</h4>
       
       <label for="segurado_nao_localizado">
-          <div id="radio_selection_1" class="radio_selections">
+          <div class="radio_selections">
               <input id="segurado_nao_localizado" class="radio" type="radio" name="radio" value="1">Segurado não localizado
           </div>
       </label>
@@ -222,8 +222,7 @@
       
 
       <div class="alignCenter">
-        <label for="assunto_email">Assunto:</label>
-        <textarea rows="1" cols="46" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+        <textarea rows="1" cols="58" id="assunto_email" placeholder="Assunto do e-mail"></textarea><br>
         
         <textarea id="dependentes_resposta" class="text_area_resposta" cols="58" rows="12" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
       </div>

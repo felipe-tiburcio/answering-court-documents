@@ -13,12 +13,12 @@ function resposta_vinculos() {
 
   let ultimoSalario = document.querySelector("#vinculos_salario").value;
 
-  let data_inicio = document.querySelector("#vinculos_data_inicio").value;
+  let data_inicio = document.querySelector("#vinculos_data_inicio").value.split("-").reverse().join("/");
 
   let beneficio = document.querySelector("#vinculos_tipoBeneficio").value;
 
   let inicioBeneficio = document.querySelector("#vinculos_beneficioInicio")
-    .value;
+    .value.split("-").reverse().join("/");
 
   let valorBeneficio = document.querySelector("#valorBeneficio").value;
 
@@ -46,7 +46,7 @@ function resposta_vinculos() {
 
 ${endereco}`;
 
-  const cnisCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
+  const cnisCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando o relatório completo do CNIS. Neste documento é possível analisar o histórico completo de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
 
   const dadosCadastrais = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar os dados cadastrais do(a) segurado(a) ${segurado}.`;
 
@@ -533,7 +533,7 @@ function resposta_ms() {
 
   const situacao = document.getElementsByClassName("radio_ms");
 
-  const dataAgendamento = document.getElementById("ms_agendamento").value;
+  const dataAgendamento = document.getElementById("ms_agendamento").value.split("-").reverse().join("/");
 
   const horaAgendamento = document.querySelector("#ms_horario").value;
 
