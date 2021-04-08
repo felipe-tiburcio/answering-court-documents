@@ -7,6 +7,10 @@
   font-weight: 400;
 }
 
+body {
+  background: #F6F6F6;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -86,6 +90,10 @@ a {
   border-radius: 4px;
 }
 
+.inputs_geral:hover {
+  outline: 1px solid #8EDCF2;
+}
+
 textarea {
   border-radius: 4px;
 }
@@ -154,9 +162,10 @@ textarea:focus {
   transition: 0.2s;
 }
 
-.solicitante_container {
-  /* border: 1px solid black; */
-}
+/* .solicitante_container {
+   border: 1px solid black;
+}  
+*/
 
 .dependentes_textarea {
   padding: 2px;
