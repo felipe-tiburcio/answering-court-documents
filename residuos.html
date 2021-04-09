@@ -143,7 +143,13 @@
 
         <div class="">
             
-            <div class="">
+            <div class="residuos_radio">
+              <label class="label_inputs">Situação</label>
+              <hr>
+                <input id="radioNormal" checked type="radio" class="radioResiduos" name="semResiduos">
+                <label for="radioNormal">Normal</label>
+
+                <br>
                 <input id="radioNaoEncontrado"type="radio" class="radioResiduos" name="semResiduos">
                 <label for="radioNaoEncontrado">Segurado não-localizado</label>
 
@@ -160,8 +166,15 @@
                 <br>
                 <br>
 
-                <input id="radioSem13" class="radioResiduos" type="radio" name="13_salario" value="no">
+                <label class="label_inputs">13º</label>                
+                <hr>
+                <input id="radioCom13" checked class="situacao13" type="radio" name="13salario">
+                <label for="radioCom13" class="">Benefício com 13º</label><br>
+
+                <input id="radioSem13" class="situacao13" type="radio" name="13salario">
                 <label for="radioSem13" class="">Benefício sem 13º</label><br>
+                
+                
 
             </div>    
 
@@ -179,30 +192,38 @@
 
             </div>
             
-            <div class="">
+            <div class="residuos_radio">
 
-                <input id="radio_10" type="radio" class="radioRessalvas" name="ressalvas">
-                <label for="radio_10">Ressalva - Acerto de Contas</label>
+                <label class="label_inputs">Ressalvas</label>
+                <hr>                
+
+                <input id="radio_10" type="radio" checked class="radioRessalvas" name="ressalvas">
+                <label for="radio_10">Sem Ressalvas</label>
+
+                <br>
+                
+                <input id="radio_11" type="radio" class="radioRessalvas" name="ressalvas">
+                <label for="radio_11">Acerto de Contas</label>
 
                 <br>
 
-                <input id="radio_11" class="radioRessalvas" type="radio" name="ressalvas">
-                <label for="radio_11" class="">Ressalva - Cadastro de Dependentes</label>
-        
-                <br>
-        
                 <input id="radio_12" class="radioRessalvas" type="radio" name="ressalvas">
-                <label for="radio_12" class="">Ressalva - Área de atuação do INSS</label>
-
+                <label for="radio_12" class="">Cadastro de Dependentes</label>
+        
                 <br>
-
+        
                 <input id="radio_13" class="radioRessalvas" type="radio" name="ressalvas">
-                <label for="radio_13" class="">Ressalva - Sem acesso a dados bancários</label>
+                <label for="radio_13" class="">Área de atuação do INSS</label>
 
                 <br>
 
                 <input id="radio_14" class="radioRessalvas" type="radio" name="ressalvas">
-                <label for="radio_14" class="">Ressalva - Encaminhamento para o MOB</label>
+                <label for="radio_14" class="">Sem acesso a dados bancários</label>
+
+                <br>
+
+                <input id="radio_15" class="radioRessalvas" type="radio" name="ressalvas">
+                <label for="radio_15" class="">Encaminhamento para o MOB</label>
 
                 <br>
                 <br>
@@ -225,7 +246,7 @@
         <textarea id="residuos_assunto" rows="2" cols="46" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
 
 
-      <textarea id="residuos_resposta" rows="15" cols="62" placeholder="A resposta aparecerá aqui. Utilize Ctrl+A para selecionar tudo, Ctrl+C para copiar e Ctrl+V no Expresso."></textarea>
+      <textarea id="residuos_resposta" rows="18" cols="62" placeholder="A resposta aparecerá aqui. Utilize Ctrl+A para selecionar tudo, Ctrl+C para copiar e Ctrl+V no Expresso."></textarea>
 
     </section>
       

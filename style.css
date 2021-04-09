@@ -203,6 +203,12 @@ div button {
   margin-left: 60px;
 }
 
+.residuos_radio {
+  /* border: 1px solid black; */
+  display: inline-block;
+  margin-left: 110px;
+}
+
 .pa_radio {
   /* border: 1px solid black; */
   display: inline-block;
