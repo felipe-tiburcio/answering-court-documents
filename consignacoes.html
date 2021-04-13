@@ -30,7 +30,7 @@
 
   </header>
 
-      <a href="#consignacoes_textarea" class="scroll">&#8659</a><br>
+      <a href="#consignacoes_nb1" class="scroll">&#8659</a><br>
       
       <h3 class="black_subtitles">Solicitante</h3>
       <div ="container_solicitante" class="consignacoes_containers"> 
@@ -66,9 +66,15 @@
         
         <label for="consignacoes_mae" class="label_inputs">Mãe:</label>
         <input id="consignacoes_mae" class="inputs_geral" placeholder="Nome da Mãe"><br><br>
+      
+        <label for="consignacoes_nb" class="label_inputs">NB1:</label>
+        <input id="consignacoes_nb1" class="inputs_geral" placeholder="Número do Benefício"><br>
+        
+        <label for="consignacoes_nb" class="label_inputs">NB2:</label>
+        <input id="consignacoes_nb2" class="inputs_geral" placeholder="Número do Benefício"><br><br>
 
-        <label for="consignacoes_nb" class="label_inputs">NB:</label>
-        <input id="consignacoes_nb" class="inputs_geral" placeholder="Número do Benefício"><br><br>
+        <a href="#nav" class="scroll">&#8657</a><br>
+        <a href="#radio_1" class="scroll">&#8659</a><br>
 
         <label for="consignacoes_contrato1" class="label_inputs">Cont.1:</label>
         <input id="consignacoes_contrato1" class="inputs_geral" placeholder="Número do Contrato 1"><br>
@@ -102,6 +108,7 @@
       
       <!--Seleção da situação da consignação-->
       <h3 class="black_subtitles">Situação</h3>
+      
       <div class="consignacoes_radio">
 
         <input id="radio_1" type="radio" name="radio" class="radio_consignacoes">
@@ -128,31 +135,40 @@
         <br>
         <br>
 
-        <input id="radio_6" class="ressalvaConsignacoes" type="radio" name="ressalvas">
-        <label for="radio_6">Ressalva - Sem Informações Bancárias</label>
+        <h3 class="black_subtitles">Ressalvas</h3>
+
+        <input id="radio_6" class="ressalvaConsignacoes" selected type="radio" name="ressalvas">
+        <label for="radio_6">Sem Ressalvas</label>
 
         <br>
 
         <input id="radio_7" class="ressalvaConsignacoes" type="radio" name="ressalvas">
-        <label for="radio_7">Ressalva - Cadastro de Dependentes</label>
+        <label for="radio_7">Sem Informações Bancárias</label>
+        
+        <br>
+        
+        <input id="radio_8" class="ressalvaConsignacoes" type="radio" name="ressalvas">
+        <label for="radio_8">Cadastro de Dependentes</label>
 
         <br>
 
-        <input id="radio_8" class="ressalvaConsignacoes" type="radio" name="ressalvas">
-        <label for="radio_8">Ressalva - Área de Atuação do INSS</label>
+        <input id="radio_9" class="ressalvaConsignacoes" type="radio" name="ressalvas">
+        <label for="radio_9">Área de Atuação do INSS</label>
 
     
     </div>
       
       <div ="consignacoes_div_button">
     
+      <a href="#consignacoes_nb1" class="scroll">&#8657</a><br>
+
       <button type="button" onclick="resposta_consignacoes()">Responder</button>
     
      
     </div>
     <section id="respostas" class="alignCenter">
 
-      <a href="#nav" class="scroll">&#8657</a><br>
+      
         
         <label for="assunto_email">Assunto:</label>
 

@@ -353,41 +353,57 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 
   //Se a situação dos resíduos for normal, verificam-se as ressalvas e sem tem 13º.
   if (situacao[0].checked) {
-    
     //Seleção das ressalvas
     if (ressalvas[0].checked) {
-      situacao13[0].checked ? resposta.value = respostaCalculosCom13 + atenciosamente : resposta.value = respostaCalculosSem13 + atenciosamente;
+      situacao13[0].checked
+        ? (resposta.value = respostaCalculosCom13 + atenciosamente)
+        : (resposta.value = respostaCalculosSem13 + atenciosamente);
     }
 
     if (ressalvas[1].checked) {
-        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + acertoContas + atenciosamente : resposta.value = respostaCalculosSem13 + acertoContas + atenciosamente;
-    } 
-    
+      situacao13[0].checked
+        ? (resposta.value =
+            respostaCalculosCom13 + acertoContas + atenciosamente)
+        : (resposta.value =
+            respostaCalculosSem13 + acertoContas + atenciosamente);
+    }
+
     if (ressalvas[2].checked) {
-        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + cadastroDependentes + atenciosamente : resposta.value = respostaCalculosSem13 + cadastroDependentes + atenciosamente;
+      situacao13[0].checked
+        ? (resposta.value =
+            respostaCalculosCom13 + cadastroDependentes + atenciosamente)
+        : (resposta.value =
+            respostaCalculosSem13 + cadastroDependentes + atenciosamente);
     }
 
     if (ressalvas[3].checked) {
-        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + escopoInss + atenciosamente : resposta.value =          respostaCalculosSem13 + escopoInss + atenciosamente;
-    } 
-    
-    if (ressalvas[4].checked) {
-        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + dadosBancarios + atenciosamente : resposta.value =           respostaCalculosSem13 + dadosBancarios + atenciosamente;
-    } 
-    
-    if (ressalvas[5].checked) {
-        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + mob + atenciosamente : resposta.value = respostaCalculosSem13 + mob + atenciosamente;
+      situacao13[0].checked
+        ? (resposta.value = respostaCalculosCom13 + escopoInss + atenciosamente)
+        : (resposta.value =
+            respostaCalculosSem13 + escopoInss + atenciosamente);
     }
 
-  //Situações em que não tem resíduos. Diferente do estado "normal".    
-  } else if (situacao[1].checked) {
-      resposta.value = naoLocalizado + atenciosamente;
+    if (ressalvas[4].checked) {
+      situacao13[0].checked
+        ? (resposta.value =
+            respostaCalculosCom13 + dadosBancarios + atenciosamente)
+        : (resposta.value =
+            respostaCalculosSem13 + dadosBancarios + atenciosamente);
+    }
 
+    if (ressalvas[5].checked) {
+      situacao13[0].checked
+        ? (resposta.value = respostaCalculosCom13 + mob + atenciosamente)
+        : (resposta.value = respostaCalculosSem13 + mob + atenciosamente);
+    }
+
+    //Situações em que não tem resíduos. Diferente do estado "normal".
+  } else if (situacao[1].checked) {
+    resposta.value = naoLocalizado + atenciosamente;
   } else if (situacao[2].checked) {
-      resposta.value = semBeneficio + atenciosamente;
-      
+    resposta.value = semBeneficio + atenciosamente;
   } else if (situacao[3].checked) {
-      resposta.value = semResiduos + atenciosamente;
+    resposta.value = semResiduos + atenciosamente;
   }
 }
 
@@ -410,53 +426,109 @@ function resposta_consignacoes() {
 
   let assunto = document.getElementById("consignacoes_assunto_email");
 
-  assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
+  //Respostas salvas em variáveis
 
+  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.`;
+
+  const consignacaoAtiva = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar a seguinte situação referente os contratos efetuados entre o segurado ${segurado} e o(s) agente(s) financeiro(s)`;
+
+  const excluidoBanco = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}`;
+
+  const excluidoInss = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme determinação.`;
+
+  const historicoCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do segurado(a) ${segurado}.`;
+
+  const ressalvaDadosBancarios = `\n\nRessaltamos que o INSS trata da concessão e manutenção de benefícios previdenciários, não dispondo assim dos detalhes contratuais firmados entre o segurado e o agente bancário responsável pela consignação.`;
+
+  const ressalvaDependentes = `\n\nImportante salientar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.`;
+
+  const ressalvaEscopoInss = `\n\nRessaltamos que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`;
+
+  const atenciosamente = `\n\nAtenciosamente,`;
+
+  assunto.value = `Ofício - Processo ${processo} - ${segurado}`;
+
+  //Segurado não-localizado
   if (situacao[0].checked) {
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.
+    ressalva[0].checked
+      ? (resposta.value = naoLocalizado + atenciosamente)
+      : (resposta.value = naoLocalizado + atenciosamente);
+    ressalva[1].checked
+      ? (resposta.value = naoLocalizado + ressalvaDadosBancarios + atenciosamente)
+      : naoLocalizado + atenciosamente;
+    ressalva[2].checked
+      ? (resposta.value = naoLocalizado + ressalvaDependentes + atenciosamente)
+      : naoLocalizado + atenciosamente;
+    ressalva[3].checked
+      ? (resposta.value = naoLocalizado + ressalvaEscopoInss + atenciosamente)
+      : naoLocalizado + atenciosamente;
+  }
 
-Atenciosamente,
-      `;
-  } else if (situacao[1].checked) {
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar a seguinte situação referente os contratos efetuados entre o segurado ${segurado} e o(s) agente(s) financeiro(s): 
+  //Consignação ativa
+  if (situacao[1].checked) {
+    ressalva[0].checked
+      ? (resposta.value = consignacaoAtiva + atenciosamente)
+      : (resposta.value = consignacaoAtiva + atenciosamente);
+    ressalva[1].checked
+      ? (resposta.value = consignacaoAtiva + ressalvaDadosBancarios + atenciosamente)
+      : consignacaoAtiva + atenciosamente;
+    ressalva[2].checked
+      ? (resposta.value =
+          consignacaoAtiva + ressalvaDependentes + atenciosamente)
+      : consignacaoAtiva + atenciosamente;
+    ressalva[3].checked
+      ? (resposta.value =
+          consignacaoAtiva + ressalvaEscopoInss + atenciosamente)
+      : consignacaoAtiva + atenciosamente;
+  }
 
-           
-Atenciosamente,
-      `;
-  } else if (situacao[2].checked) {
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}. 
-    
-      
-Atenciosamente,
-      `;
-  } else if (situacao[3].checked) {
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme determinação.
-    
+  //Excluído pelo banco
+  if (situacao[2].checked) {
+    ressalva[0].checked
+      ? (resposta.value = excluidoBanco + atenciosamente)
+      : (resposta.value = excluidoBanco + atenciosamente);
+    ressalva[1].checked
+      ? (resposta.value = excluidoBanco + ressalvaDadosBancarios + atenciosamente)
+      : excluidoBanco + atenciosamente;
+    ressalva[2].checked
+      ? (resposta.value = excluidoBanco + ressalvaDependentes + atenciosamente)
+      : excluidoBanco + atenciosamente;
+    ressalva[3].checked
+      ? (resposta.value = excluidoBanco + ressalvaEscopoInss + atenciosamente)
+      : excluidoBanco + atenciosamente;
+  }
 
-Atenciosamente,
+  //Excluído pelo INSS
+  if (situacao[3].checked) {
+    ressalva[0].checked
+      ? (resposta.value = excluidoInss + atenciosamente)
+      : (resposta.value = excluidoInss + atenciosamente);
+    ressalva[1].checked
+      ? (resposta.value = excluidoInss + ressalvaDadosBancarios + atenciosamente)
+      : excluidoInss + atenciosamente;
+    ressalva[2].checked
+      ? (resposta.value = excluidoInss + ressalvaDependentes + atenciosamente)
+      : excluidoInss + atenciosamente;
+    ressalva[3].checked
+      ? (resposta.value = excluidoInss + ressalvaEscopoInss + atenciosamente)
+      : excluidoInss + atenciosamente;
+  }
 
-    `;
-  } else if (situacao[4].checked) {
-    resposta.innerHTML = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do segurado(a) ${segurado}.
-
-Atenciosamente,
-
-   `;
-  } else if (ressalva[0].checked) {
-    resposta.innerHTML += `\n\nRessaltamos que o INSS trata da concessão e manutenção de benefícios previdenciários, não dispondo assim dos detalhes contratuais firmados entre o segurado e o agente bancário responsável pela consignação. 
-            
-      Atenciosamente,
-            `;
-  } else if (ressalva[1].checked) {
-    resposta.innerHTML += `\n\nImportante salientar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.
-
-    Atenciosamente,
-          `;
-  } else if (ressalva[2].checked) {
-    resposta.innerHTML += `\n\nRessaltamos que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.
-            
-      Atenciosamente,
-            `;
+  //Histórico completo
+  if (situacao[4].checked) {
+    ressalva[0].checked
+      ? (resposta.value = historicoCompleto + atenciosamente)
+      : (resposta.value = historicoCompleto + atenciosamente);
+    ressalva[1].checked
+      ? (resposta.value = historicoCompleto + ressalvaDadosBancarios + atenciosamente)
+      : historicoCompleto + atenciosamente;
+    ressalva[2].checked
+      ? (resposta.value =
+          historicoCompleto + ressalvaDependentes + atenciosamente)
+      : historicoCompleto + atenciosamente;
+    ressalva[3].checked
+      ? (resposta.value = historicoCompleto + ressalvaEscopoInss + atenciosamente)
+      : historicoCompleto + atenciosamente;
   }
 }
 
