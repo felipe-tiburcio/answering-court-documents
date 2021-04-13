@@ -351,55 +351,43 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 
   assunto.value = `Ofício - Processo ${processo} - ${nome}`;
 
+  //Se a situação dos resíduos for normal, verificam-se as ressalvas e sem tem 13º.
   if (situacao[0].checked) {
+    
     //Seleção das ressalvas
     if (ressalvas[0].checked) {
-      if (situacao13[0].checked) {
-        resposta.value = respostaCalculosCom13 + atenciosamente;
-      } else {
-        resposta.value = respostaCalculosSem13 + atenciosamente;
-      }
-    } else if (ressalvas[1].checked) {
-      if (situacao13[0].checked) {
-        resposta.value = respostaCalculosCom13 + acertoContas + atenciosamente;
-      } else {
-        resposta.value = respostaCalculosSem13 + acertoContas + atenciosamente;
-      }
-    } else if (ressalvas[2].checked) {
-      if (situacao13[0].checked) {
-        resposta.value =
-          respostaCalculosCom13 + cadastroDependentes + atenciosamente;
-      } else {
-        resposta.value =
-          respostaCalculosSem13 + cadastroDependentes + atenciosamente;
-      }
-    } else if (ressalvas[3].checked) {
-      if (situacao13[0].checked) {
-        resposta.value = respostaCalculosCom13 + escopoInss + atenciosamente;
-      } else {
-        resposta.value = respostaCalculosSem13 + escopoInss + atenciosamente;
-      }
-    } else if (ressalvas[4].checked) {
-      if (situacao13[0].checked) {
-        resposta.value =
-          respostaCalculosCom13 + dadosBancarios + atenciosamente;
-      } else {
-        resposta.value =
-          respostaCalculosSem13 + dadosBancarios + atenciosamente;
-      }
-    } else if (ressalvas[5].checked) {
-      if (situacao13[0].checked) {
-        resposta.value = respostaCalculosCom13 + mob + atenciosamente;
-      } else {
-        resposta.value = respostaCalculosSem13 + mob + atenciosamente;
-      }
+      situacao13[0].checked ? resposta.value = respostaCalculosCom13 + atenciosamente : resposta.value = respostaCalculosSem13 + atenciosamente;
     }
+
+    if (ressalvas[1].checked) {
+        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + acertoContas + atenciosamente : resposta.value = respostaCalculosSem13 + acertoContas + atenciosamente;
+    } 
+    
+    if (ressalvas[2].checked) {
+        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + cadastroDependentes + atenciosamente : resposta.value = respostaCalculosSem13 + cadastroDependentes + atenciosamente;
+    }
+
+    if (ressalvas[3].checked) {
+        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + escopoInss + atenciosamente : resposta.value =          respostaCalculosSem13 + escopoInss + atenciosamente;
+    } 
+    
+    if (ressalvas[4].checked) {
+        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + dadosBancarios + atenciosamente : resposta.value =           respostaCalculosSem13 + dadosBancarios + atenciosamente;
+    } 
+    
+    if (ressalvas[5].checked) {
+        situacao13[0].checked ? resposta.value = respostaCalculosCom13 + mob + atenciosamente : resposta.value = respostaCalculosSem13 + mob + atenciosamente;
+    }
+
+  //Situações em que não tem resíduos. Diferente do estado "normal".    
   } else if (situacao[1].checked) {
-    resposta.value = naoLocalizado + atenciosamente;
+      resposta.value = naoLocalizado + atenciosamente;
+
   } else if (situacao[2].checked) {
-    resposta.value = semBeneficio + atenciosamente;
+      resposta.value = semBeneficio + atenciosamente;
+      
   } else if (situacao[3].checked) {
-    resposta.value = semResiduos + atenciosamente;
+      resposta.value = semResiduos + atenciosamente;
   }
 }
 
