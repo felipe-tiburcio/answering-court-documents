@@ -355,277 +355,282 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
   if (situacao[0].checked) {
     //Seleção das ressalvas
     if (ressalvas[0].checked) {
-      situacao13[0].checked
-        ? (resposta.value = respostaCalculosCom13 + atenciosamente)
-        : (resposta.value = respostaCalculosSem13 + atenciosamente);
+      resposta.value = situacao13[0].checked
+        ? respostaCalculosCom13 + atenciosamente
+        : respostaCalculosSem13 + atenciosamente;
     }
 
     if (ressalvas[1].checked) {
-      situacao13[0].checked
-        ? (resposta.value =
-            respostaCalculosCom13 + acertoContas + atenciosamente)
-        : (resposta.value =
-            respostaCalculosSem13 + acertoContas + atenciosamente);
+      resposta.value = situacao13[0].checked
+        ? respostaCalculosCom13 + acertoContas + atenciosamente
+        : respostaCalculosSem13 + acertoContas + atenciosamente;
     }
 
     if (ressalvas[2].checked) {
-      situacao13[0].checked
-        ? (resposta.value =
-            respostaCalculosCom13 + cadastroDependentes + atenciosamente)
-        : (resposta.value =
-            respostaCalculosSem13 + cadastroDependentes + atenciosamente);
+      resposta.value = situacao13[0].checked
+        ? respostaCalculosCom13 + cadastroDependentes + atenciosamente
+        : respostaCalculosSem13 + cadastroDependentes + atenciosamente;
     }
 
     if (ressalvas[3].checked) {
-      situacao13[0].checked
-        ? (resposta.value = respostaCalculosCom13 + escopoInss + atenciosamente)
-        : (resposta.value =
-            respostaCalculosSem13 + escopoInss + atenciosamente);
+      resposta.value = situacao13[0].checked
+        ? respostaCalculosCom13 + escopoInss + atenciosamente
+        : respostaCalculosSem13 + escopoInss + atenciosamente;
     }
 
     if (ressalvas[4].checked) {
-      situacao13[0].checked
-        ? (resposta.value =
-            respostaCalculosCom13 + dadosBancarios + atenciosamente)
-        : (resposta.value =
-            respostaCalculosSem13 + dadosBancarios + atenciosamente);
+      resposta.value = situacao13[0].checked
+        ? respostaCalculosCom13 + dadosBancarios + atenciosamente
+        : respostaCalculosSem13 + dadosBancarios + atenciosamente;
     }
 
     if (ressalvas[5].checked) {
-      situacao13[0].checked
-        ? (resposta.value = respostaCalculosCom13 + mob + atenciosamente)
-        : (resposta.value = respostaCalculosSem13 + mob + atenciosamente);
+      resposta.value = situacao13[0].checked
+        ? respostaCalculosCom13 + mob + atenciosamente
+        : respostaCalculosSem13 + mob + atenciosamente;
     }
 
     //Situações em que não tem resíduos. Diferente do estado "normal".
-  } else if (situacao[1].checked) {
-    resposta.value = naoLocalizado + atenciosamente;
-  } else if (situacao[2].checked) {
-    resposta.value = semBeneficio + atenciosamente;
-  } else if (situacao[3].checked) {
-    resposta.value = semResiduos + atenciosamente;
-  }
-}
+    if (situacao[1].checked) {
+      resposta.value = naoLocalizado + atenciosamente;
+    }
 
-// Final da página de Resíduos
+    if (situacao[2].checked) {
+      resposta.value = semBeneficio + atenciosamente;
+    }
 
-// Início da página de Consignações
-
-function resposta_consignacoes() {
-  let processo = document.querySelector("#consignacoes_processo").value;
-
-  let segurado = document.querySelector("#consignacoes_nome").value;
-
-  // let consignacoes = document.querySelector("#situacaoConsignacao").value;
-
-  let situacao = document.getElementsByClassName("radio_consignacoes");
-
-  let ressalva = document.getElementsByClassName("ressalvaConsignacoes");
-
-  let resposta = document.querySelector("#consignacoes_textarea");
-
-  let assunto = document.getElementById("consignacoes_assunto_email");
-
-  //Respostas salvas em variáveis
-
-  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.`;
-
-  const consignacaoAtiva = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar a seguinte situação referente os contratos efetuados entre o segurado ${segurado} e o(s) agente(s) financeiro(s)`;
-
-  const excluidoBanco = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}`;
-
-  const excluidoInss = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme determinação.`;
-
-  const historicoCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do segurado(a) ${segurado}.`;
-
-  const ressalvaDadosBancarios = `\n\nRessaltamos que o INSS trata da concessão e manutenção de benefícios previdenciários, não dispondo assim dos detalhes contratuais firmados entre o segurado e o agente bancário responsável pela consignação.`;
-
-  const ressalvaDependentes = `\n\nImportante salientar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.`;
-
-  const ressalvaEscopoInss = `\n\nRessaltamos que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`;
-
-  const atenciosamente = `\n\nAtenciosamente,`;
-
-  assunto.value = `Ofício - Processo ${processo} - ${segurado}`;
-
-  //Segurado não-localizado
-  if (situacao[0].checked) {
-    ressalva[0].checked
-      ? (resposta.value = naoLocalizado + atenciosamente)
-      : (resposta.value = naoLocalizado + atenciosamente);
-    ressalva[1].checked
-      ? (resposta.value = naoLocalizado + ressalvaDadosBancarios + atenciosamente)
-      : naoLocalizado + atenciosamente;
-    ressalva[2].checked
-      ? (resposta.value = naoLocalizado + ressalvaDependentes + atenciosamente)
-      : naoLocalizado + atenciosamente;
-    ressalva[3].checked
-      ? (resposta.value = naoLocalizado + ressalvaEscopoInss + atenciosamente)
-      : naoLocalizado + atenciosamente;
+    if (situacao[3].checked) {
+      resposta.value = semResiduos + atenciosamente;
+    }
   }
 
-  //Consignação ativa
-  if (situacao[1].checked) {
-    ressalva[0].checked
-      ? (resposta.value = consignacaoAtiva + atenciosamente)
-      : (resposta.value = consignacaoAtiva + atenciosamente);
-    ressalva[1].checked
-      ? (resposta.value = consignacaoAtiva + ressalvaDadosBancarios + atenciosamente)
-      : consignacaoAtiva + atenciosamente;
-    ressalva[2].checked
-      ? (resposta.value =
-          consignacaoAtiva + ressalvaDependentes + atenciosamente)
-      : consignacaoAtiva + atenciosamente;
-    ressalva[3].checked
-      ? (resposta.value =
-          consignacaoAtiva + ressalvaEscopoInss + atenciosamente)
-      : consignacaoAtiva + atenciosamente;
+  // Final da página de Resíduos
+
+  // Início da página de Consignações
+
+  function resposta_consignacoes() {
+    let processo = document.querySelector("#consignacoes_processo").value;
+
+    let segurado = document.querySelector("#consignacoes_nome").value;
+
+    // let consignacoes = document.querySelector("#situacaoConsignacao").value;
+
+    let situacao = document.getElementsByClassName("radio_consignacoes");
+
+    let ressalva = document.getElementsByClassName("ressalvaConsignacoes");
+
+    let resposta = document.querySelector("#consignacoes_textarea");
+
+    let assunto = document.getElementById("consignacoes_assunto_email");
+
+    //Respostas salvas em variáveis
+
+    const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.`;
+
+    const consignacaoAtiva = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar a seguinte situação referente os contratos efetuados entre o segurado ${segurado} e o(s) agente(s) financeiro(s)`;
+
+    const excluidoBanco = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}`;
+
+    const excluidoInss = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme determinação.`;
+
+    const historicoCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do segurado(a) ${segurado}.`;
+
+    const ressalvaDadosBancarios = `\n\nRessaltamos que o INSS trata da concessão e manutenção de benefícios previdenciários, não dispondo assim dos detalhes contratuais firmados entre o segurado e o agente bancário responsável pela consignação.`;
+
+    const ressalvaDependentes = `\n\nImportante salientar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.`;
+
+    const ressalvaEscopoInss = `\n\nRessaltamos que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`;
+
+    const atenciosamente = `\n\nAtenciosamente,`;
+
+    assunto.value = `Ofício - Processo ${processo} - ${segurado}`;
+
+    //Segurado não-localizado
+    if (situacao[0].checked) {
+      ressalva[0].checked
+        ? (resposta.value = naoLocalizado + atenciosamente)
+        : (resposta.value = naoLocalizado + atenciosamente);
+      ressalva[1].checked
+        ? (resposta.value =
+            naoLocalizado + ressalvaDadosBancarios + atenciosamente)
+        : naoLocalizado + atenciosamente;
+      ressalva[2].checked
+        ? (resposta.value =
+            naoLocalizado + ressalvaDependentes + atenciosamente)
+        : naoLocalizado + atenciosamente;
+      ressalva[3].checked
+        ? (resposta.value = naoLocalizado + ressalvaEscopoInss + atenciosamente)
+        : naoLocalizado + atenciosamente;
+    }
+
+    //Consignação ativa
+    if (situacao[1].checked) {
+      ressalva[0].checked
+        ? (resposta.value = consignacaoAtiva + atenciosamente)
+        : (resposta.value = consignacaoAtiva + atenciosamente);
+      ressalva[1].checked
+        ? (resposta.value =
+            consignacaoAtiva + ressalvaDadosBancarios + atenciosamente)
+        : consignacaoAtiva + atenciosamente;
+      ressalva[2].checked
+        ? (resposta.value =
+            consignacaoAtiva + ressalvaDependentes + atenciosamente)
+        : consignacaoAtiva + atenciosamente;
+      ressalva[3].checked
+        ? (resposta.value =
+            consignacaoAtiva + ressalvaEscopoInss + atenciosamente)
+        : consignacaoAtiva + atenciosamente;
+    }
+
+    //Excluído pelo banco
+    if (situacao[2].checked) {
+      ressalva[0].checked
+        ? (resposta.value = excluidoBanco + atenciosamente)
+        : (resposta.value = excluidoBanco + atenciosamente);
+      ressalva[1].checked
+        ? (resposta.value =
+            excluidoBanco + ressalvaDadosBancarios + atenciosamente)
+        : excluidoBanco + atenciosamente;
+      ressalva[2].checked
+        ? (resposta.value =
+            excluidoBanco + ressalvaDependentes + atenciosamente)
+        : excluidoBanco + atenciosamente;
+      ressalva[3].checked
+        ? (resposta.value = excluidoBanco + ressalvaEscopoInss + atenciosamente)
+        : excluidoBanco + atenciosamente;
+    }
+
+    //Excluído pelo INSS
+    if (situacao[3].checked) {
+      ressalva[0].checked
+        ? (resposta.value = excluidoInss + atenciosamente)
+        : (resposta.value = excluidoInss + atenciosamente);
+      ressalva[1].checked
+        ? (resposta.value =
+            excluidoInss + ressalvaDadosBancarios + atenciosamente)
+        : excluidoInss + atenciosamente;
+      ressalva[2].checked
+        ? (resposta.value = excluidoInss + ressalvaDependentes + atenciosamente)
+        : excluidoInss + atenciosamente;
+      ressalva[3].checked
+        ? (resposta.value = excluidoInss + ressalvaEscopoInss + atenciosamente)
+        : excluidoInss + atenciosamente;
+    }
+
+    //Histórico completo
+    if (situacao[4].checked) {
+      ressalva[0].checked
+        ? (resposta.value = historicoCompleto + atenciosamente)
+        : (resposta.value = historicoCompleto + atenciosamente);
+      ressalva[1].checked
+        ? (resposta.value =
+            historicoCompleto + ressalvaDadosBancarios + atenciosamente)
+        : historicoCompleto + atenciosamente;
+      ressalva[2].checked
+        ? (resposta.value =
+            historicoCompleto + ressalvaDependentes + atenciosamente)
+        : historicoCompleto + atenciosamente;
+      ressalva[3].checked
+        ? (resposta.value =
+            historicoCompleto + ressalvaEscopoInss + atenciosamente)
+        : historicoCompleto + atenciosamente;
+    }
   }
 
-  //Excluído pelo banco
-  if (situacao[2].checked) {
-    ressalva[0].checked
-      ? (resposta.value = excluidoBanco + atenciosamente)
-      : (resposta.value = excluidoBanco + atenciosamente);
-    ressalva[1].checked
-      ? (resposta.value = excluidoBanco + ressalvaDadosBancarios + atenciosamente)
-      : excluidoBanco + atenciosamente;
-    ressalva[2].checked
-      ? (resposta.value = excluidoBanco + ressalvaDependentes + atenciosamente)
-      : excluidoBanco + atenciosamente;
-    ressalva[3].checked
-      ? (resposta.value = excluidoBanco + ressalvaEscopoInss + atenciosamente)
-      : excluidoBanco + atenciosamente;
-  }
+  //Final da página de Consignações
 
-  //Excluído pelo INSS
-  if (situacao[3].checked) {
-    ressalva[0].checked
-      ? (resposta.value = excluidoInss + atenciosamente)
-      : (resposta.value = excluidoInss + atenciosamente);
-    ressalva[1].checked
-      ? (resposta.value = excluidoInss + ressalvaDadosBancarios + atenciosamente)
-      : excluidoInss + atenciosamente;
-    ressalva[2].checked
-      ? (resposta.value = excluidoInss + ressalvaDependentes + atenciosamente)
-      : excluidoInss + atenciosamente;
-    ressalva[3].checked
-      ? (resposta.value = excluidoInss + ressalvaEscopoInss + atenciosamente)
-      : excluidoInss + atenciosamente;
-  }
+  //Início da página de Pensão Alimentícia
 
-  //Histórico completo
-  if (situacao[4].checked) {
-    ressalva[0].checked
-      ? (resposta.value = historicoCompleto + atenciosamente)
-      : (resposta.value = historicoCompleto + atenciosamente);
-    ressalva[1].checked
-      ? (resposta.value = historicoCompleto + ressalvaDadosBancarios + atenciosamente)
-      : historicoCompleto + atenciosamente;
-    ressalva[2].checked
-      ? (resposta.value =
-          historicoCompleto + ressalvaDependentes + atenciosamente)
-      : historicoCompleto + atenciosamente;
-    ressalva[3].checked
-      ? (resposta.value = historicoCompleto + ressalvaEscopoInss + atenciosamente)
-      : historicoCompleto + atenciosamente;
-  }
-}
+  function respostaPA() {
+    const processo = document.querySelector("#pa_processo").value;
 
-//Final da página de Consignações
+    const instituidor = document.querySelector("#nome_inst").value;
 
-//Início da página de Pensão Alimentícia
+    const dependente1 = document.querySelector("#nome_dep_1").value;
 
-function respostaPA() {
-  const processo = document.querySelector("#pa_processo").value;
+    const tarefa = document.querySelector("#pa_tarefa").value;
 
-  const instituidor = document.querySelector("#nome_inst").value;
+    const situacao = document.getElementsByClassName("radio_pa");
 
-  const dependente1 = document.querySelector("#nome_dep_1").value;
+    const nbImplantado = document.querySelector("#pa_nbImplantado").value;
 
-  const tarefa = document.querySelector("#pa_tarefa").value;
+    //variáveis relacionadas à parte das respostas
+    const resposta = document.getElementById("pa_textarea");
 
-  const situacao = document.getElementsByClassName("radio_pa");
+    const assunto = document.getElementById("pa_assunto_email");
 
-  const nbImplantado = document.querySelector("#pa_nbImplantado").value;
-
-  //variáveis relacionadas à parte das respostas
-  const resposta = document.getElementById("pa_textarea");
-
-  const assunto = document.getElementById("pa_assunto_email");
-
-  const atenciosamente = `Atenciosamente, 
+    const atenciosamente = `Atenciosamente, 
   `;
 
-  //Frases em variáveis para melhor organização;
+    //Frases em variáveis para melhor organização;
 
-  const faltaCpfTitular = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que não foi possível realizar a abertura da tarefa para implantação da referida Pensão Alimentícia no benefício do instituidor ${instituidor}, tendo em vista que é obrigatório informar o número de CPF do titular ${dependente1}. 
+    const faltaCpfTitular = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que não foi possível realizar a abertura da tarefa para implantação da referida Pensão Alimentícia no benefício do instituidor ${instituidor}, tendo em vista que é obrigatório informar o número de CPF do titular ${dependente1}. 
   
 Sendo assim, solicitamos que, se possível, este dado seja enviado para este e-mail para que a presente demanda possa ser cumprida de forma mais célere. \n\n${atenciosamente}`;
 
-  const faltaOutraCoisa = `Falta outra coisa`;
+    const faltaOutraCoisa = `Falta outra coisa`;
 
-  const faltaOutraOutraCoisa = `Falta outra outra coisa`;
+    const faltaOutraOutraCoisa = `Falta outra outra coisa`;
 
-  const ddb = document.querySelector("#pa_ddb").value;
+    const ddb = document.querySelector("#pa_ddb").value;
 
-  const tarefaAberta = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que foi aberta a tarefa de nº ${tarefa} para implantação da referida Pensão Alimentícia. O andamento deste protocolo poderá ser acompanhado pelo(s) interessado(s) através do site gov.br/inss, do aplicativo 'Meu INSS' ou através do telefone 135.`;
+    const tarefaAberta = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que foi aberta a tarefa de nº ${tarefa} para implantação da referida Pensão Alimentícia. O andamento deste protocolo poderá ser acompanhado pelo(s) interessado(s) através do site gov.br/inss, do aplicativo 'Meu INSS' ou através do telefone 135.`;
 
-  const paJaImplantada = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que a referida Pensão Alimentícia no benefício do instituidor ${instituidor} foi implantada sob o número ${nbImplantado} desde ${ddb} conforme informações constantes no relatório anexo. \n\n${atenciosamente}`;
+    const paJaImplantada = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que a referida Pensão Alimentícia no benefício do instituidor ${instituidor} foi implantada sob o número ${nbImplantado} desde ${ddb} conforme informações constantes no relatório anexo. \n\n${atenciosamente}`;
 
-  const implantadaAgora = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que a referida Pensão Alimentícia foi implantada agora...`;
+    const implantadaAgora = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que a referida Pensão Alimentícia foi implantada agora...`;
 
-  const outraSituacao = `Outra situação`;
+    const outraSituacao = `Outra situação`;
 
-  assunto.innerHTML = `Ofício - Processo ${processo} - ${instituidor}`;
+    assunto.innerHTML = `Ofício - Processo ${processo} - ${instituidor}`;
 
-  // Fim das frases - Início dos radios inputs
+    // Fim das frases - Início dos radios inputs
 
-  if (situacao[0].checked) {
-    resposta.innerHTML = faltaCpfTitular;
-  } else if (situacao[1].checked) {
-    resposta.innerHTML = faltaOutraCoisa;
-  } else if (situacao[2].checked) {
-    resposta.innerHTML = faltaOutraOutraCoisa;
-  } else if (situacao[3].checked) {
-    resposta.innerHTML = tarefaAberta;
-  } else if (situacao[4].checked) {
-    resposta.innerHTML = paJaImplantada;
-  } else if (situacao[5].checked) {
-    resposta.innerHTML = implantadaAgora;
-  } else if (situacao[6].checked) {
-    resposta.innerHTML = outraSituacao;
+    if (situacao[0].checked) {
+      resposta.innerHTML = faltaCpfTitular;
+    } else if (situacao[1].checked) {
+      resposta.innerHTML = faltaOutraCoisa;
+    } else if (situacao[2].checked) {
+      resposta.innerHTML = faltaOutraOutraCoisa;
+    } else if (situacao[3].checked) {
+      resposta.innerHTML = tarefaAberta;
+    } else if (situacao[4].checked) {
+      resposta.innerHTML = paJaImplantada;
+    } else if (situacao[5].checked) {
+      resposta.innerHTML = implantadaAgora;
+    } else if (situacao[6].checked) {
+      resposta.innerHTML = outraSituacao;
+    }
+
+    // Fim dos radio inputs
   }
 
-  // Fim dos radio inputs
-}
+  //Final da página de P.A
 
-//Final da página de P.A
+  //Início do Script de Mandado de Segurança
 
-//Início do Script de Mandado de Segurança
+  function resposta_ms() {
+    const nome = document.querySelector("#ms_nome").value;
 
-function resposta_ms() {
-  const nome = document.querySelector("#ms_nome").value;
+    const beneficio = document.querySelector("#ms_nb").value;
 
-  const beneficio = document.querySelector("#ms_nb").value;
+    const situacao = document.getElementsByClassName("radio_ms");
 
-  const situacao = document.getElementsByClassName("radio_ms");
+    const dataAgendamento = document
+      .getElementById("ms_agendamento")
+      .value.split("-")
+      .reverse()
+      .join("/");
 
-  const dataAgendamento = document
-    .getElementById("ms_agendamento")
-    .value.split("-")
-    .reverse()
-    .join("/");
+    const horaAgendamento = document.querySelector("#ms_horario").value;
 
-  const horaAgendamento = document.querySelector("#ms_horario").value;
+    const aps = document.querySelector("#ms_aps").value;
 
-  const aps = document.querySelector("#ms_aps").value;
+    const resposta = document.querySelector("#ms_textarea");
 
-  const resposta = document.querySelector("#ms_textarea");
+    //Respostas em variáveis para melhor organização
 
-  //Respostas em variáveis para melhor organização
-
-  const erroPP = `Encaminhamento de determinação judicial para cumprimento.
+    const erroPP = `Encaminhamento de determinação judicial para cumprimento.
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome} que não conseguiu realizar o agendamento de Perícia de Prorrogação dentro do prazo e teve seu benefício nº ${beneficio} indevidamente cessado. 
     
@@ -633,7 +638,7 @@ function resposta_ms() {
     
 3. O benefício foi reativado e já consta o cálculo dos pagamentos pendentes conforme relatório anexo.`;
 
-  const finalizarAnalise = `Encaminhamento de determinação judicial para cumprimento.
+    const finalizarAnalise = `Encaminhamento de determinação judicial para cumprimento.
 
 1. Trata-se de Mandado de Segurança determinando a finalização da análise do benefício 7090285392 em até 30 dias após o cumprimento das exigências por parte do(a) segurado(a) Eliana dos Santos Franca.  
 
@@ -645,13 +650,13 @@ function resposta_ms() {
 
 5. Importante ressaltar a ciência do(a) segurado(a) e/ou seu procurador, tendo em vista os constantes acessos ao processo digital registrados no sistema GET.`;
 
-  const informacoesDossie = `Encaminhamento de determinação judicial para cumprimento.
+    const informacoesDossie = `Encaminhamento de determinação judicial para cumprimento.
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome} e que determina a notificação do INSS para que sejam apresentadas informações que entender necessárias.
 
 2. Sem mais a acrescentar, encaminhamos relatório anexo com consultas diversas aos sistemas do INSS referente a situação relatada.`;
 
-  const analiseMedica = `Encaminhamento de determinação judicial para cumprimento.
+    const analiseMedica = `Encaminhamento de determinação judicial para cumprimento.
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome}. 
     
@@ -661,7 +666,7 @@ function resposta_ms() {
 
 4. Com a cessação do benefício, o segurado tem prazo de 30 dias de prazo para entrar com Recurso Administrativo contra a decisão e/ou terá que aguardar 30 dias para realizar um novo requerimento de benefício.`;
 
-  const bpcDemora = `Encaminhamento de determinação judicial para cumprimento.
+    const bpcDemora = `Encaminhamento de determinação judicial para cumprimento.
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome}. 
     
@@ -669,74 +674,75 @@ function resposta_ms() {
 
 3. Existe o registro no processo, que devido à falta de vagas, não foi possível marcar a Perícia Médica para o mesmo dia da Avaliação Social. Por isso o servidor orienta que seja solicitado ao Assistente Social, no dia da Avaliação Social, para que seja feito o agendamento de Perícia Médica do(a) segurado(a).`;
 
-  const outraSituacao = `Outra situação`;
+    const outraSituacao = `Outra situação`;
 
-  //Fim das frases - começo da lógica
+    //Fim das frases - começo da lógica
 
-  if (situacao[0].checked) {
-    resposta.value = erroPP;
-  } else if (situacao[1].checked) {
-    resposta.value = finalizarAnalise;
-  } else if (situacao[2].checked) {
-    resposta.value = informacoesDossie;
-  } else if (situacao[3].checked) {
-    resposta.value = analiseMedica;
-  } else if (situacao[4].checked) {
-    resposta.value = bpcDemora;
-  } else if (situacao[5].checked) {
-    resposta.value = outraSituacao;
+    if (situacao[0].checked) {
+      resposta.value = erroPP;
+    } else if (situacao[1].checked) {
+      resposta.value = finalizarAnalise;
+    } else if (situacao[2].checked) {
+      resposta.value = informacoesDossie;
+    } else if (situacao[3].checked) {
+      resposta.value = analiseMedica;
+    } else if (situacao[4].checked) {
+      resposta.value = bpcDemora;
+    } else if (situacao[5].checked) {
+      resposta.value = outraSituacao;
+    }
+  }
+
+  //Final de Mandado de Segurança
+
+  //Início da página de Protocolo
+
+  function resposta_protocolo() {
+    const processo = document.querySelector("#protocolo_processo").value;
+
+    const nome = document.querySelector("#protocolo_nome").value;
+
+    const radios = document.querySelectorAll(".radio_protocolo");
+
+    //Variáveis com os textos das respostas
+    const resposta_dossie = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando cópia/dossiê relativo ao segurado ${nome} conforme determinação.`;
+
+    const resposta_em_andamento = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} está em andamento.`;
+
+    const resposta_exigencia = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} está em exigência.`;
+
+    const resposta_deferido = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} foi deferido.`;
+
+    const resposta_indeferido = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} foi indeferido.`;
+
+    const ressalva1 = `\n\nImportante ressaltar que esta é a ressalva 1.`;
+
+    const ressalva2 = `\n\nImportante ressaltar que esta é a ressalva 2.`;
+
+    const assunto = document.querySelector("#assunto_email");
+
+    assunto.innerHTML = `Ofício - Processo ${processo} - ${nome}`;
+
+    const textarea = document.querySelector("#protocolo_textarea");
+
+    if (radios[1].checked) {
+      textarea.innerHTML = resposta_dossie;
+    } else if (radios[2].checked) {
+      textarea.innerHTML = resposta_em_andamento;
+    } else if (radios[3].checked) {
+      textarea.innerHTML = resposta_exigencia;
+    } else if (radios[4].checked) {
+      textarea.innerHTML = resposta_deferido;
+    } else if (radios[5].checked) {
+      textarea.innerHTML = resposta_indeferido;
+    }
+
+    if (radios[6].checked) {
+      textarea.innerHTML += ressalva1;
+    } else if (radios[7].checked) {
+      textarea.innerHTML += ressalva2;
+    }
+
+    // Fim da página de Procotolo
   }
 }
-
-//Final de Mandado de Segurança
-
-//Início da página de Protocolo
-
-function resposta_protocolo() {
-  const processo = document.querySelector("#protocolo_processo").value;
-
-  const nome = document.querySelector("#protocolo_nome").value;
-
-  const radios = document.querySelectorAll(".radio_protocolo");
-
-  //Variáveis com os textos das respostas
-  const resposta_dossie = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando cópia/dossiê relativo ao segurado ${nome} conforme determinação.`;
-
-  const resposta_em_andamento = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} está em andamento.`;
-
-  const resposta_exigencia = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} está em exigência.`;
-
-  const resposta_deferido = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} foi deferido.`;
-
-  const resposta_indeferido = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} foi indeferido.`;
-
-  const ressalva1 = `\n\nImportante ressaltar que esta é a ressalva 1.`;
-
-  const ressalva2 = `\n\nImportante ressaltar que esta é a ressalva 2.`;
-
-  const assunto = document.querySelector("#assunto_email");
-
-  assunto.innerHTML = `Ofício - Processo ${processo} - ${nome}`;
-
-  const textarea = document.querySelector("#protocolo_textarea");
-
-  if (radios[1].checked) {
-    textarea.innerHTML = resposta_dossie;
-  } else if (radios[2].checked) {
-    textarea.innerHTML = resposta_em_andamento;
-  } else if (radios[3].checked) {
-    textarea.innerHTML = resposta_exigencia;
-  } else if (radios[4].checked) {
-    textarea.innerHTML = resposta_deferido;
-  } else if (radios[5].checked) {
-    textarea.innerHTML = resposta_indeferido;
-  }
-
-  if (radios[6].checked) {
-    textarea.innerHTML += ressalva1;
-  } else if (radios[7].checked) {
-    textarea.innerHTML += ressalva2;
-  }
-}
-
-// Fim da página de Procotolo
