@@ -122,8 +122,10 @@ textarea:focus {
 }
 
 .black_subtitles {
+  
   margin-left: 180px;
   font-weight: bold;
+  /* border: 2px solid pink; */
 }
 
 .label_inputs {
