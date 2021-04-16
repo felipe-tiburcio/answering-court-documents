@@ -12,7 +12,7 @@
   <form>
   <header>
     <div class="header_1">
-      <h2 class="nome_secao">Protocolo/Requerimento</h2>
+      <h2 class="nome_secao">Protocolo/Cópia</h2>
     </div>
 
     <div id="nav" class="header_2">
@@ -22,7 +22,7 @@
         <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
         <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
         <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
-        <a href="protocolo.html" class="links_topo"><li>Protocolo/Requerimento</li></a>
+        <a href="protocolo.html" class="links_topo"><li>Protocolo/Cópia</li></a>
         <a href="ms.html" class="links_topo"><li>Mandado de Segurança</li></a>
         <a href="sei.html" class="links_topo"><li>SEI</li></a>
       </ul>
@@ -38,7 +38,23 @@
         <input id="vinculos_orgao" class="inputs_geral"><br>
         
         <label for="vinculos_cidade" class="label_inputs">Cidade:</label>
-        <input id="vinculos_cidade" class="inputs_geral" placeholder="Cidade"><br>
+        <select id="vinculos_cidade" class="inputs_geral">
+            <option selected>Aracaju</option>
+            <option>N. Sra. do Socorro</option>
+            <option>Barra dos Coqueiros</option>
+            <option>São Cristóvão</option>
+            <option>Itaporanga</option>
+            <option>Carmópolis</option>
+            <option>Maruim</option>
+            <option>Santo Amaro das Brotas</option>
+            <option>Pirambu</option>
+            <option>Laranjeiras</option>
+            <option>Itabaiana</option>
+            <option>Outra Cidade</option>
+            
+        </select>
+
+        <br>
         
         <label for="protocolo_processo" class="label_inputs">Processo:</label>
         <input id="protocolo_processo" class="inputs_geral" placeholder="Número do Processo"><br>
@@ -97,10 +113,15 @@
       
       <!--Seleção da situação do vínculo-->
       <h3 class="black_subtitles" id="protocoloSituacao">Situação:</h3>
-      <div class="radio_protocolo">
+      <div>
 
+        <input id="radio_0" type="radio" name="radio" class="radio_protocolo">
+        <label for="radio_0">Cópia/Dossiê</label>
+        
+        <br>
+        
         <input id="radio_1" type="radio" name="radio" class="radio_protocolo">
-        <label for="radio_1">Cópia/Dossiê</label>
+        <label for="radio_1">Relatórios de Perícia</label>
         
         <br>
         
