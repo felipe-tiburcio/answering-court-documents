@@ -154,7 +154,7 @@ function resposta_dependentes() {
 
   const segurado = document.querySelector("#dependentes_segurado_nome").value;
 
-  const situacao = document.getElementsByClassName("radio");
+  const situacao = document.getElementsByClassName("depRadioInputs");
 
   const resposta = document.getElementById("dependentes_resposta");
 

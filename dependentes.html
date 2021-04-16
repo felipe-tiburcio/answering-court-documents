@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYNPq2L2nk9pq77oOAe15JFG9zpgELtqhBew&usqp=CAUfavicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <title>Dependentes</title>
 </head>
@@ -30,11 +29,11 @@
 
     <div class="solicitante_container">
       
-      <a href="#dependentes_segurado_nome" class="scroll">&#x25BC</a><br>
+      <a href="#dependentes_segurado_nome" class="scroll">&#x25BC</a>
         
       <h4 class="black_subtitles">Solicitante</h4>
         <label for="dependentes_orgao" class="label_inputs">Órgão:</label>
-        <input id="dependentes_orgao" value="TJ" class="inputs_geral">
+        <input id="dependentes_orgao" class="inputs_geral">
 
         <br>
         
@@ -65,6 +64,8 @@
         <label for="dependentes_email" class="label_inputs">E-mail:</label>
         <input id="dependentes_email" class="inputs_geral" placeholder="E-mail">
     </div>
+
+    <br>
     
     <h4 class="black_subtitles">Assunto</h4>
 
@@ -93,6 +94,8 @@
         <input id="checkbox5"type="checkbox">
         <label for="checkbox5">Outra coisa</label>
     </div>
+
+    <br>
     
     <div id="dependentes_segurado_container">
         <h4 class="black_subtitles">Segurado</h4>       
@@ -117,8 +120,40 @@
           <label for="dependentes_segurado_pis" class="label_inputs">NIT/PIS:</label>
           <input type="text" min="0" id="dependentes_segurado_pis"  class="inputs_geral" placeholder="NIT/PIS/PASEP">
 
-          <a href="#nav" class="scroll">&#x25B2</a><br>
-          <a href="#dependentes_resposta" class="scroll">&#x25BC</a><br>
+          <br>
+          <br>
+
+          <a href="#nav" class="scroll">&#x25B2</a>
+          <a href="#dependentes_resposta" class="scroll">&#x25BC</a>
+
+          <div id="">
+            <h4 class="black_subtitles">Dependentes</h4>
+            <label for="nb1_dependentes" class="label_inputs">NB 1:</label>
+            
+            <input id="nb1_dependentes" type="text" class="inputs_geral" placeholder="Número do Benefício 1"><br>
+            
+            <label for="nb2_dependentes" class="label_inputs">NB 2:</label>
+            
+            <input id="nb2_dependentes" type="text" class="inputs_geral" placeholder="Número do Benefício 2"><br>
+            
+            <label for="nb3_dependentes" class="label_inputs">NB 3:</label>
+            
+            <input id="nb3_dependentes" type="text" class="inputs_geral" placeholder="Número do Benefício 3"><br>
+            
+            <label for="nb4_dependentes" class="label_inputs">NB 4:</label>
+            
+            <input id="nb4_dependentes" type="text" class="inputs_geral" placeholder="Número do Benefício 4"><br>
+            
+        <div id="text_area_container">
+          <textarea class="dependentes_textarea" cols="60" rows="8" placeholder="Colar os dados do DEPEND do PLENUS"></textarea>
+    
+        </div> 
+        
+        <br>
+
+          
+
+          <h4 class="black_subtitles">Dados do Óbito</h4>
           
           <label class="label_inputs" id="dependentes_segurado_data_obito">Óbito:</label>
           <input type="text" id="dependentes_segurado_data_obito" class="inputs_geral" placeholder="Data de Óbito"><br>
@@ -141,30 +176,7 @@
       
       <br>
       
-      <div id="">
-        <h4 class="black_subtitles">Dependentes</h4>
-        <label for "nb1_dependentes" class="label_inputs">NB 1:</label>
-        
-        <input type="text" class="inputs_geral" placeholder="Número do Benefício 1"><br>
-        
-        <label for "nb2_dependentes" class="label_inputs">NB 2:</label>
-        
-        <input type="text" class="inputs_geral" placeholder="Número do Benefício 2"><br>
-        
-        <label for "nb3_dependentes" class="label_inputs">NB 3:</label>
-        
-        <input type="text" class="inputs_geral" placeholder="Número do Benefício 3"><br>
-        
-        <label for "nb4_dependentes" class="label_inputs">NB 4:</label>
-        
-        <input type="text" class="inputs_geral" placeholder="Número do Benefício 4"><br>
-        
-    <div id="text_area_container">
-      <textarea class="dependentes_textarea" cols="60" rows="8" placeholder="Colar os dados do DEPEND do PLENUS"></textarea>
-
-    </div> 
-    
-    <br>
+      
 
     <!--Seleção da situação-->
 
@@ -173,40 +185,40 @@
       
       <label for="segurado_nao_localizado">
           <div class="radio_selections">
-              <input id="segurado_nao_localizado" class="radio" type="radio" name="radio" value="1">Segurado não localizado
+              <input id="segurado_nao_localizado" class="depRadioInputs" type="radio" name="radio" value="1">Segurado não localizado
           </div>
       </label>
                       
           
       <label for="segurado_tem_dependentes">
           <div class="radio_selections">   
-              <input id="segurado_tem_dependentes" class="radio" type="radio" name="radio" value="2">Existem dependentes ativos
+              <input id="segurado_tem_dependentes" class="depRadioInputs" type="radio" name="radio" value="2">Existem dependentes ativos
           </div>
       </label>
         
       
       <label for="segurado_sem_dependentes">
           <div class="radio_selections">
-              <input id="segurado_sem_dependentes" class="radio" type="radio" name="radio" value="3">Sem dependentes ativos
+              <input id="segurado_sem_dependentes" class="depRadioInputs" type="radio" name="radio" value="3">Sem dependentes ativos
           </div>
       </label>
 
       <label for="sem_dependentes_certidao">
           <div class="radio_selections">
-              <input id="sem_dependentes_certidao" class="radio" type="radio" name="radio" value="4">Sem dependentes + Certidão
+              <input id="sem_dependentes_certidao" class="depRadioInputs" type="radio" name="radio" value="4">Sem dependentes + Certidão
           </div>
       </label>
           
       
       <label for="houve_dependentes">    
           <div class="radio_selections">
-              <input id="houve_dependentes" class="radio" type="radio" name="radio" value="5">Já houve dependentes
+              <input id="houve_dependentes" class="depRadioInputs" type="radio" name="radio" value="5">Já houve dependentes
           </div>
       </label>
       
       <label for="com_dependentes_certidao">    
           <div class="radio_selections">
-              <input id="com_dependentes_certidao" class="radio" type="radio" name="radio" value="6">Com dependentes + Certidão
+              <input id="com_dependentes_certidao" class="depRadioInputs" type="radio" name="radio" value="6">Com dependentes + Certidão
           </div>
       </label>
 
@@ -224,7 +236,7 @@
       <div class="alignCenter">
         <textarea rows="1" cols="58" id="assunto_email" placeholder="Assunto do e-mail"></textarea><br>
         
-        <textarea id="dependentes_resposta" class="text_area_resposta" cols="58" rows="12" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
+        <textarea id="dependentes_resposta" class="text_area_resposta" cols="58" rows="18" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
       </div>
       
       <footer id=""><br>
