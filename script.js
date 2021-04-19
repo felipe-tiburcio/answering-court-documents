@@ -286,10 +286,25 @@ function respostaResiduos() {
     proporcional13 = 0;
   }
 
-  const valorTotalCom13 =
+  let valorTotalCom13 =
     proporcionalDias + proporcional13 - (_13jaRecebido + valoresIndevidos);
 
-  const valorTotalSem13 = proporcionalDias - valoresIndevidos;
+  if (competenciasSelecionadas.length > 1) {
+    valorTotalCom13 =
+      mr * (competenciasSelecionadas.length - 1) +
+      proporcionalDias +
+      proporcional13 -
+      (_13jaRecebido + valoresIndevidos);
+  }
+
+  let valorTotalSem13 = proporcionalDias - valoresIndevidos;
+
+  if (competenciasSelecionadas.length > 1) {
+    valorTotalSem13 =
+      mr * (competenciasSelecionadas.length - 1) +
+      proporcionalDias -
+      valoresIndevidos;
+  }
 
   const assunto = document.querySelector("#residuos_assunto");
 
@@ -349,19 +364,19 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 - Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
 - Data do Óbito: ${dataFormatada}
 - Proporcional de ${diaObito} dias: R$ ${proporcionalDias
-      .toFixed(2)
-      .replace(".", ",")}
+    .toFixed(2)
+    .replace(".", ",")}
 - 13º proporcional a ${mesObito} meses (Períodos com pelo menos 15 dias): R$ ${proporcional13
-      .toFixed(2)
-      .replace(".", ",")
-      .replace(".", ",")}
+    .toFixed(2)
+    .replace(".", ",")
+    .replace(".", ",")}
 - 13º já recebido: R$ ${_13jaRecebido.toFixed(2).replace(".", ",")}
 - 13º pendente: R$ ${(proporcional13 - _13jaRecebido)
-      .toFixed(2)
-      .replace(".", ",")}
+    .toFixed(2)
+    .replace(".", ",")}
 - Valores recebidos indevidamente: R$ ${valoresIndevidos
-      .toFixed(2)
-      .replace(".", ",")}
+    .toFixed(2)
+    .replace(".", ",")}
 - Total de Resíduos: R$ ${valorTotalCom13.toFixed(2).replace(".", ",")}`;
 
   const semResiduosCalcSem13 = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não existem valores pendentes de pagamento referente o(s) benefício(s) do Sr.(a) ${nome}:
@@ -390,6 +405,10 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
   const atenciosamente = `\n\nAtenciosamente,`;
 
   assunto.value = `Ofício - Processo ${processo} - ${nome}`;
+
+  if (mr === 0) {
+    alert("É necessário preencher o valor da MR do benefício.");
+  }
 
   //Situacao Normal e ressalvas
   if (situacao[0].checked) {
