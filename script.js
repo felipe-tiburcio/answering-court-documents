@@ -316,12 +316,14 @@ function respostaResiduos() {
 
   const respostaCalculosCom13 = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados do(a) Sr(a) ${nome} nos sistemas do INSS. Neste documento é possível verificar a seguinte situação:
 
-- Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
 - Data do Óbito: ${dataFormatada}
 - Meses pendentes de pagamento: ${competenciasSelecionadas}/${anoObito}
+
+- Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
 - Proporcional de ${diaObito} dias: R$ ${proporcionalDias
     .toFixed(2)
     .replace(".", ",")}
+    
 - 13º proporcional a ${mesObito} meses(Períodos com pelo menos 15 dias): R$ ${proporcional13
     .toFixed(2)
     .replace(".", ",")
@@ -330,6 +332,7 @@ function respostaResiduos() {
 - 13º pendente: R$ ${(proporcional13 - _13jaRecebido)
     .toFixed(2)
     .replace(".", ",")}
+
 - Valores recebidos indevidamente: R$ ${valoresIndevidos
     .toFixed(2)
     .replace(".", ",")}
@@ -338,14 +341,17 @@ function respostaResiduos() {
 Estes valores serão recalculados e será acrescida a correção monetária através de análise administrativa quando o requerimento dos valores devidos for realizado pelos interessados.`;
 
   const respostaCalculosSem13 = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados do(a) Sr(a) ${nome} nos sistemas do INSS. Neste documento é possível verificar a seguinte situação:
-  
-- Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
+
 - Data do Óbito: ${dataFormatada}
 - Meses pendentes de pagamento: ${competenciasSelecionadas}/${anoObito}
+  
+- Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
 - Proporcional de ${diaObito} dias: R$ ${proporcionalDias
     .toFixed(2)
     .replace(".", ",")}
+
 - 13º: Benefício sem 13º salário.
+
 - Valores recebidos indevidamente: R$ ${valoresIndevidos
     .toFixed(2)
     .replace(".", ",")}
@@ -361,11 +367,13 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 
   const semResiduosCalc13 = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não existem valores pendentes de pagamento referente o(s) benefício(s) do Sr.(a) ${nome}: 
   
-- Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
 - Data do Óbito: ${dataFormatada}
+
+- Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
 - Proporcional de ${diaObito} dias: R$ ${proporcionalDias
     .toFixed(2)
     .replace(".", ",")}
+
 - 13º proporcional a ${mesObito} meses (Períodos com pelo menos 15 dias): R$ ${proporcional13
     .toFixed(2)
     .replace(".", ",")
@@ -374,6 +382,7 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 - 13º pendente: R$ ${(proporcional13 - _13jaRecebido)
     .toFixed(2)
     .replace(".", ",")}
+
 - Valores recebidos indevidamente: R$ ${valoresIndevidos
     .toFixed(2)
     .replace(".", ",")}
@@ -381,12 +390,15 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 
   const semResiduosCalcSem13 = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não existem valores pendentes de pagamento referente o(s) benefício(s) do Sr.(a) ${nome}:
   
-- Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
 - Data do Óbito: ${dataFormatada}
+
+- Valor integral do Benefício: R$ ${mr.toFixed(2).replace(".", ",")}
 - Proporcional de ${diaObito} dias: R$ ${proporcionalDias
     .toFixed(2)
     .replace(".", ",")}
+
 - 13º: Benefício sem 13º salário.
+
 - Valores recebidos indevidamente: R$ ${valoresIndevidos
     .toFixed(2)
     .replace(".", ",")}
@@ -410,7 +422,7 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
     alert("É necessário preencher o valor da MR do benefício.");
   }
 
-  //Situacao Normal e ressalvas
+  //Cálculos com resíduos e ressalvas
   if (situacao[0].checked) {
     //Com 13º
     if (situacao13[0].checked) {
@@ -460,81 +472,8 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
     }
   }
 
-  //Não-localizado e ressalvas
+  //Cálculos sem resíduos e ressalvas
   if (situacao[1].checked) {
-    if (ressalvas[0].checked) {
-      resposta.value = naoLocalizado + atenciosamente;
-    }
-    if (ressalvas[1].checked) {
-      alert(
-        "Se não foi possível localizar o segurado, como os valores foram verificados?"
-      );
-    }
-    if (ressalvas[2].checked) {
-      resposta.value = naoLocalizado + cadastroDependentes + atenciosamente;
-    }
-    if (ressalvas[3].checked) {
-      resposta.value = naoLocalizado + escopoInss + atenciosamente;
-    }
-    if (ressalvas[4].checked) {
-      resposta.value = naoLocalizado + dadosBancarios + atenciosamente;
-    }
-    if (ressalvas[5].checked) {
-      resposta.value = naoLocalizado + mob + atenciosamente;
-    }
-  }
-  //Sem benefício e ressalvas
-  if (situacao[2].checked) {
-    if (ressalvas[0].checked) {
-      resposta.value = semBeneficio + atenciosamente;
-    }
-    if (ressalvas[1].checked) {
-      alert(
-        "Se não existe benefício, não pode existir acerto de contas, certo?"
-      );
-    }
-    if (ressalvas[2].checked) {
-      resposta.value = semBeneficio + cadastroDependentes + atenciosamente;
-    }
-    if (ressalvas[3].checked) {
-      resposta.value = semBeneficio + escopoInss + atenciosamente;
-    }
-    if (ressalvas[4].checked) {
-      resposta.value = semBeneficio + dadosBancarios + atenciosamente;
-    }
-    if (ressalvas[5].checked) {
-      alert(
-        "Se não existe benefício, não podemos encaminhar para o MOB, certo?"
-      );
-    }
-  }
-
-  //Sem resíduos e ressalvas
-  if (situacao[3].checked) {
-    if (ressalvas[0].checked) {
-      resposta.value = semResiduos + atenciosamente;
-    }
-    if (ressalvas[1].checked) {
-      alert(
-        "Se não existem resíduos, não existe acerto de contas a ser feito, certo?"
-      );
-    }
-    if (ressalvas[2].checked) {
-      resposta.value = semResiduos + cadastroDependentes + atenciosamente;
-    }
-    if (ressalvas[3].checked) {
-      resposta.value = semResiduos + escopoInss + atenciosamente;
-    }
-    if (ressalvas[4].checked) {
-      resposta.value = semResiduos + dadosBancarios + atenciosamente;
-    }
-    if (ressalvas[5].checked) {
-      resposta.value = semResiduos + mob + atenciosamente;
-    }
-  }
-
-  //Sem resíduosCalc e ressalvas
-  if (situacao[4].checked) {
     if (situacao13[0].checked) {
       if (ressalvas[0].checked) {
         resposta.value = semResiduosCalc13 + atenciosamente;
@@ -579,6 +518,79 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
       if (ressalvas[5].checked) {
         resposta.value = semResiduosCalcSem13 + mob + atenciosamente;
       }
+    }
+  }
+
+  //Não-localizado e ressalvas
+  if (situacao[2].checked) {
+    if (ressalvas[0].checked) {
+      resposta.value = naoLocalizado + atenciosamente;
+    }
+    if (ressalvas[1].checked) {
+      alert(
+        "Se não foi possível localizar o segurado, como os valores foram verificados?"
+      );
+    }
+    if (ressalvas[2].checked) {
+      resposta.value = naoLocalizado + cadastroDependentes + atenciosamente;
+    }
+    if (ressalvas[3].checked) {
+      resposta.value = naoLocalizado + escopoInss + atenciosamente;
+    }
+    if (ressalvas[4].checked) {
+      resposta.value = naoLocalizado + dadosBancarios + atenciosamente;
+    }
+    if (ressalvas[5].checked) {
+      resposta.value = naoLocalizado + mob + atenciosamente;
+    }
+  }
+  //Sem benefício e ressalvas
+  if (situacao[3].checked) {
+    if (ressalvas[0].checked) {
+      resposta.value = semBeneficio + atenciosamente;
+    }
+    if (ressalvas[1].checked) {
+      alert(
+        "Se não existe benefício, não pode existir acerto de contas, certo?"
+      );
+    }
+    if (ressalvas[2].checked) {
+      resposta.value = semBeneficio + cadastroDependentes + atenciosamente;
+    }
+    if (ressalvas[3].checked) {
+      resposta.value = semBeneficio + escopoInss + atenciosamente;
+    }
+    if (ressalvas[4].checked) {
+      resposta.value = semBeneficio + dadosBancarios + atenciosamente;
+    }
+    if (ressalvas[5].checked) {
+      alert(
+        "Se não existe benefício, não podemos encaminhar para o MOB, certo?"
+      );
+    }
+  }
+
+  //Sem resíduos e ressalvas
+  if (situacao[4].checked) {
+    if (ressalvas[0].checked) {
+      resposta.value = semResiduos + atenciosamente;
+    }
+    if (ressalvas[1].checked) {
+      alert(
+        "Se não existem resíduos, não existe acerto de contas a ser feito, certo?"
+      );
+    }
+    if (ressalvas[2].checked) {
+      resposta.value = semResiduos + cadastroDependentes + atenciosamente;
+    }
+    if (ressalvas[3].checked) {
+      resposta.value = semResiduos + escopoInss + atenciosamente;
+    }
+    if (ressalvas[4].checked) {
+      resposta.value = semResiduos + dadosBancarios + atenciosamente;
+    }
+    if (ressalvas[5].checked) {
+      resposta.value = semResiduos + mob + atenciosamente;
     }
   }
 }
