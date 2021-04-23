@@ -164,25 +164,25 @@ function resposta_dependentes() {
 
   //Variáveis com as respostas pra melhor organização
 
-  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.\n\n\nAtenciosamente,`;
+  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.\n\nAtenciosamente,`;
 
   const temDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), sendo ele(s):
         
-  ${dependentes}\n\nAtenciosamente,`;
+  ${dependentes}\nAtenciosamente,\n`;
 
-  const semDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS).\n\n\nAtenciosamente,`;
+  const semDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS).\n\nAtenciosamente,`;
 
-  const semDependentesTemRequerimento = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que embora ainda não existam dependentes habilitados com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), existe requerimento em aberto de benefício de Pensão por Morte.\n\n\nAtenciosamente,`;
+  const semDependentesTemRequerimento = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que embora ainda não existam dependentes habilitados com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), existe requerimento em aberto de benefício de Pensão por Morte.\n\nAtenciosamente,`;
 
-  const semDependentesSemRequerimento = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados, e também não consta requerimento em aberto de benefício de Pensão por Morte em nome com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS) .\n\n\nAtenciosamente,`;
+  const semDependentesSemRequerimento = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados, e até o momento da realização destas consultas, também não consta requerimento em aberto de benefício de Pensão por Morte em nome com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS) .\n\nAtenciosamente,`;
 
-  const semDependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), motivo pelo qual estamos encaminhando a Certidão de Inexistência de Dependentes, conforme solicitação.\n\n\nAtenciosamente,`;
+  const semDependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), motivo pelo qual estamos encaminhando a Certidão de Inexistência de Dependentes, conforme solicitação.\n\nAtenciosamente,`;
 
   const tinhamDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que, embora no momento atual não tenham sido localizados dependentes com benefício ativo do(a) Sr.(a) ${segurado} como instituidor(a), foram reconhecidos anteriormente como dependentes:
         
   ${dependentes}\n\nAtenciosamente,`;
 
-  const dependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), motivo pelo qual encaminhamos a Certidão de PIS/PASEP/FGTS conforme solicitação.\n\n\nAtenciosamente,`;
+  const dependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), motivo pelo qual encaminhamos a Certidão de PIS/PASEP/FGTS conforme solicitação.\n\nAtenciosamente,`;
 
   assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
 
@@ -203,6 +203,20 @@ function resposta_dependentes() {
   } else if (situacao[7].checked) {
     resposta.value = semDependentesCertidao;
   }
+
+  /*
+  Fazer a parte de ressalvas
+
+  Incluir ressalva sobre a comunicação de óbito automática por conta do registro em cartório.
+
+
+
+
+
+
+
+
+  */
 }
 
 // Final da página de Dependentes
@@ -408,12 +422,13 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 
   assunto.value = `Ofício - Processo ${processo} - ${nome}`;
 
-  if (mr === 0) {
-    alert("É necessário preencher o valor da MR do benefício.");
-  }
-
   //Cálculos com resíduos e ressalvas
   if (situacao[0].checked) {
+    //Alerta se a MR estiver zerada
+    if (mr === 0) {
+      alert("É necessário preencher o valor da MR do benefício.");
+    }
+
     //Com 13º
     if (situacao13[0].checked) {
       if (ressalvas[0].checked) {
@@ -464,6 +479,12 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 
   //Cálculos sem resíduos e ressalvas
   if (situacao[1].checked) {
+    //Alerta se a MR estiver zerada
+
+    if (mr === 0) {
+      alert("É necessário preencher o valor da MR do benefício.");
+    }
+
     if (situacao13[0].checked) {
       if (ressalvas[0].checked) {
         resposta.value = semResiduosCalc13 + atenciosamente;
