@@ -164,39 +164,25 @@ function resposta_dependentes() {
 
   //Variáveis com as respostas pra melhor organização
 
-  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.
-  
-Atenciosamente,
-`;
+  const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.\n\n\nAtenciosamente,`;
 
   const temDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), sendo ele(s):
         
-  ${dependentes}
-  
-Atenciosamente,
-`;
+  ${dependentes}\n\nAtenciosamente,`;
 
-  const semDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS).
-  
-Atenciosamente,
-`;
+  const semDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS).\n\n\nAtenciosamente,`;
 
-  const semDependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), motivo pelo qual estamos encaminhando a Certidão de Inexistência de Dependentes, conforme solicitação.
+  const semDependentesTemRequerimento = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que embora ainda não existam dependentes habilitados com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), existe requerimento em aberto de benefício de Pensão por Morte.\n\n\nAtenciosamente,`;
 
-Atenciosamente,
-`;
+  const semDependentesSemRequerimento = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados, e também não consta requerimento em aberto de benefício de Pensão por Morte em nome com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS) .\n\n\nAtenciosamente,`;
+
+  const semDependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas aos sistemas do INSS. Neste documento é possível verificar que não foram localizados dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a) no âmbito do Regime Geral de Previdência Social(RGPS), motivo pelo qual estamos encaminhando a Certidão de Inexistência de Dependentes, conforme solicitação.\n\n\nAtenciosamente,`;
 
   const tinhamDependentes = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que, embora no momento atual não tenham sido localizados dependentes com benefício ativo do(a) Sr.(a) ${segurado} como instituidor(a), foram reconhecidos anteriormente como dependentes:
         
-  ${dependentes}
-  
-Atenciosamente,
-`;
+  ${dependentes}\n\nAtenciosamente,`;
 
-  const dependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), motivo pelo qual encaminhamos a Certidão de PIS/PASEP/FGTS conforme solicitação.
-
-Atenciosamente,
-`;
+  const dependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), motivo pelo qual encaminhamos a Certidão de PIS/PASEP/FGTS conforme solicitação.\n\n\nAtenciosamente,`;
 
   assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
 
@@ -205,13 +191,17 @@ Atenciosamente,
   } else if (situacao[1].checked) {
     resposta.value = temDependentes;
   } else if (situacao[2].checked) {
-    resposta.value = semDependentes;
-  } else if (situacao[3].checked) {
-    resposta.value = semDependentesCertidao;
-  } else if (situacao[4].checked) {
     resposta.value = tinhamDependentes;
-  } else if (situacao[5].checked) {
+  } else if (situacao[3].checked) {
     resposta.value = dependentesCertidao;
+  } else if (situacao[4].checked) {
+    resposta.value = semDependentes;
+  } else if (situacao[5].checked) {
+    resposta.value = semDependentesTemRequerimento;
+  } else if (situacao[6].checked) {
+    resposta.value = semDependentesSemRequerimento;
+  } else if (situacao[7].checked) {
+    resposta.value = semDependentesCertidao;
   }
 }
 
