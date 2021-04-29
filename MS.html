@@ -35,12 +35,12 @@
   <h3 class="black_subtitles">Situação</h3>
   
       <input type="checkbox" id="checkbox_finalizacao" class="">
-      <label for="checkbox_finalizacao" class="">Demora na Análise</label>
+      <label for="checkbox_finalizacao" class="">Erro/Pendência no Sistema</label>
 
       <br>
 
       <input type="checkbox" id="checkbox_pp" class="">
-      <label for="checkbox_pp" class="">Problemas no PP</label>
+      <label for="checkbox_pp" class="">Demora na análise</label>
       
       <br>
 
@@ -109,6 +109,11 @@
 
         <br>
 
+        <label for="ms_data_pagamento" class="label_inputs">Data Pgto.:</label>
+        <input id="ms_data_pagamento" type="date" class="inputs_geral">
+
+        <br>
+
 
       </div>
 
@@ -154,32 +159,33 @@
         <br>
         
         <input 
-          id="radio_1" 
+          id="radio_1"
+          class="radio_ms" 
+          type="radio"
+          name="radio" 
+        >
+        <label for="radio_1">Erro no PP</label>
+        
+        <br>
+        
+        <input 
+          id="radio_2" 
           class="radio_ms"
           type="radio" 
           name="radio"
         >
-        <label for="radio_1">Finalização de Análise</label>   
+        <label for="radio_2">Finalização de Análise</label>   
 
         <br>
 
         <input
-          id="radio_2"
+          id="radio_3"
           class="radio_ms"
           type="radio" 
           name="radio"
         >
-        <label for="radio_2">Nada a declarar/Relatório</label>   
+        <label for="radio_3">Nada a declarar/Relatório</label>   
 
-        <br>
-        
-        <input 
-          id="radio_3" 
-          class="radio_ms"
-          type="radio" 
-          name="radio">
-        <label for="radio_3">Perícia - DCB</label>
-        
         <br>
         
         <input 
@@ -187,7 +193,7 @@
           class="radio_ms"
           type="radio" 
           name="radio">
-        <label for="radio_4">BPC - Análise/Agendamentos</label>
+        <label for="radio_4">Perícia - DCB</label>
         
         <br>
         
@@ -196,7 +202,16 @@
           class="radio_ms"
           type="radio" 
           name="radio">
-        <label for="radio_5">Outra situação</label>
+        <label for="radio_5">BPC - Análise/Agendamentos</label>
+        
+        <br>
+        
+        <input 
+          id="radio_6" 
+          class="radio_ms"
+          type="radio" 
+          name="radio">
+        <label for="radio_6">Outra situação</label>
 
     
     </div>

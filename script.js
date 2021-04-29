@@ -52,7 +52,7 @@ function resposta_vinculos() {
 
   const cnisCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando o relatório completo do CNIS. Neste documento é possível analisar o histórico completo de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
 
-  const cnisVazio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum vínculo ou contribuição no CNIS do(a) segurado(a) ${segurado}.`;
+  const cnisVazio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum vínculo, contribuição ou benefício no cadastro do(a) segurado(a) ${segurado}.`;
 
   const dadosCadastrais = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar os dados cadastrais do(a) segurado(a) ${segurado}.`;
 
@@ -797,7 +797,7 @@ Sendo assim, solicitamos que, se possível, este dado seja enviado para este e-m
 
 //   //Final da página de P.A
 
-//Início do Script de Mandado de Segurança
+//Página SEI???
 
 function resposta_sei() {
   const nome = document.querySelector("#sei_nome").value;
@@ -884,7 +884,7 @@ function resposta_sei() {
   }
 }
 
-//Final de Mandado de Segurança
+//Final da página SEI
 
 //Início da página de Protocolo
 
@@ -955,7 +955,7 @@ function resposta_protocolo() {
   // Fim da página de Procotolo
 }
 
-//Início da página ms
+//Início da página Mandado de Segurança
 
 function resposta_ms() {
   const nome = document.querySelector("#ms_nome").value;
@@ -970,6 +970,20 @@ function resposta_ms() {
     .reverse()
     .join("/");
 
+  const beneficioNumero = document.querySelector("#ms_nb").value;
+
+  const dcb = document
+    .querySelector("#ms_dcb")
+    .value.split("-")
+    .reverse()
+    .join("/");
+
+  const data1pagamento = document
+    .querySelector("#ms_data_pagamento")
+    .value.split("-")
+    .reverse()
+    .join("/");
+
   const horaAgendamento = document.querySelector("#ms_horario").value;
 
   const aps = document.querySelector("#ms_aps").value;
@@ -977,6 +991,12 @@ function resposta_ms() {
   const resposta = document.querySelector("#ms_textarea");
 
   //Respostas em variáveis para melhor organização
+
+  const pendenciaSistemaResolvida = `Encaminhamento de determinação judicial para cumprimento.
+
+1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome}. 
+    
+2. Verifica-se que o requerimento do segurado foi concedido sob o benefício de nº ${beneficioNumero} com DCB em ${dcb} e tem o primeiro pagamento previsto para ${data1pagamento}.`;
 
   const erroPP = `Encaminhamento de determinação judicial para cumprimento.
 
@@ -1027,16 +1047,18 @@ function resposta_ms() {
   //Fim das frases - começo da lógica
 
   if (situacao[0].checked) {
-    resposta.value = erroPP;
+    resposta.value = pendenciaSistemaResolvida;
   } else if (situacao[1].checked) {
-    resposta.value = finalizarAnalise;
+    resposta.value = erroPP;
   } else if (situacao[2].checked) {
-    resposta.value = informacoesDossie;
+    resposta.value = finalizarAnalise;
   } else if (situacao[3].checked) {
-    resposta.value = analiseMedica;
+    resposta.value = informacoesDossie;
   } else if (situacao[4].checked) {
-    resposta.value = bpcDemora;
+    resposta.value = analiseMedica;
   } else if (situacao[5].checked) {
+    resposta.value = bpcDemora;
+  } else if (situacao[6].checked) {
     resposta.value = outraSituacao;
   }
 }
