@@ -60,13 +60,15 @@ function resposta_vinculos() {
 
   const escopoInss = `\n\nImportante ressaltar que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`;
 
+  const outraSituacao = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que`;
+
   const atenciosamente = `\n\nAtenciosamente,`;
 
   assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
 
   //Lógica com as ressalvas sendo lidas primeiro para mudar a posição do "Atenciosamente".
-
-  if (situacao[11].checked) {
+  //Ressalva cadastro de dependentes
+  if (situacao[13].checked) {
     if (situacao[0].checked) {
       resposta.innerHTML = naoLocalizado;
     } else if (situacao[1].checked) {
@@ -89,10 +91,13 @@ function resposta_vinculos() {
       resposta.innerHTML = cnisVazio;
     } else if (situacao[10].checked) {
       resposta.innerHTML = dadosCadastrais;
+    } else if (situacao[11].checked) {
+      resposta.innerHTML = outraSituacao;
     }
 
     resposta.innerHTML += ressalvaDependentes + atenciosamente;
-  } else if (situacao[12].checked) {
+    //ressalva area de atuacao do inss
+  } else if (situacao[14].checked) {
     if (situacao[0].checked) {
       resposta.innerHTML = naoLocalizado;
     } else if (situacao[1].checked) {
@@ -115,6 +120,8 @@ function resposta_vinculos() {
       resposta.innerHTML = cnisVazio;
     } else if (situacao[10].checked) {
       resposta.innerHTML = dadosCadastrais;
+    } else if (situacao[11].checked) {
+      resposta.innerHTML = outraSituacao;
     }
 
     resposta.innerHTML += escopoInss + atenciosamente;
@@ -139,8 +146,10 @@ function resposta_vinculos() {
       resposta.innerHTML = cnisCompleto + atenciosamente;
     } else if (situacao[9].checked) {
       resposta.innerHTML = cnisVazio + atenciosamente;
-    } else if (situacao.checked) {
+    } else if (situacao[10].checked) {
       resposta.innerHTML = dadosCadastrais + atenciosamente;
+    } else if (situacao[11].checked) {
+      resposta.innerHTML = outraSituacao + atenciosamente;
     }
   }
 }
@@ -758,7 +767,7 @@ function respostaPA() {
 
 Sendo assim, solicitamos que, se possível, este dado seja enviado para este e-mail para que a presente demanda possa ser cumprida de forma mais célere. \n\n${atenciosamente}`;
 
-  const faltaOutraCoisa = `Falta outra coisa`;
+  const semBeneficio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum benefício ativo no cadastro do(a) segurado(a) ${instituidor}.\n\nAtenciosamente,`;
 
   const faltaOutraOutraCoisa = `Falta outra outra coisa`;
 
@@ -777,19 +786,19 @@ Sendo assim, solicitamos que, se possível, este dado seja enviado para este e-m
   // Fim das frases - Início dos radios inputs
 
   if (situacao[0].checked) {
-    resposta.innerHTML = faltaCpfTitular;
+    resposta.value = faltaCpfTitular;
   } else if (situacao[1].checked) {
-    resposta.innerHTML = faltaOutraCoisa;
+    resposta.value = semBeneficio;
   } else if (situacao[2].checked) {
-    resposta.innerHTML = faltaOutraOutraCoisa;
+    resposta.value = faltaOutraOutraCoisa;
   } else if (situacao[3].checked) {
-    resposta.innerHTML = tarefaAberta;
+    resposta.value = tarefaAberta;
   } else if (situacao[4].checked) {
-    resposta.innerHTML = paJaImplantada;
+    resposta.value = paJaImplantada;
   } else if (situacao[5].checked) {
-    resposta.innerHTML = implantadaAgora;
+    resposta.value = implantadaAgora;
   } else if (situacao[6].checked) {
-    resposta.innerHTML = outraSituacao;
+    resposta.value = outraSituacao;
   }
 
   // Fim dos radio inputs
@@ -992,11 +1001,18 @@ function resposta_ms() {
 
   //Respostas em variáveis para melhor organização
 
-  const pendenciaSistemaResolvida = `Encaminhamento de determinação judicial para cumprimento.
+  const pendenciaResolvidaComPagamento = `Encaminhamento de determinação judicial para cumprimento.
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome}. 
     
 2. Verifica-se que o requerimento do segurado foi concedido sob o benefício de nº ${beneficioNumero} com DCB em ${dcb} e tem o primeiro pagamento previsto para ${data1pagamento}.`;
+
+  const pendenciaResolvida = `Encaminhamento de determinação judicial para cumprimento.
+
+1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome} que relatou problemas na análise/concessão de seu benefício.\n 
+2. Verifica-se através de relatório anexo que a pendência relatada foi resolvida e o requerimento do(a) segurado(a) foi deferido sob o benefício de nº ${beneficioNumero}.
+
+4. O valor dos pagamentos e suas respectivas datas serão calculados automaticamente e poderão ser acompanhados pelo site gov.br/meuinss ou pelo aplicativo Meu INSS.`;
 
   const erroPP = `Encaminhamento de determinação judicial para cumprimento.
 
@@ -1047,7 +1063,7 @@ function resposta_ms() {
   //Fim das frases - começo da lógica
 
   if (situacao[0].checked) {
-    resposta.value = pendenciaSistemaResolvida;
+    resposta.value = pendenciaResolvida;
   } else if (situacao[1].checked) {
     resposta.value = erroPP;
   } else if (situacao[2].checked) {
