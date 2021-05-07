@@ -1050,13 +1050,14 @@ function resposta_ms() {
 
 4. Com a cessação do benefício, o segurado tem prazo de 30 dias de prazo para entrar com Recurso Administrativo contra a decisão e/ou terá que aguardar 30 dias para realizar um novo requerimento de benefício.`;
 
-  const bpcDemora = `Encaminhamento de determinação judicial para cumprimento.
+
+const exigencia = `Encaminhamento de determinação judicial para cumprimento.
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome}. 
     
-2. É possível verificar através de relatório anexo que o processo de análise do benefício está em andamento e foi agendada a Avaliação Social para o dia ${dataAgendamento} às ${horaAgendamento} a ser realizada na ${aps}. 
-
-3. Existe o registro no processo, que devido à falta de vagas, não foi possível marcar a Perícia Médica para o mesmo dia da Avaliação Social. Por isso o servidor orienta que seja solicitado ao Assistente Social, no dia da Avaliação Social, para que seja feito o agendamento de Perícia Médica do(a) segurado(a).`;
+2. É possível verificar através de relatório anexo que o requerimento se encontra em exigência sendo necessária a complementação da documentação por parte do segurado. 
+    
+3. Sendo assim, o segurado tem prazo de 30 dias para apresentar a documentação solicitada no processo administrativo.`;
 
   const outraSituacao = `Outra situação`;
 
@@ -1073,7 +1074,7 @@ function resposta_ms() {
   } else if (situacao[4].checked) {
     resposta.value = analiseMedica;
   } else if (situacao[5].checked) {
-    resposta.value = bpcDemora;
+    resposta.value = exigencia;
   } else if (situacao[6].checked) {
     resposta.value = outraSituacao;
   }
