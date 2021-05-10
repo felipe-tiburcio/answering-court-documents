@@ -33,27 +33,25 @@
         
       <h4 class="black_subtitles">Solicitante</h4>
         <label for="dependentes_orgao" class="label_inputs">Órgão:</label>
-        <input id="dependentes_orgao" class="inputs_geral">
+        <input id="dependentes_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc">
 
         <br>
         
         <label for="dependentes_cidade" class="label_inputs">Cidade:</label>
-        <select id="dependentes_cidade" class="inputs_geral">
-            <option selected>Aracaju</option>
-            <option>Nossa Sra. do Socorro</option>
-            <option>São Cristóvão</option>
-            <option>Itaporanga</option>
-            <option>Carmópolis</option>
-            <option>Maruim</option>
-            <option>Pirambu</option>
-            <option>Barra dos Coqueiros</option>
-            <option>Santo Amaro das Brotas</option>
-            <option>Japaratuba</option>
-            <option>Laranjeiras</option>
-            <option>Salgado</option>
-            <option>Outra Cidade</option>
-           
-        </select>
+        <select id="residuos_cidade" class="inputs_geral">
+          <option selected>Aracaju</option>
+          <option>N. Sra. do Socorro</option>
+          <option>Barra dos Coqueiros</option>
+          <option>São Cristóvão</option>
+          <option>Itaporanga</option>
+          <option>Carmópolis</option>
+          <option>Maruim</option>
+          <option>Riachuelo</option>
+          <option>Santo Amaro das Brotas</option>
+          <option>Salgado</option>
+          <option>Outra Cidade</option>
+      </select>
+      
 
         <br>
       
@@ -133,11 +131,41 @@
           <label for="dependentes_segurado_pis" class="label_inputs">NIT/PIS:</label>
           <input type="text" min="0" id="dependentes_segurado_pis"  class="inputs_geral" placeholder="NIT/PIS/PASEP">
 
-          <br>
-          <br>
-
           <a href="#nav" class="scroll">&#x25B2</a>
           <a href="#dependentes_resposta" class="scroll">&#x25BC</a>
+
+
+ 
+        <div>
+          <h4 class="black_subtitles">Dados do Óbito</h4>
+          
+          <label class="label_inputs" id="dependentes_segurado_data_obito">Óbito:</label>
+          <input type="date" id="dependentes_segurado_data_obito" class="inputs_geral" placeholder="Data de Óbito"><br>
+          
+          <label for="dependentes_segurado_certidao_obito" class="label_inputs">Certidão</label>
+          <input type="text" id="dependentes_segurado_certidao_obito" class="inputs_geral" placeholder="Certidão de Óbito nº"><br>
+          
+          <label for="dependentes_segurado_livro" class="label_inputs">Livro:</label>
+          <input id="dependentes_segurado_livro"  class="inputs_geral" placeholder="A, B ou C"><br>
+          
+          <label for="dependentes_segurado_folha" class="label_inputs">Folha:</label>
+          <input id="dependentes_segurado_folha" class="inputs_geral" placeholder="Folha"><br>
+          
+          <label for="dependentes_segurado_cartorio" class="label_inputs">Cartório:</label>
+          <input id="dependentes_segurado_cartorio" class="inputs_geral" placeholder="Nome do Cartório">
+      </div>
+
+      <br>
+
+
+
+
+
+
+
+
+
+
 
           <div id="">
             <h4 class="black_subtitles">Dependentes</h4>
@@ -164,26 +192,7 @@
         
         <br>
 
-          
-
-          <h4 class="black_subtitles">Dados do Óbito</h4>
-          
-          <label class="label_inputs" id="dependentes_segurado_data_obito">Óbito:</label>
-          <input type="date" id="dependentes_segurado_data_obito" class="inputs_geral" placeholder="Data de Óbito"><br>
-          
-          <label for="dependentes_segurado_certidao_obito" class="label_inputs">Certidão</label>
-          <input type="text" id="dependentes_segurado_certidao_obito" class="inputs_geral" placeholder="Certidão de Óbito nº"><br>
-          
-          <label for="dependentes_segurado_livro" class="label_inputs">Livro:</label>
-          <input id="dependentes_segurado_livro"  class="inputs_geral" placeholder="A, B ou C"><br>
-          
-          <label for="dependentes_segurado_folha" class="label_inputs">Folha:</label>
-          <input id="dependentes_segurado_folha" class="inputs_geral" placeholder="Folha"><br>
-          
-          <label for="dependentes_segurado_cartorio" class="label_inputs">Cartório:</label>
-          <input id="dependentes_segurado_cartorio" class="inputs_geral" placeholder="Nome do Cartório">
-
-      </div>
+         
       <br>
       
       
