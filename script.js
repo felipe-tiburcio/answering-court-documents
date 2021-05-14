@@ -159,17 +159,25 @@ function resposta_vinculos() {
 // Início da página de Dependentes
 
 function resposta_dependentes() {
+  const orgao = document.querySelector("#dependentes_orgao").value;
+
   const processo = document.querySelector("#dependentes_processo").value;
+
+  const email = document.querySelector("#dependentes_email").value;
 
   const segurado = document.querySelector("#dependentes_segurado_nome").value;
 
+  const dependentes = document.querySelector(".dependentes_textarea").value;
+
   const situacao = document.getElementsByClassName("depRadioInputs");
 
+  let orgaoCopia = document.querySelector("#dependentes_orgao_copia");
+
+  let emailCopia = document.querySelector("#dependentes_email_copia");
+
+  const assuntoEmail = document.querySelector("#assunto_email");
+
   const resposta = document.getElementById("dependentes_resposta");
-
-  const assunto = document.getElementById("assunto_email");
-
-  const dependentes = document.querySelector(".dependentes_textarea").value;
 
   //Variáveis com as respostas pra melhor organização
 
@@ -193,7 +201,11 @@ function resposta_dependentes() {
 
   const dependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), motivo pelo qual encaminhamos a Certidão de PIS/PASEP/FGTS conforme solicitação.\n\nAtenciosamente,`;
 
-  assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
+  orgaoCopia.value = orgao;
+
+  emailCopia.value = email;
+
+  assuntoEmail.value = `Ofício - Processo ${processo} - ${segurado}`;
 
   if (situacao[0].checked) {
     resposta.value = naoLocalizado;
@@ -637,9 +649,9 @@ function resposta_consignacoes() {
 
   const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.`;
 
-  const consignacaoAtiva = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar a seguinte situação referente os contratos efetuados entre o segurado ${segurado} e o(s) agente(s) financeiro(s)`;
+  const consignacaoAtiva = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar a seguinte situação referente os contratos efetuados entre o segurado ${segurado} e o(s) agente(s) financeiro(s)`;
 
-  const excluidoBanco = `Em atenção ao disposto no ofício relacionado ao ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}`;
+  const excluidoBanco = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}`;
 
   const excluidoInss = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme determinação.`;
 
@@ -917,6 +929,8 @@ function resposta_protocolo() {
 
   const resposta_indeferido = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas aos sistemas do INSS. Neste relatório é possível verificar que o processo do segurado ${nome} foi indeferido.`;
 
+  const mob = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, informamos que o caso relativo ao segurado ${nome}, foi encaminhado ao setor de Monitoramento Operacional de Benefícios(MOB) para apuração.`;
+
   const ressalva1 = `\n\nImportante ressaltar que esta é a ressalva 1.`;
 
   const ressalva2 = `\n\nImportante ressaltar que esta é a ressalva 2.`;
@@ -954,10 +968,14 @@ function resposta_protocolo() {
   }
 
   if (situacao[6].checked) {
+    textarea.value = mob + atenciosamente;
+  }
+
+  if (situacao[8].checked) {
     textarea.value += ressalva1;
   }
 
-  if (situacao[7].checked) {
+  if (situacao[9].checked) {
     textarea.value += ressalva2;
   }
 
@@ -1050,8 +1068,7 @@ function resposta_ms() {
 
 4. Com a cessação do benefício, o segurado tem prazo de 30 dias de prazo para entrar com Recurso Administrativo contra a decisão e/ou terá que aguardar 30 dias para realizar um novo requerimento de benefício.`;
 
-
-const exigencia = `Encaminhamento de determinação judicial para cumprimento.
+  const exigencia = `Encaminhamento de determinação judicial para cumprimento.
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome}. 
     
@@ -1059,7 +1076,17 @@ const exigencia = `Encaminhamento de determinação judicial para cumprimento.
     
 3. Sendo assim, o segurado tem prazo de 30 dias para apresentar a documentação solicitada no processo administrativo.`;
 
+  const mob = `Encaminhamento de determinação judicial para cumprimento.
+
+1. Trata-se de sentença judicial determinando que seja realizada apuração relativa aos benefícios do segurado ${nome}. 
+    
+2. É possível verificar através de relatório anexo que atualmente o segurado recebe benefício de Aposentadoria por Invalidez sob o número ${beneficioNumero}. 
+    
+3. Sendo assim, foi aberta tarefa no GET com encaminhamento para o setor de Monitoramento Operacional de Benefícios(MOB) para que seja realizada a devida apuração acerca dos fatos relatados.`;
+
   const outraSituacao = `Outra situação`;
+
+  const atenciosamente = `\n\nAtenciosamente,`;
 
   //Fim das frases - começo da lógica
 
@@ -1076,6 +1103,8 @@ const exigencia = `Encaminhamento de determinação judicial para cumprimento.
   } else if (situacao[5].checked) {
     resposta.value = exigencia;
   } else if (situacao[6].checked) {
+    resposta.value = mob;
+  } else if (situacao[7].checked) {
     resposta.value = outraSituacao;
   }
 }

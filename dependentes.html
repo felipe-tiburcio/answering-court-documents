@@ -74,24 +74,24 @@
       <label for="checkbox1">Existência de Dependentes</label>
         
       <br>
-      
+
       <input id="checkbox2"type="checkbox">
-      <label for="checkbox2">Dados Cadastrais dos Dependentes</label>
+      <label for="checkbox2">Existência de Requerimento</label>
         
       <br>
-  
+      
       <input id="checkbox3"type="checkbox">
-      <label for="checkbox3">Emissão da Certidão</label>
+      <label for="checkbox3">Dados Cadastrais dos Dependentes</label>
         
       <br>
   
       <input id="checkbox4"type="checkbox">
-      <label for="checkbox4">Informar Resíduos</label>
+      <label for="checkbox4">Emissão da Certidão</label>
         
       <br>
   
       <input id="checkbox5"type="checkbox">
-      <label for="checkbox5">Existência de Requerimento</label>
+      <label for="checkbox5">Informar Resíduos</label>
         
       <br>
 
@@ -261,6 +261,8 @@
        
       <div>
         <button type="button" onclick="resposta_dependentes()">Gerar Resposta</button><br>
+        
+        <input type="reset" value="Limpar Campos"><br>
       </div>
 
       <a href="#dependentes_segurado_nome" class="scroll">&#x25B2</a><br>
@@ -268,6 +270,15 @@
       
 
       <div class="alignCenter">
+
+        <input id="dependentes_orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc">
+
+        <br>
+
+        <input id="dependentes_email_copia" class="inputs_geral" placeholder="E-mail">
+        
+        <br>
+        
         <textarea rows="1" cols="58" id="assunto_email" placeholder="Assunto do e-mail"></textarea><br>
         
         <textarea id="dependentes_resposta" class="text_area_resposta" cols="58" rows="18" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
