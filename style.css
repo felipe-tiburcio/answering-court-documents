@@ -19,7 +19,7 @@ html {
 form {
   border: 1px solid black;
   width: 437px;
-  box-shadow: 1px 1px 1px gray;
+  /* box-shadow: 1px 1px 1px gray; */
 }
 
 .header_1 {
@@ -77,7 +77,7 @@ a {
 .vinculosCheckbox {
   border: 1px solid gray;
   border-radius: 4px;
-  box-shadow: 1px 1px 1px gray;
+  /* box-shadow: 1px 1px 1px gray; */
   margin-top: 3px;
   margin-left: 10px;
   padding: 5px;
@@ -93,6 +93,7 @@ a {
 
 .inputs_geral:hover {
   outline: 1px solid #8edcf2;
+  box-shadow: 1px 1px 1px gray;
 }
 
 textarea {
@@ -106,6 +107,11 @@ textarea {
 textarea:focus {
   background-color: #ffffe0;
   outline: 1px solid #ffcd07;
+}
+
+textarea:hover{
+  outline: 1px solid #8edcf2;
+  box-shadow: 1px 1px 1px gray;
 }
 
 .scroll {
@@ -123,7 +129,7 @@ textarea:focus {
 }
 
 .black_subtitles {
-  margin-left: 180px;
+  margin-left: 175px;
   font-weight: bold;
   /* border: 2px solid pink; */
 }
@@ -139,11 +145,9 @@ textarea:focus {
 
 .inputs_geral {
   border-radius: 4px;
-  box-shadow: 0.5px 0.5px 0.5px gray;
   width: 260px;
   padding: 5px;
   margin: 2px;
-  /* box-shadow: 0.5px 0.5px 0.5px black; */
 }
 
 /* .depRadioInputs {
@@ -191,7 +195,7 @@ textarea:focus {
 div button,
 input[type="reset"] {
   display: block;
-  margin-left: 170px;
+  margin:auto;
   padding: 5px 10px;
 }
 

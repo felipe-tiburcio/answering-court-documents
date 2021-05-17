@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./img/favicon-32x32.png">
   <title>Consignações</title>
 
 </head>
@@ -111,7 +112,7 @@
       
       <div class="consignacoes_radio">
 
-        <input id="radio_1" type="radio" name="radio" class="radio_consignacoes">
+        <input id="radio_1" type="radio" name="radio" class="radio_consignacoes" selected>
         <label for="radio_1">Segurado não localizado</label><br>
         
         <input id="radio_2" class="radio_consignacoes" type="radio" name="radio">
@@ -133,32 +134,37 @@
         <label for="radio_5">Relatório Completo</label>
 
         <br>
+        
+        <input id="radio_6"class="radio_consignacoes" type="radio" name="radio">
+        <label for="radio_6">Relatório e Bloqueio Efetuado</label>
+
+        <br>
         <br>
 
         <h3 class="black_subtitles">Ressalvas</h3>
 
-        <input id="radio_6" class="ressalvaConsignacoes" selected type="radio" name="ressalvas">
-        <label for="radio_6">Sem Ressalvas</label>
+        <input id="radio_7" class="ressalvaConsignacoes" type="radio" name="ressalvas" selected>
+        <label for="radio_7">Sem Ressalvas</label>
 
         <br>
 
-        <input id="radio_7" class="ressalvaConsignacoes" type="radio" name="ressalvas">
-        <label for="radio_7">Sem Informações Bancárias</label>
-        
-        <br>
-        
         <input id="radio_8" class="ressalvaConsignacoes" type="radio" name="ressalvas">
-        <label for="radio_8">Cadastro de Dependentes</label>
+        <label for="radio_8">Sem Informações Bancárias</label>
+        
+        <br>
+        
+        <input id="radio_9" class="ressalvaConsignacoes" type="radio" name="ressalvas">
+        <label for="radio_9">Cadastro de Dependentes</label>
 
         <br>
 
-        <input id="radio_9" class="ressalvaConsignacoes" type="radio" name="ressalvas">
-        <label for="radio_9">Área de Atuação do INSS</label>
+        <input id="radio_10" class="ressalvaConsignacoes" type="radio" name="ressalvas">
+        <label for="radio_10">Área de Atuação do INSS</label>
 
     
     </div>
       
-      <div ="consignacoes_div_button">
+      <div class="consignacoes_div_button">
     
       <a href="#consignacoes_nb1" class="scroll">&#x25B2</a><br>
 
@@ -170,7 +176,11 @@
 
       
         
-        <label for="assunto_email">Assunto:</label>
+        <input id="consignacoes_orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, etc">
+        <br>
+        <input id="consignacoes_email_copia" class="inputs_geral" placeholder="E-mail para contato">
+
+        <br>
 
         <textarea id="consignacoes_assunto_email" rows="1" cols="46" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
 

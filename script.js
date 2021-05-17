@@ -1,6 +1,18 @@
 // Início da página de Vínculos
 function resposta_vinculos() {
+  let orgao = document.querySelector("#vinculos_orgao").value;
+
+  let orgaoCopia = document.querySelector("#vinculos_orgao_copia");
+
+  orgaoCopia = orgao;
+
   let processo = document.querySelector("#vinculos_processo").value;
+
+  let email = document.querySelector("#vinculos_email").value;
+
+  let emailCopia = document.querySelector("#vinculos_email_copia").value;
+
+  emailCopia = email;
 
   let segurado = document.querySelector("#vinculos_nome").value;
 
@@ -161,19 +173,23 @@ function resposta_vinculos() {
 function resposta_dependentes() {
   const orgao = document.querySelector("#dependentes_orgao").value;
 
+  let orgaoCopia = document.querySelector("#dependentes_orgao_copia");
+
+  orgaoCopia.value = orgao;
+
   const processo = document.querySelector("#dependentes_processo").value;
 
   const email = document.querySelector("#dependentes_email").value;
+
+  let emailCopia = document.querySelector("#dependentes_email_copia");
+
+  emailCopia.value = email;
 
   const segurado = document.querySelector("#dependentes_segurado_nome").value;
 
   const dependentes = document.querySelector(".dependentes_textarea").value;
 
   const situacao = document.getElementsByClassName("depRadioInputs");
-
-  let orgaoCopia = document.querySelector("#dependentes_orgao_copia");
-
-  let emailCopia = document.querySelector("#dependentes_email_copia");
 
   const assuntoEmail = document.querySelector("#assunto_email");
 
@@ -200,10 +216,6 @@ function resposta_dependentes() {
   ${dependentes}\n\nAtenciosamente,`;
 
   const dependentesCertidao = `Em relação ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório anexo com consultas aos sistemas do INSS. Neste documento é possível verificar que existem dependentes habilitados em benefício de Pensão por Morte com o(a) Sr.(a) ${segurado} como instituidor(a), motivo pelo qual encaminhamos a Certidão de PIS/PASEP/FGTS conforme solicitação.\n\nAtenciosamente,`;
-
-  orgaoCopia.value = orgao;
-
-  emailCopia.value = email;
 
   assuntoEmail.value = `Ofício - Processo ${processo} - ${segurado}`;
 
@@ -631,7 +643,19 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 // Início da página de Consignações
 
 function resposta_consignacoes() {
+  let orgao = document.querySelector("#consignacoes_orgao").value;
+
+  let orgaoCopia = document.querySelector("#consignacoes_orgao_copia");
+
+  orgaoCopia.value = orgao;
+
   let processo = document.querySelector("#consignacoes_processo").value;
+
+  const email = document.querySelector("#consignacoes_email").value;
+
+  let emailCopia = document.querySelector("#consignacoes_email_copia");
+
+  emailCopia.value = email;
 
   let segurado = document.querySelector("#consignacoes_nome").value;
 
@@ -656,6 +680,8 @@ function resposta_consignacoes() {
   const excluidoInss = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme determinação.`;
 
   const historicoCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do segurado(a) ${segurado}.`;
+
+  const historicoEBloqueio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento, além de ser possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do(a) segurado(a) ${segurado}, também é possível verificar que foi lançado bloqueio para que não seja mais possível lançar novas consignações no benefício do(a) segurado(a).`;
 
   const ressalvaDadosBancarios = `\n\nRessaltamos que o INSS trata da concessão e manutenção de benefícios previdenciários, não dispondo assim dos detalhes contratuais firmados entre o segurado e o agente bancário responsável pela consignação.`;
 
@@ -745,6 +771,21 @@ function resposta_consignacoes() {
     textarea.value = ressalva[3].checked
       ? historicoCompleto + ressalvaEscopoInss + atenciosamente
       : historicoCompleto + atenciosamente;
+  }
+  //Histórico e Bloqueio
+  if (situacao[5].checked) {
+    textarea.value = ressalva[0].checked
+      ? historicoEBloqueio + atenciosamente
+      : historicoEBloqueio + atenciosamente;
+    textarea.value = ressalva[1].checked
+      ? historicoEBloqueio + ressalvaDadosBancarios + atenciosamente
+      : historicoEBloqueio + atenciosamente;
+    textarea.value = ressalva[2].checked
+      ? historicoEBloqueio + ressalvaDependentes + atenciosamente
+      : historicoEBloqueio + atenciosamente;
+    textarea.value = ressalva[3].checked
+      ? historicoEBloqueio + ressalvaEscopoInss + atenciosamente
+      : historicoEBloqueio + atenciosamente;
   }
 }
 
