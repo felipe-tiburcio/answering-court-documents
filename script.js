@@ -651,7 +651,7 @@ function resposta_consignacoes() {
 
   let processo = document.querySelector("#consignacoes_processo").value;
 
-  const email = document.querySelector("#consignacoes_email").value;
+  let email = document.querySelector("#consignacoes_email").value;
 
   let emailCopia = document.querySelector("#consignacoes_email_copia");
 
@@ -659,35 +659,33 @@ function resposta_consignacoes() {
 
   let segurado = document.querySelector("#consignacoes_nome").value;
 
-  // let consignacoes = document.querySelector("#situacaoConsignacao").value;
-
   let situacao = document.getElementsByClassName("radio_consignacoes");
 
   let ressalva = document.getElementsByClassName("ressalvaConsignacoes");
 
-  let textarea = document.querySelector("#consignacoes_textarea");
-
   let assunto = document.getElementById("consignacoes_assunto_email");
+
+  let textarea = document.querySelector("#consignacoes_textarea");
 
   //Respostas salvas em variáveis
 
   const naoLocalizado = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com dados de consultas aos sistemas do INSS. Neste documento é possível constatar que não foi possível localizar o cadastro do(a) Sr.(a) ${segurado} através dos dados informados.`;
 
-  const consignacaoAtiva = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar a seguinte situação referente os contratos efetuados entre o segurado ${segurado} e o(s) agente(s) financeiro(s)`;
+  const consignacaoAtiva = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar a seguinte situação referente os contratos efetuados entre o segurado ${segurado} e o(s) agente(s) financeiro(s):`;
 
-  const excluidoBanco = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}`;
+  const excluidoBanco = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o agente financeiro efetuou a exclusão da consignação no benefício do segurado ${segurado}.`;
 
   const excluidoInss = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, encaminhamos relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que o INSS efetuou a suspensão da consignação conforme determinação.`;
 
   const historicoCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do segurado(a) ${segurado}.`;
 
-  const historicoEBloqueio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento, além de ser possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros no cadastro do(a) segurado(a) ${segurado}, também é possível verificar que foi lançado bloqueio para que não seja mais possível lançar novas consignações no benefício do(a) segurado(a).`;
+  const historicoEBloqueio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento, além de ser possível analisar o histórico completo de consignações efetuadas pelos agentes financeiros, também é possível verificar que foi lançado bloqueio para que não seja mais possível lançar novas consignações no benefício do(a) segurado(a) ${segurado}.`;
 
   const ressalvaDadosBancarios = `\n\nRessaltamos que o INSS trata da concessão e manutenção de benefícios previdenciários, não dispondo assim dos detalhes contratuais firmados entre o segurado e o agente bancário responsável pela consignação.`;
 
   const ressalvaDependentes = `\n\nImportante salientar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.`;
 
-  const ressalvaEscopoInss = `\n\nRessaltamos que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`;
+  const ressalvaEscopoInss = `\n\nRessaltamos que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre outros programas de outros entes federais.`;
 
   const atenciosamente = `\n\nAtenciosamente,`;
 
@@ -695,97 +693,113 @@ function resposta_consignacoes() {
 
   //Segurado não-localizado
   if (situacao[0].checked) {
-    textarea.value = ressalva[0].checked
-      ? naoLocalizado + atenciosamente
-      : naoLocalizado + atenciosamente;
-    textarea.value = ressalva[1].checked
-      ? naoLocalizado + ressalvaDadosBancarios + atenciosamente
-      : naoLocalizado + atenciosamente;
-    textarea.value = ressalva[2].checked
-      ? naoLocalizado + ressalvaDependentes + atenciosamente
-      : naoLocalizado + atenciosamente;
-    textarea.value = ressalva[3].checked
-      ? naoLocalizado + ressalvaEscopoInss + atenciosamente
-      : naoLocalizado + atenciosamente;
+    if (ressalva[0].checked) {
+      textarea.value = naoLocalizado + atenciosamente;
+    }
+
+    if (ressalva[1].checked) {
+      textarea.value = naoLocalizado + ressalvaDadosBancarios + atenciosamente;
+    }
+
+    if (ressalva[2].checked) {
+      textarea.value = naoLocalizado + ressalvaDependentes + atenciosamente;
+    }
+    if (ressalva[3].checked) {
+      textarea.value = naoLocalizado + ressalvaEscopoInss + atenciosamente;
+    }
   }
 
   //Consignação ativa
   if (situacao[1].checked) {
-    textarea.value = ressalva[0].checked
-      ? consignacaoAtiva + atenciosamente
-      : consignacaoAtiva + atenciosamente;
-    textarea.value = ressalva[1].checked
-      ? consignacaoAtiva + ressalvaDadosBancarios + atenciosamente
-      : consignacaoAtiva + atenciosamente;
-    textarea.value = ressalva[2].checked
-      ? consignacaoAtiva + ressalvaDependentes + atenciosamente
-      : consignacaoAtiva + atenciosamente;
-    textarea.value = ressalva[3].checked
-      ? consignacaoAtiva + ressalvaEscopoInss + atenciosamente
-      : consignacaoAtiva + atenciosamente;
+    if (ressalva[0].checked) {
+      textarea.value = consignacaoAtiva + atenciosamente;
+    }
+
+    if (ressalva[1].checked) {
+      textarea.value =
+        consignacaoAtiva + ressalvaDadosBancarios + atenciosamente;
+    }
+
+    if (ressalva[2].checked) {
+      textarea.value = consignacaoAtiva + ressalvaDependentes + atenciosamente;
+    }
+    if (ressalva[3].checked) {
+      textarea.value = consignacaoAtiva + ressalvaEscopoInss + atenciosamente;
+    }
   }
 
-  //Excluído pelo banco
+  //Cancelada pelo banco
   if (situacao[2].checked) {
-    textarea.value = ressalva[0].checked
-      ? excluidoBanco + atenciosamente
-      : excluidoBanco + atenciosamente;
-    textarea.value = ressalva[1].checked
-      ? excluidoBanco + ressalvaDadosBancarios + atenciosamente
-      : excluidoBanco + atenciosamente;
-    textarea.value = ressalva[2].checked
-      ? excluidoBanco + ressalvaDependentes + atenciosamente
-      : excluidoBanco + atenciosamente;
-    textarea.value = ressalva[3].checked
-      ? excluidoBanco + ressalvaEscopoInss + atenciosamente
-      : excluidoBanco + atenciosamente;
+    if (ressalva[0].checked) {
+      textarea.value = excluidoBanco + atenciosamente;
+    }
+
+    if (ressalva[1].checked) {
+      textarea.value = excluidoBanco + ressalvaDadosBancarios + atenciosamente;
+    }
+
+    if (ressalva[2].checked) {
+      textarea.value = excluidoBanco + ressalvaDependentes + atenciosamente;
+    }
+    if (ressalva[3].checked) {
+      textarea.value = excluidoBanco + ressalvaEscopoInss + atenciosamente;
+    }
   }
 
   //Excluído pelo INSS
   if (situacao[3].checked) {
-    textarea.value = ressalva[0].checked
-      ? excluidoInss + atenciosamente
-      : excluidoInss + atenciosamente;
-    textarea.value = ressalva[1].checked
-      ? excluidoInss + ressalvaDadosBancarios + atenciosamente
-      : excluidoInss + atenciosamente;
-    textarea.value = ressalva[2].checked
-      ? excluidoInss + ressalvaDependentes + atenciosamente
-      : excluidoInss + atenciosamente;
-    textarea.value = ressalva[3].checked
-      ? excluidoInss + ressalvaEscopoInss + atenciosamente
-      : excluidoInss + atenciosamente;
+    if (ressalva[0].checked) {
+      textarea.value = excluidoInss + atenciosamente;
+    }
+
+    if (ressalva[1].checked) {
+      textarea.value = excluidoInss + ressalvaDadosBancarios + atenciosamente;
+    }
+
+    if (ressalva[2].checked) {
+      textarea.value = excluidoInss + ressalvaDependentes + atenciosamente;
+    }
+    if (ressalva[3].checked) {
+      textarea.value = excluidoInss + ressalvaEscopoInss + atenciosamente;
+    }
   }
 
   //Histórico completo
   if (situacao[4].checked) {
-    textarea.value = ressalva[0].checked
-      ? historicoCompleto + atenciosamente
-      : historicoCompleto + atenciosamente;
-    textarea.value = ressalva[1].checked
-      ? historicoCompleto + ressalvaDadosBancarios + atenciosamente
-      : historicoCompleto + atenciosamente;
-    textarea.value = ressalva[2].checked
-      ? historicoCompleto + ressalvaDependentes + atenciosamente
-      : historicoCompleto + atenciosamente;
-    textarea.value = ressalva[3].checked
-      ? historicoCompleto + ressalvaEscopoInss + atenciosamente
-      : historicoCompleto + atenciosamente;
+    if (ressalva[0].checked) {
+      textarea.value = historicoCompleto + atenciosamente;
+    }
+
+    if (ressalva[1].checked) {
+      textarea.value =
+        historicoCompleto + ressalvaDadosBancarios + atenciosamente;
+    }
+
+    if (ressalva[2].checked) {
+      textarea.value = historicoCompleto + ressalvaDependentes + atenciosamente;
+    }
+    if (ressalva[3].checked) {
+      textarea.value = historicoCompleto + ressalvaEscopoInss + atenciosamente;
+    }
   }
   //Histórico e Bloqueio
   if (situacao[5].checked) {
-    textarea.value = ressalva[0].checked
-      ? historicoEBloqueio + atenciosamente
-      : historicoEBloqueio + atenciosamente;
-    textarea.value = ressalva[1].checked
-      ? historicoEBloqueio + ressalvaDadosBancarios + atenciosamente
-      : historicoEBloqueio + atenciosamente;
-    textarea.value = ressalva[2].checked
-      ? historicoEBloqueio + ressalvaDependentes + atenciosamente
-      : historicoEBloqueio + atenciosamente;
-    textarea.value = ressalva[3].checked
-      ? historicoEBloqueio + ressalvaEscopoInss + atenciosamente
-      : historicoEBloqueio + atenciosamente;
+    if (ressalva[0].checked) {
+      textarea.value = historicoEBloqueio + atenciosamente;
+    }
+
+    if (ressalva[1].checked) {
+      textarea.value =
+        historicoEBloqueio + ressalvaDadosBancarios + atenciosamente;
+    }
+
+    if (ressalva[2].checked) {
+      textarea.value =
+        historicoEBloqueio + ressalvaDependentes + atenciosamente;
+    }
+    if (ressalva[3].checked) {
+      textarea.value = historicoEBloqueio + ressalvaEscopoInss + atenciosamente;
+    }
   }
 }
 

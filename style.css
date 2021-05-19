@@ -94,6 +94,8 @@ a {
 .inputs_geral:hover {
   outline: 1px solid #8edcf2;
   box-shadow: 1px 1px 1px gray;
+  position: relative;
+  left: 2px;
 }
 
 textarea {
