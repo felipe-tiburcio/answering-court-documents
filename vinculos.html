@@ -286,16 +286,16 @@
 
         <br>
 
-        <input selected id="radio_13"class="radio_vinculos" type="radio" name="ressalvas" value="3">
+        <input selected id="radio_13"class="ressalvas" type="radio" name="ressalvas" value="3">
         <label for="radio_13">Sem Ressalvas</label>
         <br>
 
-        <input id="radio_14"class="radio_vinculos" type="radio" name="ressalvas" value="1">
+        <input id="radio_14"class="ressalvas" type="radio" name="ressalvas" value="1">
         <label for="radio_14">Ressalva - Cadastro de Dependentes</label>
 
         <br>
 
-        <input id="radio_15"class="radio_vinculos" type="radio" name="ressalvas" value="2">
+        <input id="radio_15"class="ressalvas" type="radio" name="ressalvas" value="2">
         <label for="radio_15">Ressalva - Área de atuação do INSS</label>
         <br>       
         <hr>
@@ -306,17 +306,20 @@
     </div>
        
       
-      <div id="vinculos_div_button">
-    
+    <div id="vinculos_div_button">
       <button type="button" onclick="resposta_vinculos()">Responder</button>
-      <button type="reset">Limpar Campos</button>
-    
-     
+      <button type="reset">Limpar Campos</button> 
     </div>
 
     <section id="respostas" class="alignCenter">
 
-      <a href="#container_segurado" class="scroll">&#x25B2</a><br>
+      <a href="#container_segurado" class="scroll">&#x25B2</a>
+
+      <input 
+      id="vinculos_nome_copia"
+      class="inputs_geral"
+      placeholder="Nome Completo"  
+    ><br>
 
       <input id="vinculos_orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc">
       <br>

@@ -120,26 +120,35 @@
 
       <div ="container_segurado" class="vinculos_containers"> 
       
-        
         <label for="ms_resumo" class="label_inputs" id="label_endereco">Situação:</label>
         <textarea id="ms_resumo" class="inputs_geral" rows="5" cols="70" placeholder="Notas e relato da situação"></textarea>
 
         <br>
 
+        <h3 class="black_subtitles">Atendimento realizado</h3>
+
+        <label for="ms_data_atendimento" class="label_inputs">Data:</label>
+        <input id="ms_data_atendimento" class="inputs_geral" type="date">
+
+        <br>
+
+        <label for="ms_aps_atendimento" class="label_inputs">Local:</label>
+        <input id="ms_aps_atendimento" class="inputs_geral" placeholder="APS" value="APS Ivo do Prado">
+        
         <h3 class="black_subtitles">Agendamento</h3>
 
-        <label for="ms_agendamento" class="label_inputs">Data:</label>
-        <input id="ms_agendamento" class="inputs_geral" type="date">
+        <label for="ms_data_agendamento" class="label_inputs">Data:</label>
+        <input id="ms_data_agendamento" class="inputs_geral" type="date">
 
         <br>
 
-        <label for="ms_horario" class="label_inputs">Horário:</label>
-        <input id="ms_horario" class="inputs_geral" placeholder="Horário do Agendamento">
+        <label for="ms_horario_agendamento" class="label_inputs">Horário:</label>
+        <input id="ms_horario_agendamento" class="inputs_geral" placeholder="Horário do Agendamento">
 
         <br>
 
-        <label for="ms_aps" class="label_inputs">Local:</label>
-        <input id="ms_aps" class="inputs_geral" placeholder="APS" value="APS Ivo do Prado">
+        <label for="ms_aps_agendamento" class="label_inputs">Local:</label>
+        <input id="ms_aps_agendamento" class="inputs_geral" placeholder="APS" value="APS Ivo do Prado">
         
       </div>
       
@@ -194,7 +203,7 @@
           class="radio_ms"
           type="radio" 
           name="radio">
-        <label for="radio_4">Perícia - DCB</label>
+        <label for="radio_4">Perícia Agendada</label>
         
         <br>
         
@@ -203,7 +212,7 @@
           class="radio_ms"
           type="radio" 
           name="radio">
-        <label for="radio_5">Exigência</label>
+        <label for="radio_5">Perícia-DCB</label>
         
         <br>
         
@@ -212,8 +221,8 @@
           class="radio_ms"
           type="radio" 
           name="radio">
-        <label for="radio_6">MOB</label>
-       
+        <label for="radio_6">Exigência</label>
+        
         <br>
         
         <input 
@@ -221,7 +230,16 @@
           class="radio_ms"
           type="radio" 
           name="radio">
-        <label for="radio_7">Outra situação</label>
+        <label for="radio_7">MOB</label>
+
+        <br>
+        
+        <input 
+          id="radio_8" 
+          class="radio_ms"
+          type="radio" 
+          name="radio">
+        <label for="radio_8">Outra situação</label>
 
     
     </div>
@@ -232,15 +250,15 @@
     
       <button 
         type="button"
-        onclick="resposta_ms()" >Responder</button>
+        onclick="resposta_ms()" >Responder
+      </button>
     </div>
 
     <br>
-
+  
     <section id="respostas" class="alignCenter">
 
       <textarea id="ms_textarea" rows="18" cols="60" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
-
     </section>
       <footer ="geral_footer">
         &copyFelipe Tiburcio - 2020

@@ -4,21 +4,21 @@ function resposta_vinculos() {
 
   let orgaoCopia = document.querySelector("#vinculos_orgao_copia");
 
-  orgaoCopia = orgao;
-
   let processo = document.querySelector("#vinculos_processo").value;
 
   let email = document.querySelector("#vinculos_email").value;
 
-  let emailCopia = document.querySelector("#vinculos_email_copia").value;
-
-  emailCopia = email;
+  let emailCopia = document.querySelector("#vinculos_email_copia");
 
   let segurado = document.querySelector("#vinculos_nome").value;
+
+  let seguradoCopia = document.querySelector("#vinculos_nome_copia");
 
   let endereco = document.querySelector("#vinculos_endereco").value;
 
   let situacao = document.getElementsByClassName("radio_vinculos");
+
+  let ressalvas = document.querySelectorAll(".ressalvas");
 
   let empresa = document.querySelector("#vinculos_empresa").value;
 
@@ -42,7 +42,7 @@ function resposta_vinculos() {
 
   let resposta = document.querySelector("#vinculos_textarea");
 
-  let assunto = document.getElementById("assunto");
+  let assunto = document.querySelector("#assunto");
 
   // Variáveis com as respostas para melhor organização
 
@@ -50,19 +50,19 @@ function resposta_vinculos() {
 
   const vinculoAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo ativo com a empresa ${empresa} desde ${data_inicio}.`;
 
-  const vinculoSalario = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo ativo com a empresa ${empresa} desde ${data_inicio}, e seu último salário informado pelo empregador foi R$ ${ultimoSalario}.`;
+  const vinculoESalario = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo ativo com a empresa ${empresa} desde ${data_inicio}, e seu último salário informado pelo empregador foi R$ ${ultimoSalario}.`;
 
-  const vinculoDuvida = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo(s) em aberto, no entanto, não existem dados atuais informados pela(s) empresa(s) sobre a remuneração recebida, o que gera dúvida quanto à manutenção deste(s) vínculo(s).`;
+  const vinculoAbertoESemRemuneracao = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} tem vínculo(s) em aberto, no entanto, não existem dados atuais informados pela(s) empresa(s) sobre a remuneração recebida, o que gera dúvida quanto à manutenção deste(s) vínculo(s).`;
 
-  const semVinculo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum vínculo ativo atual no cadastro do(a) segurado(a) ${segurado}.`;
+  const semVinculoAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum vínculo ativo atual no cadastro do(a) segurado(a) ${segurado}.`;
 
   const beneficioAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta que o(a) segurado(a) ${segurado} recebe benefício de ${beneficio} desde ${inicioBeneficio} com o valor bruto de R$ ${valorBeneficio}.`;
 
-  const semBeneficio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum benefício ativo no cadastro do(a) segurado(a) ${segurado}.`;
+  const semBeneficioAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum benefício ativo no cadastro do(a) segurado(a) ${segurado}.`;
 
   const informarEndereco = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta(m) o(s) seguinte(s) endereço(s) do segurado ${segurado}: \n\n${endereco}`;
 
-  const cnisCompleto = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando o relatório completo do CNIS. Neste documento é possível analisar o histórico completo de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
+  const cnisExtrato = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando o relatório completo do CNIS. Neste documento é possível analisar o histórico completo de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
 
   const cnisVazio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum vínculo, contribuição ou benefício no cadastro do(a) segurado(a) ${segurado}.`;
 
@@ -70,98 +70,137 @@ function resposta_vinculos() {
 
   const ressalvaDependentes = `\n\nImportante ressaltar que dependentes somente são cadastrados/habilitados no INSS após aprovação de requerimento administrativo de benefício de Pensão por Morte quando ocorre o óbito do segurado, inexistindo assim um cadastro prévio de dependentes administrado pelo INSS.`;
 
-  const escopoInss = `\n\nImportante ressaltar que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`;
+  const ressalvaEscopoInss = `\n\nImportante ressaltar que o INSS é uma autarquia federal que trata somente de questões previdenciárias relacionadas ao Regime Geral de Previdência Social (RGPS), não dispondo de informações sobre quaisquer programas de outros entes federais.`;
 
   const outraSituacao = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que`;
 
   const atenciosamente = `\n\nAtenciosamente,`;
 
-  assunto.innerHTML = `Ofício - Processo ${processo} - ${segurado}`;
+  assunto.value = `Ofício - Processo ${processo} - ${segurado}`;
+  seguradoCopia.value = segurado;
+  orgaoCopia.value = orgao;
+  emailCopia.value = email;
 
-  //Lógica com as ressalvas sendo lidas primeiro para mudar a posição do "Atenciosamente".
-  //Ressalva cadastro de dependentes
-  if (situacao[13].checked) {
-    if (situacao[0].checked) {
-      resposta.innerHTML = naoLocalizado;
-    } else if (situacao[1].checked) {
-      resposta.innerHTML = vinculoAtivo;
-    } else if (situacao[2].checked) {
-      resposta.innerHTML = vinculoSalario;
-    } else if (situacao[3].checked) {
-      resposta.innerHTML = vinculoDuvida;
-    } else if (situacao[4].checked) {
-      resposta.innerHTML = semVinculo;
-    } else if (situacao[5].checked) {
-      resposta.innerHTML = beneficioAtivo;
-    } else if (situacao[6].checked) {
-      resposta.innerHTML = semBeneficio;
-    } else if (situacao[7].checked) {
-      resposta.innerHTML = informarEndereco;
-    } else if (situacao[8].checked) {
-      resposta.innerHTML = cnisCompleto;
-    } else if (situacao[9].checked) {
-      resposta.innerHTML = cnisVazio;
-    } else if (situacao[10].checked) {
-      resposta.innerHTML = dadosCadastrais;
-    } else if (situacao[11].checked) {
-      resposta.innerHTML = outraSituacao;
+  //Segurado não localizado
+  if (situacao[0].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = naoLocalizado + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = naoLocalizado + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = naoLocalizado + atenciosamente;
     }
-
-    resposta.innerHTML += ressalvaDependentes + atenciosamente;
-    //ressalva area de atuacao do inss
-  } else if (situacao[14].checked) {
-    if (situacao[0].checked) {
-      resposta.innerHTML = naoLocalizado;
-    } else if (situacao[1].checked) {
-      resposta.innerHTML = vinculoAtivo;
-    } else if (situacao[2].checked) {
-      resposta.innerHTML = vinculoSalario;
-    } else if (situacao[3].checked) {
-      resposta.innerHTML = vinculoDuvida;
-    } else if (situacao[4].checked) {
-      resposta.innerHTML = semVinculo;
-    } else if (situacao[5].checked) {
-      resposta.innerHTML = beneficioAtivo;
-    } else if (situacao[6].checked) {
-      resposta.innerHTML = semBeneficio;
-    } else if (situacao[7].checked) {
-      resposta.innerHTML = informarEndereco;
-    } else if (situacao[8].checked) {
-      resposta.innerHTML = cnisCompleto;
-    } else if (situacao[9].checked) {
-      resposta.innerHTML = cnisVazio;
-    } else if (situacao[10].checked) {
-      resposta.innerHTML = dadosCadastrais;
-    } else if (situacao[11].checked) {
-      resposta.innerHTML = outraSituacao;
+  }
+  //Vínculo Ativo
+  if (situacao[1].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = vinculoAtivo + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = vinculoAtivo + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = vinculoAtivo + atenciosamente;
     }
-
-    resposta.innerHTML += escopoInss + atenciosamente;
-  } else {
-    if (situacao[0].checked) {
-      resposta.innerHTML = naoLocalizado + atenciosamente;
-    } else if (situacao[1].checked) {
-      resposta.innerHTML = vinculoAtivo + atenciosamente;
-    } else if (situacao[2].checked) {
-      resposta.innerHTML = vinculoSalario + atenciosamente;
-    } else if (situacao[3].checked) {
-      resposta.innerHTML = vinculoDuvida + atenciosamente;
-    } else if (situacao[4].checked) {
-      resposta.innerHTML = semVinculo + atenciosamente;
-    } else if (situacao[5].checked) {
-      resposta.innerHTML = beneficioAtivo + atenciosamente;
-    } else if (situacao[6].checked) {
-      resposta.innerHTML = semBeneficio + atenciosamente;
-    } else if (situacao[7].checked) {
-      resposta.innerHTML = informarEndereco + atenciosamente;
-    } else if (situacao[8].checked) {
-      resposta.innerHTML = cnisCompleto + atenciosamente;
-    } else if (situacao[9].checked) {
-      resposta.innerHTML = cnisVazio + atenciosamente;
-    } else if (situacao[10].checked) {
-      resposta.innerHTML = dadosCadastrais + atenciosamente;
-    } else if (situacao[11].checked) {
-      resposta.innerHTML = outraSituacao + atenciosamente;
+  }
+  //Vínculo e Salário
+  if (situacao[2].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = vinculoESalario + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = vinculoESalario + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = vinculoESalario + atenciosamente;
+    }
+  }
+  //Vínculo aberto e sem remuneração recente
+  if (situacao[3].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value =
+        vinculoAbertoESemRemuneracao + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value =
+        vinculoAbertoESemRemuneracao + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = vinculoAbertoESemRemuneracao + atenciosamente;
+    }
+  }
+  //Sem Vínculo Ativo
+  if (situacao[4].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = semVinculoAtivo + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = semVinculoAtivo + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = semVinculoAtivo + atenciosamente;
+    }
+  }
+  //Benefício Ativo
+  if (situacao[5].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = beneficioAtivo + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = beneficioAtivo + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = beneficioAtivo + atenciosamente;
+    }
+  }
+  //Sem Benefício Ativo
+  if (situacao[6].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = semBeneficioAtivo + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = semBeneficioAtivo + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = semBeneficioAtivo + atenciosamente;
+    }
+  }
+  //Endereço
+  if (situacao[7].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = informarEndereco + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = informarEndereco + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = informarEndereco + atenciosamente;
+    }
+  }
+  //CNIS Extrato
+  if (situacao[8].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = cnisExtrato + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = cnisExtrato + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = cnisExtrato + atenciosamente;
+    }
+  }
+  //CNIS Vazio
+  if (situacao[9].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = cnisVazio + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = cnisVazio + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = cnisVazio + atenciosamente;
+    }
+  }
+  //Dados Cadastrais
+  if (situacao[10].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = dadosCadastrais + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = dadosCadastrais + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = dadosCadastrais + atenciosamente;
+    }
+  }
+  //Outra Situação
+  if (situacao[11].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = outraSituacao + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = outraSituacao + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = outraSituacao + atenciosamente;
     }
   }
 }
@@ -1046,12 +1085,6 @@ function resposta_ms() {
 
   const situacao = document.getElementsByClassName("radio_ms");
 
-  const dataAgendamento = document
-    .getElementById("ms_agendamento")
-    .value.split("-")
-    .reverse()
-    .join("/");
-
   const beneficioNumero = document.querySelector("#ms_nb").value;
 
   const dcb = document
@@ -1066,9 +1099,25 @@ function resposta_ms() {
     .reverse()
     .join("/");
 
-  const horaAgendamento = document.querySelector("#ms_horario").value;
+  const dataAtendimento = document
+    .getElementById("ms_data_atendimento")
+    .value.split("-")
+    .reverse()
+    .join("/");
 
-  const aps = document.querySelector("#ms_aps").value;
+  const aps_atendimento = document.querySelector("#ms_aps_atendimento").value;
+
+  const dataAgendamento = document
+    .getElementById("ms_data_agendamento")
+    .value.split("-")
+    .reverse()
+    .join("/");
+
+  const horaAgendamento = document.querySelector(
+    "#ms_horario_agendamento"
+  ).value;
+
+  const aps_agendamento = document.querySelector("#ms_aps_agendamento").value;
 
   const resposta = document.querySelector("#ms_textarea");
 
@@ -1091,7 +1140,7 @@ function resposta_ms() {
 
 1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome} que não conseguiu realizar o agendamento de Perícia de Prorrogação dentro do prazo e teve seu benefício nº ${beneficio} indevidamente cessado. 
     
-2. Situação resolvida e perícia agendada para o dia ${dataAgendamento} às ${horaAgendamento} na ${aps}.
+2. Situação resolvida e perícia agendada para o dia ${dataAgendamento} às ${horaAgendamento} na ${aps_agendamento}.
     
 3. O benefício foi reativado e já consta o cálculo dos pagamentos pendentes conforme relatório anexo.`;
 
@@ -1122,6 +1171,14 @@ function resposta_ms() {
 3. Nestes casos em que a data de cessação é a própria data da perícia, não é possível agendar prorrogação.
 
 4. Com a cessação do benefício, o segurado tem prazo de 30 dias de prazo para entrar com Recurso Administrativo contra a decisão e/ou terá que aguardar 30 dias para realizar um novo requerimento de benefício.`;
+
+  const periciaAgendada = `Encaminhamento de determinação judicial para cumprimento.
+
+1. Trata-se de Mandado de Segurança impetrado pelo(a) segurado(a) ${nome} referente demora na análise do seu requerimento de Benefício de Prestação Continuada. 
+    
+2. É possível verificar através do relatório da tarefa que a Avaliação Social foi realizada em ${dataAtendimento}. 
+    
+3. Sendo assim, restou pendente a realização da Perícia Médica, e consta no processo que esta teve que ser remarcada para o dia ${dataAgendamento} às ${horaAgendamento} na ${aps_agendamento}.`;
 
   const exigencia = `Encaminhamento de determinação judicial para cumprimento.
 
@@ -1154,12 +1211,14 @@ function resposta_ms() {
   } else if (situacao[3].checked) {
     resposta.value = informacoesDossie;
   } else if (situacao[4].checked) {
-    resposta.value = analiseMedica;
+    resposta.value = periciaAgendada;
   } else if (situacao[5].checked) {
-    resposta.value = exigencia;
+    resposta.value = analiseMedica;
   } else if (situacao[6].checked) {
-    resposta.value = mob;
+    resposta.value = exigencia;
   } else if (situacao[7].checked) {
+    resposta.value = mob;
+  } else if (situacao[8].checked) {
     resposta.value = outraSituacao;
   }
 }
