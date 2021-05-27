@@ -75,12 +75,11 @@ a {
 }
 
 .vinculosCheckbox {
+  display: flex;
+  justify-content: space-around;
   border: 1px solid gray;
-  border-radius: 4px;
-  /* box-shadow: 1px 1px 1px gray; */
-  margin-top: 3px;
-  margin-left: 10px;
-  padding: 5px;
+  border-radius: 3px;
+  padding: 6px 0px 6px 0px;
   width: 360px;
   margin: auto;
 }
@@ -111,7 +110,7 @@ textarea:focus {
   outline: 1px solid #ffcd07;
 }
 
-textarea:hover{
+textarea:hover {
   outline: 1px solid #8edcf2;
   box-shadow: 1px 1px 1px gray;
 }
@@ -197,7 +196,7 @@ textarea:hover{
 div button,
 input[type="reset"] {
   display: block;
-  margin:auto;
+  margin: auto;
   padding: 5px 10px;
 }
 
