@@ -205,6 +205,14 @@ function resposta_vinculos() {
   }
 }
 
+const clearFunction = () => {
+  const clearButton = document.querySelector("#clearButton");
+
+  if (confirm("Apagar campos?")) {
+    clearButton.type = "reset";
+  }
+};
+
 //Final da página de Vínculos
 
 // Início da página de Dependentes
@@ -916,7 +924,7 @@ Sendo assim, solicitamos que, se possível, este dado seja enviado para este e-m
   // Fim dos radio inputs
 }
 
-//   //Final da página de P.A
+//Final da página de P.A
 
 //Página SEI???
 
