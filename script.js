@@ -1,3 +1,12 @@
+//Função pra limpar campos - Escopo Global
+const clearFunction = () => {
+  const clearButton = document.querySelector("#clearButton");
+
+  if (confirm("Apagar campos?")) {
+    clearButton.type = "reset";
+  }
+};
+
 // Início da página de Vínculos
 function resposta_vinculos() {
   let orgao = document.querySelector("#vinculos_orgao").value;
@@ -204,19 +213,9 @@ function resposta_vinculos() {
     }
   }
 }
-
-const clearFunction = () => {
-  const clearButton = document.querySelector("#clearButton");
-
-  if (confirm("Apagar campos?")) {
-    clearButton.type = "reset";
-  }
-};
-
 //Final da página de Vínculos
 
 // Início da página de Dependentes
-
 function resposta_dependentes() {
   const orgao = document.querySelector("#dependentes_orgao").value;
 
@@ -304,11 +303,9 @@ function resposta_dependentes() {
 
   */
 }
-
 // Final da página de Dependentes
 
 //Início da página de Resíduos
-
 function respostaResiduos() {
   const nome = document.querySelector("#residuos_nome").value;
 
@@ -694,7 +691,6 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 // Final da página de Resíduos
 
 // Início da página de Consignações
-
 function resposta_consignacoes() {
   let orgao = document.querySelector("#consignacoes_orgao").value;
 
@@ -855,11 +851,9 @@ function resposta_consignacoes() {
     }
   }
 }
-
 //Final da página de Consignações
 
 //Início da página de Pensão Alimentícia
-
 function respostaPA() {
   const processo = document.querySelector("#pa_processo").value;
 
@@ -923,11 +917,9 @@ Sendo assim, solicitamos que, se possível, este dado seja enviado para este e-m
 
   // Fim dos radio inputs
 }
-
 //Final da página de P.A
 
 //Página SEI???
-
 function resposta_sei() {
   const nome = document.querySelector("#sei_nome").value;
 
@@ -1012,11 +1004,9 @@ function resposta_sei() {
     resposta.value = outraSituacao;
   }
 }
-
 //Final da página SEI
 
 //Início da página de Protocolo
-
 function resposta_protocolo() {
   const processo = document.querySelector("#protocolo_processo").value;
 
@@ -1086,12 +1076,10 @@ function resposta_protocolo() {
   if (situacao[9].checked) {
     textarea.value += ressalva2;
   }
-
-  // Fim da página de Procotolo
 }
+// Fim da página de Procotolo
 
 //Início da página Mandado de Segurança
-
 function resposta_ms() {
   const nome = document.querySelector("#ms_nome").value;
 
@@ -1236,5 +1224,4 @@ function resposta_ms() {
     resposta.value = outraSituacao;
   }
 }
-
-//Final da página ms
+//Final da página Mandado de Segurança
