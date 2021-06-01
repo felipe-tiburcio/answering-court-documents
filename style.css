@@ -84,6 +84,36 @@ a {
   margin: auto;
 }
 
+.dependentesCheckbox {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 6px 0px 6px 0px;
+  width: 360px;
+  margin: auto;
+}
+
+.msCheckbox {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 6px 0px 6px 0px;
+  width: 360px;
+  margin: auto;
+}
+
+.seiCheckbox {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 6px 0px 6px 0px;
+  width: 360px;
+  margin: auto;
+}
+
 .inputs_geral:focus {
   background-color: #ffffe0;
   outline: 1px solid #ffcd07;

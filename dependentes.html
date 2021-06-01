@@ -37,24 +37,6 @@
         <input id="dependentes_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc">
 
         <br>
-        
-        <!-- <label for="dependentes_cidade" class="label_inputs">Cidade:</label>
-        <select id="residuos_cidade" class="inputs_geral">
-          <option selected>Aracaju</option>
-          <option>N. Sra. do Socorro</option>
-          <option>Barra dos Coqueiros</option>
-          <option>São Cristóvão</option>
-          <option>Itaporanga</option>
-          <option>Carmópolis</option>
-          <option>Maruim</option>
-          <option>Riachuelo</option>
-          <option>Santo Amaro das Brotas</option>
-          <option>Salgado</option>
-          <option>Outra Cidade</option>
-      </select>
-      
-
-        <br> -->
       
         <label for="dependentes_processo" class="label_inputs">Processo:</label>
         <input type="text" id="dependentes_processo" class="inputs_geral" min="0" placeholder="Número do Processo">
@@ -69,15 +51,15 @@
     
     <h4 class="black_subtitles">Assunto</h4>
 
-    <div id="vinculosCheckbox" class="vinculosCheckbox"> 
-
-      <input id="checkbox1"type="checkbox">
-      <label for="checkbox1">Existência de Dependentes</label>
+    <div id="dependentesCheckbox" class="dependentesCheckbox"> 
+      <div>
+        <input id="checkbox1"type="checkbox">
+        <label for="checkbox1">Existência de Dependentes</label>
         
-      <br>
+        <br>
 
-      <input id="checkbox2"type="checkbox">
-      <label for="checkbox2">Emissão de Certidão</label>
+        <input id="checkbox2"type="checkbox">
+        <label for="checkbox2">Emissão de Certidão</label>
         
       <br>
 
@@ -90,6 +72,9 @@
       <label for="checkbox4">Dados Cadastrais dos Dependentes</label>
         
       <br>
+
+    </div>
+    <div>
   
       <input id="checkbox5"type="checkbox">
       <label for="checkbox5">Informar Resíduos</label>
@@ -108,6 +93,7 @@
     </div>
 
     <br>
+  </div>
     
     <div id="dependentes_segurado_container">
         <h4 class="black_subtitles">Segurado</h4>       
