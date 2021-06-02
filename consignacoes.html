@@ -176,18 +176,21 @@
     </div>
     <section id="respostas" class="alignCenter">
 
+      <input id="nome_copia" class="inputs_geral" placeholder="Nome Completo" onclick="copiaNome()">
       
+      <br>
+
+      <input id="orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, etc" onclick="copiaOrgao()">
         
-        <input id="consignacoes_orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, etc">
-        <br>
-        <input id="consignacoes_email_copia" class="inputs_geral" placeholder="E-mail para contato">
+      <br>
+        
+      <input id="email_copia" class="inputs_geral" placeholder="E-mail para contato" onclick="copiaEmail()">
 
-        <br>
+      <br>
 
-        <textarea id="consignacoes_assunto_email" rows="1" cols="46" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
+      <textarea id="assunto" rows="1" cols="46" placeholder="Texto pra ser colado no Assunto do E-mail" onclick="copiaAssunto()"></textarea><br>
 
-
-      <textarea id="consignacoes_textarea" rows="8" cols="62" id="consignacoes_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+      <textarea id="resposta" rows="8" cols="62" placeholder="O texto aparecerá aqui. Clique e o texto será copiado automaticamente." onclick="copiaResposta()"></textarea>
 
     </section>
       <footer ="geral_footer">

@@ -275,20 +275,20 @@
       <a href="#container_segurado" class="scroll">&#x25B2</a>
 
       <input 
-      id="vinculos_nome_copia"
+      id="nome_copia"
       class="inputs_geral"
       placeholder="Nome Completo"
-      onclick="copyNameValue()"  
+      onclick="copiaNome()"  
     ><br>
 
-      <input id="vinculos_orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc">
+      <input id="orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc" onclick="copiaOrgao()">
       <br>
-      <input id="vinculos_email_copia" class="inputs_geral" placeholder="E-mail">
+      <input id="email_copia" class="inputs_geral" placeholder="E-mail" onclick="copiaEmail()">
       <br>
     
-      <textarea id="assunto" rows="1" cols="58" placeholder="Assunto do e-mail"></textarea><br>
+      <textarea id="assunto" rows="1" cols="58" placeholder="Assunto do e-mail" onclick="copiaAssunto()"></textarea><br>
 
-      <textarea id="vinculos_textarea" rows="12" cols="60" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+      <textarea id="resposta" rows="12" cols="60" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar" onclick="copiaResposta()"></textarea>
 
     </section>
       <footer ="geral_footer">

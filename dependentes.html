@@ -249,19 +249,20 @@
 
       <div class="alignCenter">
 
-        <input id="dependentes_segurado_nome_copia" class="inputs_geral" placeholder="Nome do Segurado"><br>
+        <input id="nome_copia" class="inputs_geral" placeholder="Nome do Segurado" onclick="copiaNome()"><br>
 
-        <input id="dependentes_orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc">
+        <input id="orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc" onclick="copiaOrgao()">
 
         <br>
 
-        <input id="dependentes_email_copia" class="inputs_geral" placeholder="E-mail">
+        <input id="email_copia" class="inputs_geral" placeholder="E-mail" onclick="copiaEmail()">
         
         <br>
         
-        <textarea rows="1" cols="58" id="assunto_email" placeholder="Assunto do e-mail"></textarea><br>
+        <textarea rows="1" cols="58" id="assunto" placeholder="Assunto do e-mail" onclick="copiaAssunto()"></textarea><br>
         
-        <textarea id="dependentes_resposta" class="text_area_resposta" cols="58" rows="18" placeholder="A resposta aparecerá aqui. Use CTRL + A para selecionar toda a resposta, depois CTRL + C e CTRL + V no Expresso."></textarea>
+        <textarea id="resposta" class="text_area_resposta" cols="58" rows="18" placeholder="A resposta aparecerá aqui. Clique e será copiada automaticamente."
+        onclick="copiaResposta()"></textarea>
       </div>
       
       <footer id="">

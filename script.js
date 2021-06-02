@@ -3,34 +3,44 @@ const clearFunction = () => {
   const clearButton = document.querySelector("#clearButton");
 
   if (confirm("Apagar campos?")) {
-    clearButton.type = "reset";
+    clearButton.type = "submit"; //gambiarra - verificar o .reset()
+    //acrescentar JS pra fazer o scroll pra seção do segurado
   }
 };
 
 const copiaNome = () => {
-  let name = document.querySelector("#vinculos_nome_copia");
+  let name = document.querySelector("#nome_copia");
   name.select();
   document.execCommand("copy");
+  // console.log("nome");
 };
+
 const copiaOrgao = () => {
-  let orgao = document.querySelector("#vinculos_orgao_copia");
+  let orgao = document.querySelector("#orgao_copia");
   orgao.select();
   document.execCommand("copy");
+  // console.log("orgao");
 };
+
 const copiaEmail = () => {
-  let email = document.querySelector("#vinculos_email_copia");
+  let email = document.querySelector("#email_copia");
   email.select();
   document.execCommand("copy");
+  // console.log("email");
 };
+
 const copiaAssunto = () => {
-  let assunto = document.querySelector("#vinculos_assunto_copia");
+  let assunto = document.querySelector("#assunto");
   assunto.select();
   document.execCommand("copy");
+  // console.log("assunto");
 };
+
 const copiaResposta = () => {
-  let resposta = document.querySelector("#vinculos_text_area");
-  textarea.select();
+  let resposta = document.querySelector("#resposta");
+  resposta.select();
   document.execCommand("copy");
+  // console.log("resposta");
 };
 
 // Início da página de Vínculos
@@ -97,7 +107,7 @@ function resposta_vinculos() {
 
   const informarEndereco = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta(m) o(s) seguinte(s) endereço(s) do segurado ${segurado}: \n\n${endereco}`;
 
-  const cnisExtrato = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando o relatório completo do CNIS. Neste documento é possível analisar o histórico completo de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
+  const cnisExtrato = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando o relatório completo do CNIS. Neste documento é possível analisar o histórico de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
 
   const cnisVazio = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum vínculo, contribuição ou benefício no cadastro do(a) segurado(a) ${segurado}.`;
 
