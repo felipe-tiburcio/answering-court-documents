@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./img/favicon-32x32.png">
+  <title>SEI</title>
+
+</head>
+
+<body>
+  <form>
+  <header>
+    <div class="header_1">
+      <h2 class="nome_secao">SEI</h2>
+    </div>
+
+    <div id="nav" class="header_2">
+      <ul>
+        <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+        <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+        <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+        <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
+        <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+        <a href="protocolo.html" class="links_topo"><li>Protocolo/Cópia</li></a>
+        <a href="ms.html" class="links_topo"><li>Mandado de Segurança</li></a>
+        <a href="sei.html" class="links_topo"><li>SEI</li></a>
+      </ul>
+    </div>
+
+  </header>
+
+  <a href="#sei_textarea" class="scroll">&#x25BC</a><br>
+
+  <h3 class="black_subtitles">Situação</h3>
+    <div class="seiCheckbox">
+      <div>
+      <input type="checkbox" id="checkbox_finalizacao" class="">
+      <label for="checkbox_finalizacao" class="">Demora na Análise</label>
+
+      <br>
+
+      <input type="checkbox" id="checkbox_pp" class="">
+      <label for="checkbox_pp" class="">Problemas no PP</label>
+      
+      <br>
+
+      <input type="checkbox" id="checkbox_informacoes" class="">
+      <label for="checkbox_informacoes" class="">Informações/Dossiê</label>
+      <br>
+    </div>
+    <div>
+
+      <input type="checkbox" id="checkbox_agendamento" class="">
+      <label for="checkbox_agendamento" class="">Agendamentos</label>
+      
+      <br>
+      
+      <input type="checkbox" id="checkbox_outra" class="">
+      <label for="checkbox_outra" class="">Outra Situação</label>
+      
+      <br>
+      </div>
+    </div>
+
+      <h3 class="black_subtitles">Segurado</h3>
+
+        <label for="sei_nome" class="label_inputs">Nome:</label>
+        <input id="sei_nome" class="inputs_geral" placeholder="Nome Completo">
+
+        <br>
+
+        <label for="sei_cpf" class="label_inputs">CPF:</label>
+        <input id="sei_cpf" class="inputs_geral" placeholder="Número do CPF">
+       
+        <br>
+
+        <label for="sei_nit" class="label_inputs">NIT:</label>
+        <input id="sei_nit" class="inputs_geral" placeholder="Número de Inscrição do Trabalhador">
+              
+        <br>
+
+        <label for="sei_rg" class="label_inputs">RG:</label>
+        <input id="sei_rg" class="inputs_geral" placeholder="Número do RG">
+        
+        <br>
+
+        <h3 class="black_subtitles">Dados</h3>
+
+        <label for="sei_get" class="label_inputs">GET:</label>
+        <input id="sei_get" class="inputs_geral" placeholder="Protocolo GET">
+        
+        <br>
+
+        <label for="sei_requerimento" class="label_inputs">Req.:</label>
+        <input id="sei_requerimento" class="inputs_geral" placeholder="Número de requerimento">
+        
+        <br>
+
+        <label for="sei_nb" class="label_inputs">NB:</label>
+        <input id="sei_nb" type="text" class="inputs_geral" placeholder="Número de Benefício">
+        
+        <br>
+
+        <label for="sei_der" class="label_inputs">DER:</label>
+        <input id="sei_der" type="date" class="inputs_geral">
+
+        <br>
+
+        <label for="sei_dcb" class="label_inputs">DCB:</label>
+        <input id="sei_dcb" type="date" class="inputs_geral">
+
+        <br>
+
+
+      </div>
+
+      <div ="container_segurado" class="vinculos_containers"> 
+      
+        
+        <label for="sei_resumo" class="label_inputs" id="label_endereco">Situação:</label>
+        <textarea id="sei_resumo" class="inputs_geral" rows="5" cols="70" placeholder="Notas e relato da situação"></textarea>
+
+        <br>
+
+        <h3 class="black_subtitles">Agendamento</h3>
+
+        <label for="sei_agendamento" class="label_inputs">Data:</label>
+        <input id="sei_agendamento" class="inputs_geral" type="date">
+
+        <br>
+
+        <label for="sei_horario" class="label_inputs">Horário:</label>
+        <input id="sei_horario" class="inputs_geral" placeholder="Horário do Agendamento">
+
+        <br>
+
+        <label for="sei_aps" class="label_inputs">Local:</label>
+        <input id="sei_aps" class="inputs_geral" placeholder="APS" value="APS Ivo do Prado">
+        
+      </div>
+      
+      <br>
+      
+      <!--Seleção da situação do vínculo-->
+      <h3 class="black_subtitles">Respostas</h3>
+      <div class="vinculos_radio">
+
+        <input 
+          id="radio_0"
+          class="radio_sei" 
+          type="radio"
+          name="radio" 
+        >
+        <label for="radio_0">Cópia de Processo - Não Localizado</label>
+        
+        <br>
+        
+        <input 
+          id="radio_1"
+          class="radio_sei" 
+          type="radio"
+          name="radio" 
+        >
+        <label for="radio_1">Cópia de Processo</label>
+        
+        <br>
+        
+        <input 
+          id="radio_2"
+          class="radio_sei" 
+          type="radio"
+          name="radio" 
+        >
+        <label for="radio_2">Erro/Pendência no sistema</label>
+        
+        <br>
+        
+        <input 
+          id="radio_3" 
+          class="radio_sei"
+          type="radio" 
+          name="radio"
+        >
+        <label for="radio_3">Finalização de Análise</label>   
+
+        <br>
+
+        <input
+          id="radio_4"
+          class="radio_sei"
+          type="radio" 
+          name="radio"
+        >
+        <label for="radio_4">Nada a declarar/Relatório</label>   
+
+        <br>
+        
+        <input 
+          id="radio_5" 
+          class="radio_sei"
+          type="radio" 
+          name="radio">
+        <label for="radio_5">Perícia - DCB</label>
+        
+        <br>
+        
+        <input 
+          id="radio_6" 
+          class="radio_sei"
+          type="radio" 
+          name="radio">
+        <label for="radio_6">BPC - Análise/Agendamentos</label>
+        
+        <br>
+        
+        <input 
+          id="radio_7" 
+          class="radio_sei"
+          type="radio" 
+          name="radio">
+        <label for="radio_7">Outra situação</label>
+
+    
+    </div>
+
+      <a href="#nav" class="scroll">&#x25B2</a><br>
+    
+      <div ="vinculos_div_button">
+    
+      <button 
+        type="button"
+        onclick="resposta_sei()" >Responder</button>
+
+        <button id="clearButton" type="button" onclick="clearFunction()">Limpar Campos</button>
+    </div>
+
+    <br>
+
+    <section id="respostas" class="alignCenter">
+
+      <textarea id="sei_textarea" rows="18" cols="60" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+
+    </section>
+      <footer ="geral_footer">
+        &copyFelipe Tiburcio - 2020
+      </footer>
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
+
+  

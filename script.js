@@ -7,6 +7,32 @@ const clearFunction = () => {
   }
 };
 
+const copiaNome = () => {
+  let name = document.querySelector("#vinculos_nome_copia");
+  name.select();
+  document.execCommand("copy");
+};
+const copiaOrgao = () => {
+  let orgao = document.querySelector("#vinculos_orgao_copia");
+  orgao.select();
+  document.execCommand("copy");
+};
+const copiaEmail = () => {
+  let email = document.querySelector("#vinculos_email_copia");
+  email.select();
+  document.execCommand("copy");
+};
+const copiaAssunto = () => {
+  let assunto = document.querySelector("#vinculos_assunto_copia");
+  assunto.select();
+  document.execCommand("copy");
+};
+const copiaResposta = () => {
+  let resposta = document.querySelector("#vinculos_text_area");
+  textarea.select();
+  document.execCommand("copy");
+};
+
 // Início da página de Vínculos
 function resposta_vinculos() {
   let orgao = document.querySelector("#vinculos_orgao").value;
