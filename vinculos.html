@@ -37,7 +37,7 @@
       <div id="container_solicitante"  class="vinculos_containers">       
         <h3 class="black_subtitles">Solicitante</h3>
         <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
-        <input id="vinculos_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, etc.">
+        <input id="vinculos_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, etc." required>
         <br>
         
         <label for="vinculos_processo" class="label_inputs">Processo:</label>
@@ -98,7 +98,8 @@
         <input 
           id="vinculos_nome"
           class="inputs_geral"
-          placeholder="Nome Completo"  
+          placeholder="Nome Completo" 
+          required  
         ><br>
 
         <label for="vinculos_cpf" class="label_inputs">CPF:</label>
@@ -266,8 +267,32 @@
     </div>  
       
     <div id="vinculos_div_button">
-      <button type="button" onclick="resposta_vinculos()">Responder</button>
-      <button id="clearButton"type="button"  onclick="clearFunction()" >Limpar Campos</button> 
+      <button 
+        type="button"
+        onclick="resposta_vinculos()">Responder
+      </button>
+
+      <button 
+        id="saveButton" 
+        type="button"
+        onclick="saveFunction()">Salvar Campos
+      </button>
+      
+      <button 
+        id="loadButton" 
+        type="button"
+        onclick="loadFunction()">Carregar Dados
+      </button>
+      
+      <button 
+        id="clearButton" 
+        type="button"
+        onclick="clearFunction()">Limpar Campos
+      </button>
+      
+      
+      
+      
     </div>
 
     <section id="respostas" class="alignCenter">

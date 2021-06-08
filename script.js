@@ -1,10 +1,165 @@
+//Função pra salvar os campos.
+const saveFunction = () => {
+  const confirmation = confirm("Deseja salvar os dados na memória local?");
+  if (confirmation) {
+    const form = document.querySelector("form");
+
+    //Parte que seleciona os elementos da página.
+    const orgao = document.querySelector("#vinculos_orgao").value;
+
+    const processo = document.querySelector("#vinculos_processo").value;
+
+    const email = document.querySelector("#vinculos_email").value;
+
+    let assunto = document.querySelectorAll("input[type='checkbox']");
+
+    let selection = [];
+
+    for (let i of assunto) {
+      selection.push(i.checked);
+    }
+
+    const segurado = document.querySelector("#vinculos_nome").value;
+
+    const cpf = document.querySelector("#vinculos_cpf").value;
+
+    const mae = document.querySelector("#vinculos_mae").value;
+
+    const rg = document.querySelector("#vinculos_rg").value;
+
+    const nascimento = document.querySelector("#vinculos_nascimento").value;
+    // .value.split("-")
+    // .reverse()
+    // .join("/");
+
+    const endereco = document.querySelector("#vinculos_endereco").value;
+
+    const empresa = document.querySelector("#vinculos_empresa").value;
+
+    const inicioEmpresa = document.querySelector("#vinculos_data_inicio").value;
+
+    const ultimoSalario = document.querySelector("#vinculos_salario").value;
+
+    const data_inicio = document
+      .querySelector("#vinculos_data_inicio")
+      .value.split("-")
+      .reverse()
+      .join("/");
+
+    const nb = document.querySelector("#vinculos_nb").value;
+
+    const tipoBeneficio = document.querySelector(
+      "#vinculos_tipoBeneficio"
+    ).value;
+
+    const inicioBeneficio = document.querySelector(
+      "#vinculos_beneficioInicio"
+    ).value;
+
+    const valorBeneficio = document.querySelector("#valorBeneficio").value;
+
+    //Parte que salva as variáveis
+    localStorage.setItem("Órgão", orgao);
+    localStorage.setItem("Processo", processo);
+    localStorage.setItem("E-mail", email);
+
+    localStorage.setItem("Assunto", selection);
+
+    localStorage.setItem("Nome", segurado);
+    localStorage.setItem("CPF", cpf);
+    localStorage.setItem("Mãe", mae);
+    localStorage.setItem("RG", rg);
+    localStorage.setItem("Nasc.", nascimento);
+    localStorage.setItem("End.", endereco);
+
+    localStorage.setItem("Empresa", empresa);
+    localStorage.setItem("Início", inicioEmpresa);
+    localStorage.setItem("Salário", ultimoSalario);
+
+    localStorage.setItem("NB", nb);
+    localStorage.setItem("Tipo", tipoBeneficio);
+    localStorage.setItem("DIB", inicioBeneficio);
+    localStorage.setItem("Valor Benefício", valorBeneficio);
+  }
+};
+//Função pra carregar os campos.
+const loadFunction = () => {
+  const confirmation = confirm(
+    "Deseja carregar os dados salvos na memória local?"
+  );
+  if (confirmation) {
+    const form = document.querySelector("form");
+
+    //Parte que seleciona os elementos da página.
+    const orgao = document.querySelector("#vinculos_orgao");
+    orgao.value = localStorage.getItem("Órgão");
+
+    const processo = document.querySelector("#vinculos_processo");
+    processo.value = localStorage.getItem("Processo");
+
+    const email = document.querySelector("#vinculos_email");
+    email.value = localStorage.getItem("E-mail");
+
+    const assunto = document.querySelectorAll("input[type='checkbox']");
+
+    const selected = localStorage.getItem("Assunto").split(",");
+
+    for (let i = 0; i < assunto.length; i++) {
+      if (selected[i] === "true") {
+        assunto[i].checked = selected[i];
+      }
+    }
+
+    const segurado = document.querySelector("#vinculos_nome");
+    segurado.value = localStorage.getItem("Nome");
+
+    const cpf = document.querySelector("#vinculos_cpf");
+    cpf.value = localStorage.getItem("CPF");
+
+    const mae = document.querySelector("#vinculos_mae");
+    mae.value = localStorage.getItem("Mãe");
+
+    const rg = document.querySelector("#vinculos_rg");
+    rg.value = localStorage.getItem("RG");
+
+    const nascimento = document.querySelector("#vinculos_nascimento");
+    nascimento.value = localStorage.getItem("Nasc.");
+
+    const endereco = document.querySelector("#vinculos_endereco");
+    endereco.value = localStorage.getItem("End.");
+
+    const empresa = document.querySelector("#vinculos_empresa");
+    empresa.value = localStorage.getItem("Empresa");
+
+    const inicioEmpresa = document.querySelector("#vinculos_data_inicio");
+    inicioEmpresa.value = localStorage.getItem("Início");
+
+    const salario = document.querySelector("#vinculos_salario");
+    salario.value = localStorage.getItem("Salário");
+
+    const nb = document.querySelector("#vinculos_nb");
+    nb.value = localStorage.getItem("NB");
+
+    const tipoBeneficio = document.querySelector("#vinculos_tipoBeneficio");
+    tipoBeneficio.value = localStorage.getItem("Tipo");
+
+    const data_inicio = document.querySelector("#vinculos_beneficioInicio");
+    data_inicio.value = localStorage.getItem("DIB");
+
+    const valorBeneficio = document.querySelector("#valorBeneficio");
+    valorBeneficio.value = localStorage.getItem("Valor Benefício");
+
+    window.scrollTo(0, 0);
+  }
+};
+
 //Função pra limpar campos - Escopo Global
 const clearFunction = () => {
-  const clearButton = document.querySelector("#clearButton");
+  const form = document.querySelector("form");
 
   if (confirm("Apagar campos?")) {
-    clearButton.type = "submit"; //gambiarra - verificar o .reset()
-    //acrescentar JS pra fazer o scroll pra seção do segurado
+    form.reset();
+    window.scrollTo(0, 0);
   }
 };
 
@@ -45,19 +200,19 @@ const copiaResposta = () => {
 
 // Início da página de Vínculos
 function resposta_vinculos() {
+  let segurado = document.querySelector("#vinculos_nome").value;
+
   let orgao = document.querySelector("#vinculos_orgao").value;
 
-  let orgaoCopia = document.querySelector("#vinculos_orgao_copia");
+  let orgaoCopia = document.querySelector("#orgao_copia");
 
   let processo = document.querySelector("#vinculos_processo").value;
 
   let email = document.querySelector("#vinculos_email").value;
 
-  let emailCopia = document.querySelector("#vinculos_email_copia");
+  let emailCopia = document.querySelector("#email_copia");
 
-  let segurado = document.querySelector("#vinculos_nome").value;
-
-  let seguradoCopia = document.querySelector("#vinculos_nome_copia");
+  let seguradoCopia = document.querySelector("#nome_copia");
 
   let endereco = document.querySelector("#vinculos_endereco").value;
 
@@ -85,7 +240,7 @@ function resposta_vinculos() {
 
   let valorBeneficio = document.querySelector("#valorBeneficio").value;
 
-  let resposta = document.querySelector("#vinculos_textarea");
+  let resposta = document.querySelector("#resposta");
 
   let assunto = document.querySelector("#assunto");
 
@@ -255,7 +410,7 @@ function resposta_vinculos() {
 function resposta_dependentes() {
   const orgao = document.querySelector("#dependentes_orgao").value;
 
-  let orgaoCopia = document.querySelector("#dependentes_orgao_copia");
+  let orgaoCopia = document.querySelector("#orgao_copia");
 
   orgaoCopia.value = orgao;
 
@@ -263,15 +418,13 @@ function resposta_dependentes() {
 
   const email = document.querySelector("#dependentes_email").value;
 
-  let emailCopia = document.querySelector("#dependentes_email_copia");
+  let emailCopia = document.querySelector("#email_copia");
 
   emailCopia.value = email;
 
   const segurado = document.querySelector("#dependentes_segurado_nome").value;
 
-  let seguradoCopia = document.querySelector(
-    "#dependentes_segurado_nome_copia"
-  );
+  let seguradoCopia = document.querySelector("#nome_copia");
 
   seguradoCopia.value = segurado;
 
@@ -279,9 +432,9 @@ function resposta_dependentes() {
 
   const situacao = document.getElementsByClassName("depRadioInputs");
 
-  const assuntoEmail = document.querySelector("#assunto_email");
+  const assuntoEmail = document.querySelector("#assunto");
 
-  const resposta = document.getElementById("dependentes_resposta");
+  const resposta = document.getElementById("resposta");
 
   //Variáveis com as respostas pra melhor organização
 
