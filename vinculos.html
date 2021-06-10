@@ -99,17 +99,32 @@
           id="vinculos_nome"
           class="inputs_geral"
           placeholder="Nome Completo" 
-          required  
+          required
+          onclick="nome()"  
         ><br>
 
         <label for="vinculos_cpf" class="label_inputs">CPF:</label>
-        <input id="vinculos_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
+        <input 
+          id="vinculos_cpf"
+          class="inputs_geral"
+          placeholder="Número do CPF"
+          onclick="cpf()"
+          ><br>
 
         <label for="vinculos_mae" class="label_inputs">Mãe:</label>
-        <input id="vinculos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+        <input 
+          id="vinculos_mae"
+          class="inputs_geral"
+          placeholder="Nome da Mãe"
+          onclick="mae()"><br>
         
         <label for="vinculos_rg" class="label_inputs">RG:</label>
-        <input id="vinculos_rg" class="inputs_geral" placeholder="Número do RG"><br>
+        <input 
+          id="vinculos_rg"
+          class="inputs_geral"
+          placeholder="Número do RG"
+          onclick="rg()"
+          ><br>
        
         <label for="vinculos_nascimento" class="label_inputs">Nasc.:</label>
         <input id="vinculos_nascimento" type= "date" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
@@ -145,7 +160,12 @@
       <div ="container_beneficio" class="vinculos_containers">
 
       <label for="vinculos_nb" class="label_inputs">NB:</label>
-        <input id="vinculos_nb" class="inputs_geral" placeholder="Número do Benefício"><br>
+        <input
+          id="vinculos_nb"
+          class="inputs_geral"
+          placeholder="Número do Benefício"
+          onclick="nb()"
+        ><br>
 
         <label for="vinculos_tipoBeneficio" class="label_inputs">Tipo:</label>
         <select id="vinculos_tipoBeneficio" class="inputs_geral">
@@ -178,10 +198,6 @@
       
       <br>
 
-
-
-     
-      
       <!--Seleção da situação do vínculo-->
       <h3 class="black_subtitles">Situação</h3>
       <div id="vinculos_situacao" class="vinculos_radio">
@@ -319,7 +335,7 @@
       <footer ="geral_footer">
         &copyFelipe Tiburcio - 2020
       </footer>
-      <script src="script.js"></script>
+      <script src="./vinculos.js"></script>
     </form>
   </body>
 </html>
