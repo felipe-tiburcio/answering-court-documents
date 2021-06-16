@@ -37,7 +37,7 @@
       <div ="container_solicitante" class="consignacoes_containers"> 
         
         <label for="consignacoes_orgao" class="label_inputs">Órgão:</label>
-        <input id="consignacoes_orgao" class="inputs_geral" placeholder="Vara / TJ / TRT / Etc"><br>
+        <input id="consignacoes_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc"><br>
         
         <label for="consignacoes_processo" class="label_inputs">Processo:</label>
         <input id="consignacoes_processo" class="inputs_geral" placeholder="Número do Processo"><br>
@@ -185,15 +185,15 @@
 
       <br>
 
-      <textarea id="assunto" rows="1" cols="46" placeholder="Texto pra ser colado no Assunto do E-mail" onclick="copiaAssunto()"></textarea><br>
+      <textarea id="assunto_email" rows="1" cols="46" placeholder="Texto pra ser colado no Assunto do E-mail" onclick="copiaAssunto()"></textarea><br>
 
-      <textarea id="resposta" rows="8" cols="62" placeholder="O texto aparecerá aqui. Clique e o texto será copiado automaticamente." onclick="copiaResposta()"></textarea>
+      <textarea id="textarea_resposta" rows="8" cols="62" placeholder="O texto aparecerá aqui. Clique e o texto será copiado automaticamente." onclick="copiaResposta()"></textarea>
 
     </section>
       <footer ="geral_footer">
         &copyFelipe Tiburcio - 2020
       </footer>
-      <script src="script.js"></script>
+      <script src="./consignacoes.js"></script>
     </form>
   </body>
 </html>

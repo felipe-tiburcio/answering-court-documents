@@ -36,27 +36,10 @@
       <div>
 
         <label for="residuos_orgao" class="label_inputs">Órgão:</label>
-        <input id="residuos_orgao" class="inputs_geral">
+        <input id="residuos_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc">
 
         <br>
-        
-        <label for="residuos_cidade" class="label_inputs">Cidade:</label>
-        <select id="residuos_cidade" class="inputs_geral">
-            <option selected>Aracaju</option>
-            <option>N. Sra. do Socorro</option>
-            <option>Barra dos Coqueiros</option>
-            <option>São Cristóvão</option>
-            <option>Itaporanga</option>
-            <option>Carmópolis</option>
-            <option>Maruim</option>
-            <option>Riachuelo</option>
-            <option>Santo Amaro das Brotas</option>
-            <option>Salgado</option>
-            <option>Outra Cidade</option>
-        </select>
-
-        <br>
-        
+                
         <label for="residuos_processo" class="label_inputs">Processo:</label>
         <input id="residuos_processo" class="inputs_geral" placeholder="Número do Processo">
        
@@ -242,10 +225,31 @@
       
       <a href="#nav" class="scroll">&#x25B2</a><br>  
 
-      <div class="div_botao">
-        <button type="button" onclick="respostaResiduos()">Gerar Resposta</button>
-
-        <button id="clearButton" type="button" onclick="clearFunction()">Limpar Campos</button>
+      <div id="residuos_div_button">
+        <button
+          id="answerButton" 
+          type="button"
+          onclick="resposta_residuos()"
+          >Responder
+        </button>
+  
+        <button 
+          id="saveButton" 
+          type="button"
+          onclick="saveFunction()">Salvar Campos
+        </button>
+        
+        <button 
+          id="loadButton" 
+          type="button"
+          onclick="loadFunction()">Carregar Dados
+        </button>
+        
+        <button 
+          id="clearButton" 
+          type="button"
+          onclick="clearFunction()">Limpar Campos
+        </button>
       </div>
       
       <section id="respostas" class="alignCenter">
@@ -260,7 +264,7 @@
       <footer id="geral_footer">
         &copy Felipe Tiburcio - 2020
       </footer>
-      <script src="script.js"></script>
+      <script src="./residuos.js"></script>
     </form>
   </body>
 </html>

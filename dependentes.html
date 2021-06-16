@@ -103,30 +103,59 @@
     <div id="dependentes_segurado_container">
         <h4 class="black_subtitles">Segurado</h4>       
         <label for="dependentes_segurado_nome" class="label_inputs">Nome:</label>
-          <input id="dependentes_segurado_nome" class="inputs_geral" placeholder="Nome do Segurado"><br>
+          <input 
+            id="dependentes_segurado_nome" 
+            class="inputs_geral"
+            placeholder="Nome do Segurado"
+            onclick="nome()"
+          >
+            
+        <br>
 
           <label for="dependentes_segurado_cpf" class="label_inputs">CPF:</label>
-          <input type="text" min="0" id="dependentes_segurado_cpf"  class="inputs_geral" placeholder="Número do CPF"><br>
+          <input 
+            type="text"
+            min="0"
+            id="dependentes_segurado_cpf"  class="inputs_geral"
+            placeholder="Número do CPF"
+            onclick="cpf()"
+          >
+          
+            <br>
 
           <label for="dependentes_segurado_mae" class="label_inputs">Mãe:</label>
-          <input id="dependentes_segurado_mae" class="inputs_geral" placeholder="Nome da mãe"><br>
+          <input 
+            id="dependentes_segurado_mae"
+            class="inputs_geral"
+            placeholder="Nome da mãe"
+            onclick="mae()"
+          >
+          
+          <br>
           
           <label for="dependentes_segurado_rg" class="label_inputs">RG:</label>
-          <input type="text" min="0" id="dependentes_segurado_rg" class="inputs_geral" placeholder="Número do RG"><br>
-          
-         
+          <input 
+            min="0"
+            id="dependentes_segurado_rg"
+            class="inputs_geral"
+            placeholder="Número do RG"
+            onclick="rg()"
+          >
+            
+          <br>        
 
           <label for="dependentes_segurado_data_nascimento" class="label_inputs">Nasc.:</label>
-          <input type="date" id="dependentes_segurado_data_nascimento" class="inputs_geral"><br>
+          <input 
+            type="date" id="dependentes_segurado_data_nascimento" class="inputs_geral"
+          >
 
+          <br>
 
           <label for="dependentes_segurado_pis" class="label_inputs">NIT/PIS:</label>
           <input type="text" min="0" id="dependentes_segurado_pis"  class="inputs_geral" placeholder="NIT/PIS/PASEP">
 
           <a href="#nav" class="scroll">&#x25B2</a>
           <a href="#situacao" class="scroll">&#x25BC</a>
-
-
  
         <div>
           <h4 class="black_subtitles">Dados do Óbito</h4>
@@ -149,33 +178,51 @@
 
       <br>
 
-
-
-
-
-
-
-
-
-
-
           <div id="">
             <h4 class="black_subtitles">Dependentes</h4>
-            <label for="nb1_dependentes" class="label_inputs">NB 1:</label>
+            <label for="nb1" class="label_inputs">NB 1:</label>
             
-            <input id="nb1_dependentes" type="text" class="inputs_geral" placeholder="Número do Benefício 1"><br>
+            <input 
+              id="nb1"
+              class="inputs_geral"
+              placeholder="Número do Benefício 1"
+              onclick="copiandoNb1()"
+            >
+              
+            <br>
             
-            <label for="nb2_dependentes" class="label_inputs">NB 2:</label>
+            <label for="nb2" class="label_inputs">NB 2:</label>
             
-            <input id="nb2_dependentes" type="text" class="inputs_geral" placeholder="Número do Benefício 2"><br>
+            <input 
+              id="nb2"
+              class="inputs_geral"
+              placeholder="Número do Benefício 2"
+              onclick="copiandoNb2()"
+            >
+              
+            <br>
             
-            <label for="nb3_dependentes" class="label_inputs">NB 3:</label>
+            <label for="nb3" class="label_inputs">NB 3:</label>
             
-            <input id="nb3_dependentes" type="text" class="inputs_geral" placeholder="Número do Benefício 3"><br>
+            <input 
+              id="nb3"
+              class="inputs_geral"
+              placeholder="Número do Benefício 3"
+              onclick="copiandoNb3()"  
+            >
             
-            <label for="nb4_dependentes" class="label_inputs">NB 4:</label>
+            <br>
             
-            <input id="nb4_dependentes" type="text" class="inputs_geral" placeholder="Número do Benefício 4"><br>
+            <label for="nb4" class="label_inputs">NB 4:</label>
+            
+            <input 
+              id="nb4"
+              class="inputs_geral"
+              placeholder="Número do Benefício 4"
+              onclick="copiandoNb4()"  
+            >
+              
+            <br>
             
         <div id="text_area_container">
           <textarea class="dependentes_textarea" cols="60" rows="8" placeholder="Colar os dados do DEPEND do PLENUS"></textarea>
@@ -242,15 +289,35 @@
           
       <br>
       <br>
-       
-      <div>
-        <button type="button" onclick="resposta_dependentes()">Gerar Resposta</button>
-        <button id="clearButton" type="button" onclick="clearFunction()">Limpar Campos</button>
+
+      <div id="dependentes_div_button">
+        <button
+          id="answerButton" 
+          type="button"
+          onclick="resposta_dependentes()"
+          >Responder
+        </button>
+  
+        <button 
+          id="saveButton" 
+          type="button"
+          onclick="saveFunction()">Salvar Campos
+        </button>
+        
+        <button 
+          id="loadButton" 
+          type="button"
+          onclick="loadFunction()">Carregar Dados
+        </button>
+        
+        <button 
+          id="clearButton" 
+          type="button"
+          onclick="clearFunction()">Limpar Campos
+        </button>
       </div>
-
-      <a href="#dependentes_segurado_nome" class="scroll">&#x25B2</a><br>
-
-      
+  
+      <a href="#dependentes_segurado_nome" class="scroll">&#x25B2</a><br>    
 
       <div class="alignCenter">
 
@@ -273,7 +340,7 @@
       <footer id="">
         &copy Felipe Tiburcio - 2020
       </footer>
-      <script src="script.js"></script>
+      <script src="./dependentes.js"></script>
     </form>
   </body>
 </html>
