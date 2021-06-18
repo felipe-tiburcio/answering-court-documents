@@ -294,6 +294,8 @@ function resposta_vinculos() {
 
   const semBeneficioAtivo = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que não foi localizado nenhum benefício ativo no cadastro do(a) segurado(a) ${segurado}.`;
 
+  const extratoPagamento = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando o histórico de créditos do segurado. Neste documento é possível analisar as rubricas e valores lançados referente o(s) benefício(s) do(a) segurado(a) ${segurado}.`;
+
   const informarEndereco = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando relatório com consultas feitas nos sistemas do INSS. Neste documento é possível verificar que consta(m) o(s) seguinte(s) endereço(s) do segurado ${segurado}: \n\n${endereco}`;
 
   const cnisExtrato = `Em atenção ao disposto no ofício relacionado ao processo ${processo}, estamos encaminhando o relatório completo do CNIS. Neste documento é possível analisar o histórico de vínculos e remunerações do(a) segurado(a) ${segurado}.`;
@@ -387,8 +389,19 @@ function resposta_vinculos() {
       resposta.value = semBeneficioAtivo + atenciosamente;
     }
   }
-  //Endereço
+
+  //Extrato Pagamentos
   if (situacao[7].checked) {
+    if (ressalvas[1].checked) {
+      resposta.value = extratoPagamento + ressalvaDependentes + atenciosamente;
+    } else if (ressalvas[2].checked) {
+      resposta.value = extratoPagamento + ressalvaEscopoInss + atenciosamente;
+    } else {
+      resposta.value = extratoPagamento + atenciosamente;
+    }
+  }
+  //Endereço
+  if (situacao[8].checked) {
     if (ressalvas[1].checked) {
       resposta.value = informarEndereco + ressalvaDependentes + atenciosamente;
     } else if (ressalvas[2].checked) {
@@ -398,7 +411,7 @@ function resposta_vinculos() {
     }
   }
   //CNIS Extrato
-  if (situacao[8].checked) {
+  if (situacao[9].checked) {
     if (ressalvas[1].checked) {
       resposta.value = cnisExtrato + ressalvaDependentes + atenciosamente;
     } else if (ressalvas[2].checked) {
@@ -408,7 +421,7 @@ function resposta_vinculos() {
     }
   }
   //CNIS Vazio
-  if (situacao[9].checked) {
+  if (situacao[10].checked) {
     if (ressalvas[1].checked) {
       resposta.value = cnisVazio + ressalvaDependentes + atenciosamente;
     } else if (ressalvas[2].checked) {
@@ -418,7 +431,7 @@ function resposta_vinculos() {
     }
   }
   //Dados Cadastrais
-  if (situacao[10].checked) {
+  if (situacao[11].checked) {
     if (ressalvas[1].checked) {
       resposta.value = dadosCadastrais + ressalvaDependentes + atenciosamente;
     } else if (ressalvas[2].checked) {
@@ -428,7 +441,7 @@ function resposta_vinculos() {
     }
   }
   //Outra Situação
-  if (situacao[11].checked) {
+  if (situacao[12].checked) {
     if (ressalvas[1].checked) {
       resposta.value = outraSituacao + ressalvaDependentes + atenciosamente;
     } else if (ressalvas[2].checked) {
