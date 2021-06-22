@@ -31,7 +31,7 @@
 
   </header>
 
-  <a href="#ms_textarea" class="scroll">&#x25BC</a><br>
+  <a href="#radio_0" class="scroll">&#x25BC</a><br>
 
   <h3 class="black_subtitles">Situação</h3>
   <div class="msCheckbox">
@@ -67,39 +67,73 @@
       <h3 class="black_subtitles">Segurado</h3>
 
         <label for="ms_nome" class="label_inputs">Nome:</label>
-        <input id="ms_nome" class="inputs_geral" placeholder="Nome Completo">
+        <input 
+          id="ms_nome"
+          class="inputs_geral"
+          placeholder="Nome Completo"
+          onclick="nome()"  
+        >
 
         <br>
 
         <label for="ms_cpf" class="label_inputs">CPF:</label>
-        <input id="ms_cpf" class="inputs_geral" placeholder="Número do CPF">
+        <input 
+          id="ms_cpf"
+          class="inputs_geral"
+          placeholder="Número do CPF"
+          onclick="cpf()"
+        >
        
         <br>
 
         <label for="ms_nit" class="label_inputs">NIT:</label>
-        <input id="ms_nit" class="inputs_geral" placeholder="Número de Inscrição do Trabalhador">
+        <input 
+          id="ms_nit" 
+          class="inputs_geral"
+          placeholder="Número de Inscrição do Trabalhador"
+          onclick="nit()"  
+        >
               
         <br>
 
         <label for="ms_rg" class="label_inputs">RG:</label>
-        <input id="ms_rg" class="inputs_geral" placeholder="Número do RG">
+        <input 
+          id="ms_rg"
+          class="inputs_geral"
+          placeholder="Número do RG"
+          onclick="rg()"  
+        >
         
         <br>
 
         <h3 class="black_subtitles">Dados</h3>
 
         <label for="ms_get" class="label_inputs">GET:</label>
-        <input id="ms_get" class="inputs_geral" placeholder="Protocolo GET">
+        <input 
+          id="ms_get"
+          class="inputs_geral" placeholder="Protocolo GET"
+          onclick="get()"  
+        >
         
         <br>
 
         <label for="ms_requerimento" class="label_inputs">Req.:</label>
-        <input id="ms_requerimento" class="inputs_geral" placeholder="Número de requerimento">
+        <input 
+          id="ms_req"
+          class="inputs_geral"
+          placeholder="Número de requerimento"
+          onclick="req()"  
+        >
         
         <br>
 
         <label for="ms_nb" class="label_inputs">NB:</label>
-        <input id="ms_nb" type="text" class="inputs_geral" placeholder="Número de Benefício">
+        <input 
+          id="ms_nb"
+          class="inputs_geral"
+          placeholder="Número de Benefício"
+          onclick="nb()"  
+        >
         
         <br>
 
@@ -249,26 +283,51 @@
 
       <a href="#nav" class="scroll">&#x25B2</a><br>
     
-      <div ="vinculos_div_button">
-    
-      <button 
-        type="button"
-        onclick="resposta_ms()" >Responder
-      </button>
-
-      <button id="clearButton" type="button" onclick="clearFunction()">Limpar Campos</button>
-    </div>
+      <div id="ms_div_button">
+        <button
+          id="answerButton" 
+          type="button"
+          onclick="resposta_ms()"
+          >Responder
+        </button>
+  
+        <button 
+          id="saveButton" 
+          type="button"
+          onclick="saveFunction()">Salvar Campos
+        </button>
+        
+        <button 
+          id="loadButton" 
+          type="button"
+          onclick="loadFunction()">Carregar Dados
+        </button>
+        
+        <button 
+          id="clearButton" 
+          type="button"
+          onclick="clearFunction()">Limpar Campos
+        </button>
+      </div>
 
     <br>
   
     <section id="respostas" class="alignCenter">
 
-      <textarea id="ms_textarea" rows="18" cols="60" id="vinculos_text_area" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+      <textarea 
+        id="resposta"
+        rows="18" 
+        cols="60"
+        placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"
+        onclick="copiaResposta()"
+        >
+      </textarea>
+
     </section>
       <footer ="geral_footer">
         &copyFelipe Tiburcio - 2020
       </footer>
-      <script src="script.js"></script>
+      <script src="MS.js"></script>
     </form>
   </body>
 </html>
