@@ -234,7 +234,23 @@ const copiaResposta = () => {
 
 //Início da página de Resíduos
 function resposta_residuos() {
+  const orgao = document.querySelector("#residuos_orgao").value;
+
+  const orgaoCopia = document.querySelector("#orgao_copia");
+
+  orgaoCopia.value = orgao;
+
+  const email = document.querySelector("#residuos_email").value;
+
+  const emailCopia = document.querySelector("#email_copia");
+
+  emailCopia.value = email;
+
   const nome = document.querySelector("#residuos_nome").value;
+
+  const copiaNome = document.querySelector("#nome_copia");
+
+  copiaNome.value = nome;
 
   const processo = document.querySelector("#residuos_processo").value;
 
@@ -320,9 +336,9 @@ function resposta_residuos() {
       valoresIndevidos;
   }
 
-  const assunto = document.querySelector("#residuos_assunto");
+  const assunto = document.querySelector("#assunto");
 
-  let resposta = document.querySelector("#residuos_resposta");
+  let resposta = document.querySelector("#resposta");
 
   const ressalvas = document.getElementsByClassName("radioRessalvas");
 
@@ -428,7 +444,7 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
 
   const mob = `\n\nNeste caso, como houve recebimento pós-óbito, o processo será encaminhado ao setor de Monitoramento Operacional de Benefícios(MOB) para apuração das competências e valores recebidos após o óbito do segurado.`;
 
-  const atenciosamente = `\n\nAtenciosamente,`;
+  const atenciosamente = `\n\nAtenciosamente,\n`;
 
   assunto.value = `Ofício - Processo ${processo} - ${nome}`;
 
@@ -437,6 +453,7 @@ Estes valores serão recalculados e será acrescida a correção monetária atra
     //Alerta se a MR estiver zerada
     if (mr === 0) {
       alert("É necessário preencher o valor da MR do benefício.");
+      return;
     }
 
     //Com 13º

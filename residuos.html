@@ -30,7 +30,7 @@
     </ul>
   </div>
 
-      <a href="#residuos_resposta" class="scroll">&#x25BC</a><br>
+      <a href="#resposta" class="scroll">&#x25BC</a><br>
 
       <h4 class="black_subtitles">Solicitante</h4>
       <div>
@@ -53,24 +53,43 @@
       <div> 
         
         <label for="residuos_nome" class="label_inputs">Nome:</label>
-        <input id="residuos_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+        <input 
+          id="residuos_nome"
+          class="inputs_geral"
+          placeholder="Nome Completo"
+          onclick="nome()"
+        ><br>
 
         <label for="residuos_cpf" class="label_inputs">CPF:</label>
-        <input id="residuos_cpf" class="inputs_geral" placeholder="CPF"><br>
+        <input 
+          id="residuos_cpf"
+          class="inputs_geral"
+          placeholder="CPF"
+          onclick="cpf()"
+        ><br>
         
         <label for="residuos_nascimento" class="label_inputs">Nasc.:</label>
         <input id="residuos_nascimento" class="inputs_geral" type="date"><br>
 
         <label for="residuos_mae" class="label_inputs">Mãe:</label>
-        <input id="residuos_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+        <input 
+          id="residuos_mae"
+          class="inputs_geral"
+          placeholder="Nome da Mãe"
+          onclick="mae()"  
+        ><br>
 
         <label for="dataObito" class="label_inputs">Óbito:</label>
         <input id="dataObito" type="date" class="inputs_geral">
                  
         <br>
 
-        <label for="residuos_beneficio" class="label_inputs">Benefício:</label>
-        <input id="residuos_beneficio" class="inputs_geral" placeholder="Número do Benefício"><br>
+        <label for="residuos_nb" class="label_inputs">Benefício:</label>
+        <input 
+          id="residuos_nb" class="inputs_geral" 
+          placeholder="Número do Benefício"
+          onclick="nb()"  
+        ><br>
 
         <label for="residuos_mr" class="label_inputs">MR:</label>
         <input id="residuos_mr" class="inputs_geral" placeholder="Somente números sem vírgula">
@@ -253,13 +272,24 @@
       </div>
       
       <section id="respostas" class="alignCenter">
-
-        <textarea id="residuos_assunto" rows="2" cols="46" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea><br>
-
-
-      <textarea id="residuos_resposta" rows="18" cols="62" placeholder="A resposta aparecerá aqui. Utilize Ctrl+A para selecionar tudo, Ctrl+C para copiar e Ctrl+V no Expresso."></textarea>
-
-    </section>
+  
+        <input 
+        id="nome_copia"
+        class="inputs_geral"
+        placeholder="Nome Completo"
+        onclick="copiaNome()"  
+      ><br>
+  
+        <input id="orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc" onclick="copiaOrgao()">
+        <br>
+        <input id="email_copia" class="inputs_geral" placeholder="E-mail" onclick="copiaEmail()">
+        <br>
+      
+        <textarea id="assunto" rows="1" cols="58" placeholder="Assunto do e-mail" onclick="copiaAssunto()"></textarea><br>
+  
+        <textarea id="resposta" rows="12" cols="60" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar" onclick="copiaResposta()"></textarea>
+  
+      </section>
       
       <footer id="geral_footer">
         &copy Felipe Tiburcio - 2020
