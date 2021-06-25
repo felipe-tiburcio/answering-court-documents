@@ -33,55 +33,98 @@
     <a href="#protocoloSituacao" class="scroll">&#x25BC</a><br>
 
       <h3 class="black_subtitles">Solicitante</h3>
-      <div class="vinculos_containers"> 
+      <div class="protocolo_containers"> 
         
-        <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
-        <input id="vinculos_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc"><br>
-        
-        <label for="vinculos_cidade" class="label_inputs">Cidade:</label>
-        <select id="vinculos_cidade" class="inputs_geral">
-            <option selected>Aracaju</option>
-            <option>N. Sra. do Socorro</option>
-            <option>Barra dos Coqueiros</option>
-            <option>São Cristóvão</option>
-            <option>Itaporanga</option>
-            <option>Carmópolis</option>
-            <option>Maruim</option>
-            <option>Santo Amaro das Brotas</option>
-            <option>Pirambu</option>
-            <option>Laranjeiras</option>
-            <option>Itabaiana</option>
-            <option>Outra Cidade</option>
-            
-        </select>
-
-        <br>
+        <label for="protocolo_orgao" class="label_inputs">Órgão:</label>
+        <input id="protocolo_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc"><br>
         
         <label for="protocolo_processo" class="label_inputs">Processo:</label>
         <input id="protocolo_processo" class="inputs_geral" placeholder="Número do Processo"><br>
 
-        <label for="vinculos_email" class="label_inputs">E-mail:</label>
-        <input id="vinculos_email" class="inputs_geral" placeholder="E-mail"><br>
+        <label for="protocolo_email" class="label_inputs">E-mail:</label>
+        <input id="protocolo_email" class="inputs_geral" placeholder="E-mail"><br>
 
       </div>
 
+      <h3 class="black_subtitles">Assunto</h3>
+
+  <div id="vinculosCheckbox" class="vinculosCheckbox">
+    <div id="esquerda">
+
+    <input id="checkbox0"type="checkbox">
+    <label for="checkbox0">Demora Protocolo</label>
+    <br>  
+    <input id="checkbox1"type="checkbox">
+    <label for="checkbox1">Solicitada Cópia/Dossiê</label>
+    <br>
+    <input id="checkbox2"type="checkbox">
+    <label for="checkbox2">Relatórios de Perícia</label>
+    <br>  
+
+  </div>
+  <div id="direita"> 
+    
+   
+    <input id="checkbox9"type="checkbox">
+    <label for="checkbox9">Outra situação</label>
+    <br>
+    <input id="checkbox10"type="checkbox">
+    <label for="checkbox10">Ressalva - Dependentes</label>
+    <br>
+    <input id="checkbox11"type="checkbox">
+    <label for="checkbox11">Ressalva - Área do INSS</label>
+    </div>
+
+  </div>
+
       <h3 class="black_subtitles">Segurado</h3>
-      <div ="container_segurado" class="vinculos_containers"> 
+      <div ="container_segurado" class="protocolo_containers"> 
         
         <label for="protocolo_nome" class="label_inputs">Nome:</label>
-        <input id="protocolo_nome" class="inputs_geral" placeholder="Nome Completo"><br>
+        <input 
+          id="protocolo_nome"
+          class="inputs_geral"
+          placeholder="Nome Completo"
+          onclick="nome()"  
+        ><br>
 
         <label for="protocolo_cpf" class="label_inputs">CPF:</label>
-        <input id="protocolo_cpf" class="inputs_geral" placeholder="Número do CPF"><br>
+        <input 
+          id="protocolo_cpf"
+          class="inputs_geral"
+          placeholder="Número do CPF"
+          onclick="cpf()"  
+        ><br>
         
         <label for="protocolo_rg" class="label_inputs">RG:</label>
-        <input id="protocolo_rg" class="inputs_geral" placeholder="Número do RG"><br>
+        <input 
+          id="protocolo_rg"
+          class="inputs_geral"
+          placeholder="Número do RG"
+          onclick="rg()"  
+        ><br>
        
         <label for="protocolo_nascimento" class="label_inputs">Nasc.:</label>
         <input id="protocolo_nascimento" class="inputs_geral" type="date"><br>
         
         <label for="protocolo_mae" class="label_inputs">Mãe:</label>
-        <input id="protocolo_mae" class="inputs_geral" placeholder="Nome da Mãe"><br>
+        <input 
+          id="protocolo_mae"
+          class="inputs_geral"
+          placeholder="Nome da Mãe"
+          onclick="mae()"  
+        >
+        
+        <br>
+        <br>
+
+        <label for="protocolo_nb" class="label_inputs">NB:</label>
+        <input 
+          id="protocolo_nb"
+          class="inputs_geral"
+          placeholder="Número de Benefício"
+          onclick="nb()"
+        >
         
         <br>
 
@@ -95,12 +138,21 @@
         <br>
 
         <label for="protocolo_get" class="label_inputs">GET:</label>
-        <input id="protocolo_get" class="inputs_geral" placeholder="Protocolo GET">
+        <input 
+          id="protocolo_get"
+          class="inputs_geral" placeholder="Protocolo GET"
+          onclick="get()"  
+        >
 
         <br>
 
         <label for="protocolo_req" class="label_inputs">Req.:</label>
-        <input id="protocolo_req" class="inputs_geral" placeholder="Número de Requerimento">
+        <input 
+          id="protocolo_req"
+          class="inputs_geral"
+          placeholder="Número de Requerimento"
+          onclick="req()"  
+        >
         
         <br>
         <br>
@@ -116,86 +168,138 @@
       <h3 class="black_subtitles" id="protocoloSituacao">Situação:</h3>
       <div>
 
-        <input id="radio_0" type="radio" name="radio" class="radio_protocolo">
-        <label for="radio_0">Cópia/Dossiê</label>
-        
-        <br>
-        
         <input id="radio_1" type="radio" name="radio" class="radio_protocolo">
-        <label for="radio_1">Relatórios de Perícia</label>
+        <label for="radio_1">Cópia/Dossiê</label>
         
         <br>
         
         <input id="radio_2" type="radio" name="radio" class="radio_protocolo">
-        <label for="radio_2">Em andamento</label>
+        <label for="radio_2">Relatórios de Perícia</label>
         
         <br>
         
-        <input id="radio_3" class="radio_protocolo" type="radio" name="radio">
-        <label for="radio_3" >Exigência</label>
+        <input id="radio_3" type="radio" name="radio" class="radio_protocolo">
+        <label for="radio_3">Não localizado + Relatórios</label>
         
-        <br>   
+        <br>
         
-        <input id="radio_4" class="radio_protocolo" type="radio" name="radio">
-        <label for="radio_4" >Deferido</label>
-
+        <input id="radio_4" type="radio" name="radio" class="radio_protocolo">
+        <label for="radio_4">Em andamento</label>
+        
         <br>
         
         <input id="radio_5" class="radio_protocolo" type="radio" name="radio">
-        <label for="radio_5">Indeferido</label>
-
-        <br>
-       
+        <label for="radio_5" >Exigência</label>
+        
+        <br>   
+        
         <input id="radio_6" class="radio_protocolo" type="radio" name="radio">
-        <label for="radio_6">MOB</label>
-
-        <br>
-        <br>
-
-        <input id="radio_7" class="radio_protocolo" type="radio" name="ressalvas" checked>
-        <label for="radio_7">Sem Ressalvas</label>
+        <label for="radio_6" >Deferido</label>
 
         <br>
         
-        <input id="radio_8" class="radio_protocolo" type="radio" name="ressalvas">
-        <label for="radio_8">Ressalva1</label>
+        <input id="radio_7" class="radio_protocolo" type="radio" name="radio">
+        <label for="radio_7">Indeferido</label>
+
+        <br>
+       
+        <input id="radio_8" class="radio_protocolo" type="radio" name="radio">
+        <label for="radio_8">MOB</label>
+
+        <br>
+        <br>
+
+        <input id="radio_9" class="radio_protocolo" type="radio" name="ressalvas" checked>
+        <label for="radio_9">Sem Ressalvas</label>
+
+        <br>
+        
+        <input id="radio_10" class="radio_protocolo" type="radio" name="ressalvas">
+        <label for="radio_10">Ressalva1</label>
 
         <br>
 
-        <input id="radio_9" class="radio_protocolo" type="radio" name="ressalvas">
-        <label for="radio_9">Ressalva2</label>
+        <input id="radio_11" class="radio_protocolo" type="radio" name="ressalvas">
+        <label for="radio_11">Ressalva2</label>
 
     
     </div>
        
       
-      <div id="vinculos_div_button">
-    
-      <button type="button" onclick="resposta_protocolo()">Responder</button>
+    <div id="protocolo_div_button">
+      <button
+        id="answerButton" 
+        type="button"
+        onclick="resposta_protocolo()"
+        >Responder
+      </button>
 
-      <button id="clearButton" type="button" onclick="clearFunction()">Limpar Campos</button>
-    
-     
+      <button 
+        id="saveButton" 
+        type="button"
+        onclick="saveFunction()">Salvar Campos
+      </button>
+      
+      <button 
+        id="loadButton" 
+        type="button"
+        onclick="loadFunction()">Carregar Dados
+      </button>
+      
+      <button 
+        id="clearButton" 
+        type="button"
+        onclick="clearFunction()">Limpar Campos
+      </button>
     </div>
 
     <a href="#nav" class="scroll">&#x25B2</a><br>
 
     <section id="respostas" class="alignCenter">
+
+      <input 
+      id="nome_copia"
+      class="inputs_geral"
+      placeholder="Nome Completo"
+      onclick="copiaNome()"  
+    ><br>
+
+      <input 
+        id="orgao_copia"
+        class="inputs_geral"
+        placeholder="Vara, TJ, TRT, MP, etc" onclick="copiaOrgao()">
+      <br>
+      <input 
+        id="email_copia"
+        class="inputs_geral"
+        placeholder="E-mail"
+        onclick="copiaEmail()">
+      <br>
+    
+      <textarea 
+        id="assunto"
+        rows="1"
+        cols="58"
+        placeholder="Assunto do e-mail" onclick="copiaAssunto()"
         
-        <label for="assunto_email">Assunto:</label>
+      >
+      </textarea>
+      
+      <br>
 
-        <textarea rows="2" cols="44" id="assunto_email" placeholder="Texto pra ser colado no Assunto do E-mail"></textarea>
-        
-        <br>
-
-
-      <textarea id="protocolo_textarea" rows="8" cols="62" id="protocolo_textarea" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar"></textarea>
+      <textarea 
+        id="resposta"
+        rows="12"
+        cols="60"
+        placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar" onclick="copiaResposta()"    
+      >
+      </textarea>
 
     </section>
       <footer ="geral_footer">
         &copyFelipe Tiburcio - 2020
       </footer>
-      <script src="script.js"></script>
+      <script src="./protocolo.js"></script>
     </form>
   </body>
 </html>
