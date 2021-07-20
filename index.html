@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./img/favicon-32x32.png">
+  <title>Vínculos, Benefícios e Cadastro</title>
+
+</head>
+
+<body>
+  <form>
+  <header>
+    <div class="header_1">
+      <h2 class="nome_secao">Vínculos, Benefícios e Cadastro</h2>
+    </div>
+
+    <div id="nav" class="header_2">
+        <ul>
+          <a href="vinculos.html" class="links_topo"><li>Vínculos, Benefícios e Cadastro</li></a>
+          <a href="dependentes.html" class="links_topo"><li>Dependentes</li></a>
+          <a href="consignacoes.html" class="links_topo"><li>Consignações</li></a>
+          <a href="pa.html" class="links_topo"><li>Pensão Alimentícia</li></a>
+          <a href="residuos.html" class="links_topo"><li>Resíduos</li></a>
+          <a href="protocolo.html" class="links_topo"><li>Protocolo/Cópia</li></a>
+          <a href="ms.html" class="links_topo"><li>Mandado de Segurança</li></a>
+          <a href="sei.html" class="links_topo"><li>SEI</li></a>
+        </ul>
+
+    </div>
+
+  </header>
+
+      <a href="#container_segurado" class="scroll">&#x25BC</a><br>
+
+      <div id="container_solicitante"  class="vinculos_containers">       
+        <h3 class="black_subtitles">Solicitante</h3>
+        <label for="vinculos_orgao" class="label_inputs">Órgão:</label>
+        <input id="vinculos_orgao" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc" required>
+        <br>
+        
+        <label for="vinculos_processo" class="label_inputs">Processo:</label>
+        <input id="vinculos_processo" class="inputs_geral" placeholder="Número do Processo"><br>
+
+        <label for="vinculos_email" class="label_inputs">E-mail:</label>
+        <input id="vinculos_email" class="inputs_geral" placeholder="E-mail"><br>
+
+      </div>
+
+      <h3 class="black_subtitles">Assunto</h3>
+
+  <div id="vinculosCheckbox" class="vinculosCheckbox">
+    <div id="esquerda">
+
+    <input id="checkbox1"type="checkbox">
+    <label for="checkbox1">Vínculo Empregatício</label>
+    <br>
+    <input id="checkbox2"type="checkbox">
+    <label for="checkbox2">CNIS</label>
+    <br>
+    <input id="checkbox3"type="checkbox">
+    <label for="checkbox3">Cadastro/Endereço</label>
+    <br>  
+    <input id="checkbox4"type="checkbox">
+    <label for="checkbox4">Existência de Benefício</label>
+    <br>  
+    <input id="checkbox5"type="checkbox">
+    <label for="checkbox5">Valor de Benefício</label>
+    <br> 
+    <input id="checkbox6"type="checkbox">
+    <label for="checkbox6">Cópia de Processos</label>
+  </div>
+  <div id="direita">  
+    <input id="checkbox7"type="checkbox">
+    <label for="checkbox7">Extrato de Pagamentos</label>
+    <br> 
+    <input id="checkbox8"type="checkbox">
+    <label for="checkbox8">CadÚnico</label>
+    <br>
+    <input id="checkbox9"type="checkbox">
+    <label for="checkbox9">Outra situação</label>
+    <br>
+    <input id="checkbox10"type="checkbox">
+    <label for="checkbox10">Ressalva - Dependentes</label>
+    <br>
+    <input id="checkbox11"type="checkbox">
+    <label for="checkbox11">Ressalva - Área do INSS</label>
+    </div>
+
+  </div>
+
+  
+      <h3 class="black_subtitles">Segurado</h3>
+      <div id="container_segurado" class="vinculos_containers"> 
+        
+        <label for="vinculos_nome" class="label_inputs">Nome:</label>
+        <input 
+          id="vinculos_nome"
+          class="inputs_geral"
+          placeholder="Nome Completo" 
+          required
+          onclick="nome()"  
+        ><br>
+
+        <label for="vinculos_cpf" class="label_inputs">CPF:</label>
+        <input 
+          id="vinculos_cpf"
+          class="inputs_geral"
+          placeholder="Número do CPF"
+          onclick="cpf()"
+          ><br>
+
+        <label for="vinculos_mae" class="label_inputs">Mãe:</label>
+        <input 
+          id="vinculos_mae"
+          class="inputs_geral"
+          placeholder="Nome da Mãe"
+          onclick="mae()"><br>
+        
+        <label for="vinculos_rg" class="label_inputs">RG:</label>
+        <input 
+          id="vinculos_rg"
+          class="inputs_geral"
+          placeholder="Número do RG"
+          onclick="rg()"
+          ><br>
+       
+        <label for="vinculos_nascimento" class="label_inputs">Nasc.:</label>
+        <input id="vinculos_nascimento" type= "date" class="inputs_geral" placeholder="xx/xx/xxxx"><br>
+        
+        <label for="vinculos_endereco" class="label_inputs" id="label_endereco">End.:</label>
+        <textarea id="vinculos_endereco" class="inputs_geral" rows="4" cols="70" placeholder="Endereço(s) cadastrado(s) no CNIS"></textarea>
+      </div>
+
+      <a href="#nav" class="scroll">&#x25B2</a><br>
+      <a href="#vinculos_situacao" class="scroll">&#x25BC</a><br>
+
+      <h3 class="black_subtitles">Empresa</h3>
+      
+      <div id="container_empresa" class="vinculos_containers"> 
+        
+        <label for="vinculos_empresa" class="label_inputs">Empresa:</label>
+        <input id="vinculos_empresa" placeholder="Nome da Empresa" class="inputs_geral">
+        <br>
+        
+        <label for="vinculos_data_inicio" class="label_inputs">Início:</label>
+        <input id="vinculos_data_inicio" type="text" placeholder="xx/xx/xxxx" class="inputs_geral">
+
+        <br>
+
+        <label for="vinculos_salario" class="label_inputs">R$:</label>
+        <input id="vinculos_salario" placeholder="Última remuneração no CNIS" class="inputs_geral">
+
+      </div>
+
+      <br>
+
+      <h3 class="black_subtitles">Benefício</h3>
+      <div ="container_beneficio" class="vinculos_containers">
+
+      <label for="vinculos_nb" class="label_inputs">NB:</label>
+        <input
+          id="vinculos_nb"
+          class="inputs_geral"
+          placeholder="Número do Benefício"
+          onclick="nb()"
+        ><br>
+
+        <label for="vinculos_tipoBeneficio" class="label_inputs">Tipo:</label>
+        <select id="vinculos_tipoBeneficio" class="inputs_geral">
+            
+            <option selected>Pensão por Morte</option>
+            <option>Aposentadoria por Idade</option>
+            <option>Apos. por Tempo de Contribuição</option>
+            <option>Aposentadoria Especial</option>
+            <option>Auxílio por Incapacidade Temporária</option>
+            <option>Apos. por Incapacidade Permanente</option>
+            <option>Auxílio por Incapacidade Temporária Acidentária</option>
+            <option>Amparo Social a Pes. Def.</option>
+            <option>Amparo Social ao Idoso</option>
+            <option>Outra opção</option>
+            
+        
+        </select>
+
+        <br>
+
+        
+        <label for="vinculos_beneficioInicio" class="label_inputs">DIB:</label>
+        <input id="vinculos_beneficioInicio" type="date" class="inputs_geral">
+
+        <br>
+
+        <label for="valorBeneficio" class="label_inputs">R$:</label>
+        <input id="valorBeneficio" placeholder="MR do benefício no INFBEN" class="inputs_geral">
+    </div>
+      
+      <br>
+
+      <!--Seleção da situação do vínculo-->
+      <h3 class="black_subtitles">Situação</h3>
+      <div id="vinculos_situacao" class="vinculos_radio">
+        <br>
+        <input id="radio_1" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_1">Segurado não localizado</label>
+        <hr>
+        <br>
+        <input id="radio_2" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_2" >Vínculo ativo</label>   
+
+        <br>
+
+        <input id="radio_3" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_3" >Vínculo e salário</label>   
+
+        <br>
+        
+        <input id="radio_4" class="radio_vinculos" type="radio" name="radio" class="radio_vinculos">
+        <label for="radio_4" >Vínculo(s) aberto(s) (Sem remunerações recentes)</label>
+
+        <br>
+        
+        <input id="radio_5"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_5">Sem vínculo ativo</label>
+        <hr>
+        <br>
+
+        <input id="radio_6"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_6">Benefício ativo</label>
+
+        <br>
+
+        <input id="radio_7"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_7">Sem benefício ativo</label>
+        <br>
+      
+        <input id="radio_8"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_8">Extrato de Pagamentos</label>
+        <hr>
+        <br>
+
+
+        <input id="radio_9"class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_9">Endereço</label>
+        <br>
+        
+        <input id="radio_10" class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_10">CNIS - Extrato</label>
+
+        <br>
+        
+        <input id="radio_11" class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_11">CNIS - Vazio</label>
+
+        <br>
+
+        <input id="radio_12" class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_12">Dados Cadastrais</label>
+
+        <hr>
+        <br>
+
+        <input id="radio_13" class="radio_vinculos" type="radio" name="radio">
+        <label for="radio_13">Outra Situação - Escrever Manualmente</label>
+        <hr>
+
+        <br>
+
+        <input selected id="radio_14"class="ressalvas" type="radio" name="ressalvas">
+        <label for="radio_14">Sem Ressalvas</label>
+        <br>
+
+        <input id="radio_15"class="ressalvas" type="radio" name="ressalvas">
+        <label for="radio_15">Ressalva - Cadastro de Dependentes</label>
+
+        <br>
+
+        <input id="radio_16"class="ressalvas" type="radio" name="ressalvas">
+        <label for="radio_16">Ressalva - Área de atuação do INSS</label>
+        <br>       
+        <hr>
+
+        <br>
+
+    
+    </div>  
+     
+    <div id="vinculos_div_button">
+      <button
+        id="answerButton" 
+        type="button"
+        onclick="resposta_vinculos()"
+        >Responder
+      </button>
+
+      <button 
+        id="saveButton" 
+        type="button"
+        onclick="saveFunction()">Salvar Campos
+      </button>
+      
+      <button 
+        id="loadButton" 
+        type="button"
+        onclick="loadFunction()">Carregar Dados
+      </button>
+      
+      <button 
+        id="clearButton" 
+        type="button"
+        onclick="clearFunction()">Limpar Campos
+      </button>
+    </div>
+
+    <section id="respostas" class="alignCenter">
+
+      <a href="#container_segurado" class="scroll">&#x25B2</a>
+
+      <input 
+      id="nome_copia"
+      class="inputs_geral"
+      placeholder="Nome Completo"
+      onclick="copiaNome()"  
+    ><br>
+
+      <input id="orgao_copia" class="inputs_geral" placeholder="Vara, TJ, TRT, MP, etc" onclick="copiaOrgao()">
+      <br>
+      <input id="email_copia" class="inputs_geral" placeholder="E-mail" onclick="copiaEmail()">
+      <br>
+    
+      <textarea id="assunto" rows="1" cols="58" placeholder="Assunto do e-mail" onclick="copiaAssunto()"></textarea><br>
+
+      <textarea id="resposta" rows="12" cols="60" placeholder="O texto aparecerá aqui. Utilize o Ctrl + C para copiar" onclick="copiaResposta()"></textarea>
+
+    </section>
+      <footer ="geral_footer">
+        &copyFelipe Tiburcio - 2020
+      </footer>
+      <script src="./vinculos.js"></script>
+    </form>
+  </body>
+</html>
+
+  

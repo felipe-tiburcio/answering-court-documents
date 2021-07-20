@@ -255,6 +255,8 @@ const copiaResposta = () => {
 //Função principal
 
 function resposta_dependentes() {
+  window.scrollTo(0, 2000);
+
   const orgao = document.querySelector("#dependentes_orgao").value;
 
   let orgaoCopia = document.querySelector("#orgao_copia");

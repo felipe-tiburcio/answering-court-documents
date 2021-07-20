@@ -234,6 +234,8 @@ const copiaResposta = () => {
 
 //Função principal
 function resposta_vinculos() {
+  window.scrollTo(0, 1500);
+
   let segurado = document.querySelector("#vinculos_nome").value;
 
   let orgao = document.querySelector("#vinculos_orgao").value;
