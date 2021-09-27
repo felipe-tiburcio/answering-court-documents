@@ -80,8 +80,11 @@ const saveFunction = () => {
     localStorage.setItem("Tipo", tipoBeneficio);
     localStorage.setItem("DIB", inicioBeneficio);
     localStorage.setItem("Valor Benefício", valorBeneficio);
+
+    alert("Dados salvos com sucesso.");
   }
 };
+
 const loadFunction = () => {
   const confirmation = confirm(
     "Deseja carregar os dados salvos na memória local?"
@@ -264,7 +267,8 @@ function resposta_vinculos() {
     .querySelector("#vinculos_data_inicio")
     .value.split("-")
     .reverse()
-    .join("/");
+    .join("/")
+    .trim();
 
   let beneficio = document.querySelector("#vinculos_tipoBeneficio").value;
 
@@ -272,7 +276,8 @@ function resposta_vinculos() {
     .querySelector("#vinculos_beneficioInicio")
     .value.split("-")
     .reverse()
-    .join("/");
+    .join("/")
+    .trim();
 
   let valorBeneficio = document.querySelector("#valorBeneficio").value;
 
